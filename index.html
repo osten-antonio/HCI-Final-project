@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="globalstyles.css">
+    <script type="module" src="homemodule.js"></script>
 </head>
 <body>
-    
-
     <div class="header">
         <div class="logo">
             <img src="4069_gray_square.png" class="logoimg" alt="Logo">
             <p class="regularfont" id="websitename">Name</p>
         </div>
-        <img src="4069_gray_square.png" alt="Right Image" class="pfp">
+        <a>
+        <img src="4069_gray_square.png" alt="Right Image" id="pfp">
+        </a>
     </div>
     <div class="main">
         <div class="text-content">
@@ -24,15 +26,14 @@
             <p id="subtitle">
                 Making education fun, accessible, and meaningful for every child
             </p>
-            <a href="#">
-                <button id="mainbutton">
-                    <p class="regularfont mainbuttontext">Jump to dashboard</p>
-                </button>
-            </a>
+            <!-- TODO: Cloud animation thing -->
+            <button id="mainbutton">
+                <p class="regularfont mainbuttontext" id="dashboardbutton">Jump to dashboard</p>
+            </button>
         </div>
         <div class="image-content">
             <img src="https://png.pngtree.com/element_our/png/20180917/children-reading-book-png_100050.jpg" class="main-image">
-            <img src="cloudcover.png" id="cloudcover"> <!--Fix pls-->
+            <img src="cloudcover.png" id="cloudcover"> <!--TODO: Edit to add shadow-->
         </div>
     </div>
     <div class="cloudseperator">
@@ -108,6 +109,7 @@
         <p class="bigfont sep">Course structure</p>
     </div>
     <div id="coursestructure">
+        <!-- TODO: Change font color  -->
         <div class="coursestructurediv">
             <button class="mediumfont accordionc" style="padding: 10px;">English</button>
             <div class="regularfont panelc">
@@ -226,7 +228,7 @@
     <p class="bigfont sepo" style="padding-bottom: 1%;">Our course</p>
     <div id="rightforyou">
         <div class="coursedivider">
-            <a href="google.com" class="courselink">
+            <a href="mathsselector.html" class="courselink">
                 <div class="coursebutton">
                     <img src="https://flat-icons.com/wp-content/uploads/2022/09/Math-Mathematics-Icon-Set-Featured-Image.png" class="buttonimage">
                     <p class="mediumfont coursename">Maths</p>
@@ -239,7 +241,7 @@
             </a>
         </div>
         <div class="coursedivider">
-            <a href="google.com" class="courselink">
+            <a href="englishselector.html" class="courselink">
                 <div class="coursebutton">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuceyEbaXyE60-ms3OqDsLDauhOymmUVRz0A&s" class="buttonimage">
                     <p class="mediumfont coursename">English</p>
@@ -268,6 +270,6 @@
         <p class="placeholder">placeholder</p>
         <p class="placeholder">placeholder</p>
     </div>
-    <script src="functions.js"></script>
+    <script src="homestyles.js"></script>
 </body>
 </html>

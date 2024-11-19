@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register & Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="authstyle.css">
+    <link rel="stylesheet" href="globalstyles.css">
+    <script type="module" src="auth.js"></script>
+</head>
+<body>
+    <div class="container" id="signUp" style="display:none;">
+      <h1 class="formTitle bigfont">Register</h1>
+      <form method="post" action="">
+        <div class="inputGroup">
+           <i class="fas fa-user"></i>
+           <input type="text"  id="fName" placeholder="First Name" required>
+           <label for="fname" class="mediumfont">First Name</label>
+        </div>
+        <div class="inputGroup">
+            <i class="fas fa-user"></i>
+            <input type="text"  id="lName" placeholder="Last Name" required>
+            <label for="lName" class="mediumfont">Last Name</label>
+        </div>
+        <div class="inputGroup">
+            <i class="fas fa-envelope"></i>
+            <input type="email"  id="emailR" placeholder="Email" required>
+            <label for="emailR" class="mediumfont">Email</label>
+        </div>
+        <div class="inputGroup">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="passwordR"  placeholder="Password" required>
+            <label for="rPassword" class="mediumfont">Password</label>
+        </div>
+       <button class="btn" id="submitSignUp" >Sign Up</button>
+      </form>
+      <div class="links">
+        <p class="mediumfont haveAccount">Already Have Account?</p>
+        <button id="signInButton" class="mediumfont">Sign In</button>
+      </div>
+    </div>
+
+  <div class="container" id="signIn">
+        <h1 class="formTitle bigfont">Sign In</h1>
+        <form method="post" action="">
+          <div id="signInMessage" class="messageDiv" style="display:none;"></div>
+
+          <div class="inputGroup">
+              <i class="fas fa-envelope"></i>
+              <input type="email"  id="email" placeholder="Email" required>
+              <label for="email" class="mediumfont">Email</label>
+          </div>
+          <div class="inputGroup">
+              <i class="fas fa-lock"></i>
+            <input type="password" id="password"  placeholder="Password" required>
+              <label for="password" class="mediumfont">Password</label>
+          </div>
+          <p class="recover">
+            <a href="#" class="regularfont">Recover Password</a>
+          </p>
+         <button class="mediumfont" id="submitSignIn">Sign In</button>
+        </form>
+        <div class="links">
+          <p class="mediumfont haveAccount">Don't have account yet?</p>
+          <button id="signUpButton" class="mediumfont">Sign Up</button>
+        </div>
+      </div>
+      <script src="authstyles.js"></script>
+</body>
+</html>

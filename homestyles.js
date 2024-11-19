@@ -43,3 +43,4 @@ document.querySelector('.rightscroll').addEventListener('click', () => {
     const wrapper = document.querySelector('.resourceswrapper');
     wrapper.scrollBy({ left: 600, behavior: 'smooth' }); 
 });
+

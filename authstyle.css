@@ -1,0 +1,129 @@
+:root{
+    --primemint: #34CFB5;
+    --primeyellow: #ffe932;
+    --darkmint: #05525B;
+    --darkyellow: #CCC965;
+    --accentyellow:#f2dfae;
+    --confirm:#008000;
+    --confirmhover:#50C878;
+}
+
+
+html, body{
+    margin: 0;
+}
+
+body{
+    background:linear-gradient(to right,var(--primemint),var(--primeyellow));
+}
+.container{
+    background:#fff;
+    width:fit-content;
+    padding:26px;
+    margin:50px auto;
+    border-radius:10px;
+    box-shadow:0 20px 35px rgba(0,0,1,0.9);
+}
+form{
+    margin:0 64px;
+}
+.formTitle{
+    font-weight:bold;
+    text-align:center;
+    padding:20.8px;
+    margin-bottom:6.4px;
+    color: var(--darkmint);
+}
+input{
+    color:inherit;
+    width:100%;
+    background-color:transparent;
+    border:none;
+    border-bottom:1px solid #757575;
+    padding-left:26px;
+}
+.inputGroup{
+    padding:1% 0;
+    position:relative;
+
+}
+.inputGroup i{
+    position:absolute;
+    color:var(--darkmint);
+}
+input:focus{
+    background-color: transparent;
+    outline:transparent;
+    border-bottom:2px solid var(--darkmint);
+}
+input::placeholder{
+    color:transparent;
+}
+label{
+    color:#757575;
+    position:relative;
+    left:26px;
+    top:-20px;
+    cursor:auto;
+    transition:0.3s ease all;
+}
+input:focus~label,input:not(:placeholder-shown)~label{
+    top:-40px;
+    color: var(--darkmint);
+}
+.recover{
+    text-align:right;
+    margin-bottom:16px;
+
+}
+.recover a{
+    text-decoration:none;
+    color:var(--confirm);
+}
+.recover a:hover{
+    color:var(--confirmhover);
+    text-decoration:underline;
+}
+button{
+    padding:8px 0;
+    border-radius:5px;
+    outline:none;
+    border:none;
+    width:100%;
+    background:var(--confirm);
+    color:var(--accentyellow);
+    cursor:pointer;
+    transition:0.9s;
+}
+button:hover{
+    background:var(--confirmhover);
+}
+.or{
+    margin-top:8px;
+    text-align:center;
+}
+.icons{
+    text-align:center;
+}
+
+.links{
+    display:flex;
+    justify-content:space-around;
+    padding:0 64px;
+    margin-top: 14.4px;
+    font-weight:bold;
+}
+ #signUpButton, #signInButton{
+    color:var(--confirm);
+    border:none;
+    background-color:transparent;
+    font-weight:bold;
+}
+#signUpButton:hover, #signInButton:hover {
+    text-decoration:underline;
+    color:var(--confirmhover);
+} 
+
+.haveAccount{
+    color: var(--darkmint);
+}

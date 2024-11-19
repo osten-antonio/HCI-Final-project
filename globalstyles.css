@@ -1,0 +1,21 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+.bigfont{
+    font-size: clamp(1.3rem, 2.5vw, 2.7vw);
+}
+
+.mediumfont{
+    font-size: clamp(0.9rem, 1.5vw, 2.3vw);
+}
+
+.regularfont{
+    font-size: clamp(0.7rem, 1.3vw, 1.7vw);
+}
+
+
+.smallfont{
+    font-size: clamp(0.5rem, 1vw, 1.3vw);
+}
