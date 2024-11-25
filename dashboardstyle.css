@@ -1,0 +1,174 @@
+:root{
+    --primemint: #34CFB5;
+    --primeyellow: #FFBB00;
+    --darkmint: #05525B;
+    --darkyellow: #CCC965;
+    --accentyellow:#f2dfae;
+    --confirm:#008000;
+    --confirmhover:#50C878;
+    --valuesize: clamp(40px,5vw,7vw);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    background-image: linear-gradient(var(--accentyellow),white);
+    background-repeat: no-repeat;
+    margin: 0;
+    position:relative;
+}
+
+.container{
+    margin: 2% 10%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:1vw;
+    padding: 20px;
+}
+
+.achievement{
+    grid-column: 1 / span 2;
+    grid-row: 1/span 3;
+}
+.achievement-square{
+    grid-column: 3;
+    grid-row: 1 / span 4;
+}
+.topic-square{
+    grid-column: 1;
+    grid-row: 4 / span 2;
+}
+.login-square{
+    grid-column: 2;
+    grid-row: 4 / span 6;
+}
+.streak{
+    grid-column: 3;
+    grid-row: 5/span 4;
+}
+
+.recent-label{
+    grid-column: 3;
+    grid-row: 7;
+}
+.course-button-a{
+    grid-column: 1;
+    grid-row: 7/span 5;
+}
+.course-button-b{
+    grid-column: 2;
+    grid-row: 7/span 5;
+}
+.recent-content{
+    padding-top: auto;
+    grid-column: 3;
+    grid-row: 9/span 5;
+
+}
+
+.box{
+    background-color: var(--primemint);
+    border: 5px solid var(--darkmint);
+    border-radius: 25px;
+    padding: 5px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.streak-box{
+    background-color: var(--primemint);
+    border: 5px solid var(--darkmint);
+    border-radius: 25px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.achievement-box{
+
+    background-color: var(--primeyellow);
+    border: 5px solid var(--darkmint);
+    border-radius: 25px;
+    height: 100%;
+    padding: 5px;
+}
+
+.heading{
+    color: var(--darkmint);
+    font-weight: bold;
+    padding: 15px;
+}
+
+#achievementvalue{
+    font-weight: bold;
+    width: 100%;
+    color: var(--darkmint);
+}
+.values{
+    text-align: center; 
+    font-size: var(--valuesize);
+    margin: auto;
+}
+
+.courselink {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.coursebutton {
+    background: var(--primemint);
+    border: 5px solid var(--darkmint);
+    border-radius: 15px;
+    text-align: center;
+    width: 100%;  
+    height: auto;
+    min-height: 350px;
+    max-height: 500px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.buttonimage {
+    width: 130px;
+    height: 150px;
+    margin: 5% 0;
+}
+
+.coursename {
+    text-align: left;
+    font-weight: bold;
+    margin-left: 5%;
+    color: var(--darkmint);
+}
+
+
+
+@media screen and (max-width: 725px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .achievement,
+    .achievement-square,
+    .topic-square,
+    .login-square,
+    .streak,
+    .jump-button,
+    .recent-content,
+    .course-button-a,
+    .course-button-b {
+        grid-column: 1;
+        grid-row: auto; 
+    }
+
+    .achievement {
+        margin-bottom: 10px;
+    }
+}
+

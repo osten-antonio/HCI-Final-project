@@ -2,14 +2,18 @@
     --primemint: #34CFB5;
     --primeyellow: #ffe932;
     --darkmint: #05525B;
-    --darkyellow: #CCC965;
+    --darkyellow: #FFBB00;
     --accentyellow:#f2dfae;
+    --cloudblue:#C9EBE3;
+    --secondblue:#6ADDFF;
+    --seconddarkblue:#1A695C;
 }
 
 
 
-html, body{
+body{
     margin: 0;
+    overflow-x: hidden;
 }
 
 
@@ -55,24 +59,6 @@ html, body{
 
 
 
-.header{
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    background-color: var(--darkmint);
-    padding: 10px 20px; 
-    width: 100%;
-}
-
-.logo{
-    display: flex;
-    align-items: center;
-}
-
-#websitename{
-    color: var(--primeyellow);
-    margin-left: 10px;
-}
 
 
 #cloudcover{
@@ -83,27 +69,19 @@ html, body{
     height: 67.708vw; 
     object-fit: cover; 
     pointer-events: none; 
+    z-index: 3;
 }
 
-#pfp{
-    max-width: 40px;
-    height: auto; 
-    border-radius: 50%;
-}
-
-.logoimg{
-    max-width: 50px; 
-    height: auto;
-}
 .main {
     display: flex;
     flex-direction: row;  
+    margin: 0;
     justify-content: space-between;
     padding-left: 40px;
     padding-top: 20px;
     flex-wrap: wrap-reverse; 
     background: var(--primemint);
-    background: linear-gradient(90deg, var(--primemint) 0%, var(--primeyellow) 100%); 
+    background: linear-gradient(45deg, var(--primemint) 0%, var(--secondblue) 100%); 
 }
 
 .text-content{
@@ -127,7 +105,6 @@ html, body{
 }
 
 .main-image {
-
     min-width: 210px;
     width: 80vw; 
     max-width: 90%;
@@ -151,15 +128,46 @@ html, body{
 }
 
 #mainbutton{
-    background: 
-    linear-gradient(90deg, var(--primeyellow) 70%, rgba(255,251,124,0) 100%) padding-box,
-    linear-gradient(90deg, #ffca32 0%, rgba(255,251,124,0) 100%) border-box;
-    padding: 5px 15px;
-    border: 5px solid transparent;
+    background: var(--accentyellow);
     border-radius: 15px;
     display: inline-block;
     margin: 75px 0; 
     transition: transform 0.2s;
+    position: relative;
+    margin: 0 auto;
+    border:0 solid rgba(1, 1, 1, 0);
+    z-index: 1;
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+#mainbutton::after, #mainbutton::before{
+    content: '';
+    position: absolute;
+    background-image: linear-gradient(var(--angle),var(--primeyellow),var(--secondblue));
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    translate: -50% -50%;
+    padding: 1px;
+    border-radius: 15px;
+
+    animation: 3s spin linear infinite;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }    
 }
 
 #mainbutton:hover {
@@ -167,12 +175,16 @@ html, body{
 }
 
 .mainbuttontext{
-    margin: 10px; margin-left: 2px;
+    margin:5px 5px;
+    background: var(--accentyellow);
     color: var(--primemint);
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
 }
 
 .cloudseperator {
-    background: linear-gradient(90deg, var(--primemint) 0%, var(--primeyellow) 100%); 
+    background: linear-gradient(45deg, var(--primemint) 0%, var(--secondblue) 100%); 
     width: 100%;
     height: 15vw;
     display: flex;
@@ -180,6 +192,7 @@ html, body{
     justify-content: center;
     position: relative;
     overflow: hidden; 
+    overflow: visible;
 }
 
 .circle {
@@ -188,7 +201,32 @@ html, body{
     background-color: #FFFFFF;
     border-radius: 50%;
     position: absolute;
+    z-index: 2;
 }
+
+.secondcircle{
+    z-index: 1;
+    background-color: var(--cloudblue);
+    height: 15vw; 
+    width: 15vw;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.secondcircle:nth-child(13) { width: 20vw; height: 20vw; top: -5%; left: 5%; }
+.secondcircle:nth-child(14) { width: 15vw; height: 15vw; top: -10%; left: 25%; }
+.secondcircle:nth-child(15) { width: 18vw; height: 18vw; top: -15%; left: 50%;}
+.secondcircle:nth-child(16) { width: 25vw; height: 25vw; top: -15%; left: 75%;}
+.secondcircle:nth-child(17) { width: 12vw; height: 12vw; top: -7%; left: 90%; }
+.secondcircle:nth-child(18) { width: 10vw; height: 10vw; top: 1%; left: 20%; }
+.secondcircle:nth-child(19) { width: 22vw; height: 22vw; top: -5%; left: 60%; }
+.secondcircle:nth-child(20) { width: 16vw; height: 16vw; top: -12%; left: 35%; }
+.secondcircle:nth-child(21) { width: 14vw; height: 14vw; top: -14%; left: 80%; }
+.secondcircle:nth-child(22) { width: 17vw; height: 17vw; top: -8%; left: -5%; }
+.secondcircle:nth-child(23) { width: 12vw; height: 12vw; top: -15%; left: 45%; }
+.secondcircle:nth-child(24) { width: 12vw; height: 12vw; top: -15%; left: 42%; }
+
+
 .circle:nth-child(1) { width: 20vw; height: 20vw; top: 5%; left: 5%; }
 .circle:nth-child(2) { width: 15vw; height: 15vw; top: 10%; left: 25%; }
 .circle:nth-child(3) { width: 18vw; height: 18vw; top: 0; left: 50%; }
@@ -208,6 +246,7 @@ html, body{
     position: absolute;
     bottom: 0;
     left: 0;
+    z-index: 3;
 }
 
 .rectb{
@@ -217,7 +256,7 @@ html, body{
     position: absolute;
     top: 0;
     left: 48%;
-
+    z-index: 3;
 }
 
 @media only screen and (max-width: 564px) {
@@ -274,6 +313,8 @@ html, body{
     align-items: center;
     width: 100%;
     justify-content: space-between;
+    z-index: 3;
+    position: relative;
 }
 
 #coursestructurediv{
@@ -347,8 +388,10 @@ html, body{
 }
 
 .coursebutton {
-    background: var(--primemint);
-    border: 5px solid white;
+    position: relative;
+    z-index: 5;
+    background: var(--secondblue);
+    border: 5px solid var(--darkmint);
     border-radius: 15px;
     text-align: center;
     width: 20vw;  
@@ -392,13 +435,48 @@ html, body{
     border-radius: 100% 100% 0 0;
     position: absolute;
     bottom: 0;
-    z-index: 0;
+    z-index: 2;
     left: 0;
+    box-shadow:
+    0 0 0 40px #ffe93280,
+    0 0 0 60px #ffe93240,
+    0 0 0 80px #ffe93220,
+    0 0 0 100px #ffe93210,
+    0 0 0 120px #ffe93200,
+    0 0 40px 140px #ffe93210;
+    animation: rays 2s 2s infinite linear;
+    
+}
+@keyframes rays {
+	0% {
+		box-shadow: 
+		0 0 0 0 #FFDE0080,
+		0 0 0 40px #FFDE0080,
+		0 0 0 60px #FFDE0040,
+		0 0 0 80px #FFDE0020,
+		0 0 0 100px #FFDE0010,
+		0 0 40px 120px #FFDE0010;
+	}
+	100% {
+		box-shadow: 
+		0 0 0 40px #FFDE0080,
+		0 0 0 60px #FFDE0040,
+		0 0 0 80px #FFDE0020,
+		0 0 0 100px #FFDE0010,
+		0 0 0 120px #FFDE0000,
+		0 0 40px 120px #FFDE0010;
+	}
 }
 
 #FAQ{
     background-color: var(--primeyellow);
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
 }
 
 .placeholder{
@@ -406,19 +484,19 @@ html, body{
 }
 
 #otherresources{
-    background-color: var(--primemint);
+    background-image: linear-gradient(var(--secondblue),var(--seconddarkblue));
 }
 
 
 .reverscloudseperator {
-    background: var(--primemint);
+    background: var(--secondblue);
     width: 100%;
     height: 15vw; 
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 
@@ -428,7 +506,7 @@ html, body{
     background-color: #FFFFFF;
     border-radius: 50%;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
 }
 
 
@@ -444,6 +522,27 @@ html, body{
 .reversecircle:nth-child(11) { width: 17vw; height: 17vw; top: -15%; left: -5%; }
 .reversecircle:nth-child(12) { width: 12vw; height: 12vw; top: 15%; left: 45%; }
 
+.secondreversecircle{
+    height: 15vw; 
+    width: 15vw;
+    background-color: var(--cloudblue);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+}
+
+.secondreversecircle:nth-child(13) { width: 20vw; height: 20vw; top: -35%; left: 5%; }
+.secondreversecircle:nth-child(14) { width: 15vw; height: 15vw; top: -5%; left: 25%; }
+.secondreversecircle:nth-child(15) { width: 18vw; height: 18vw; top: -25%; left: 50%; }
+.secondreversecircle:nth-child(16) { width: 25vw; height: 25vw; top: -55%; left: 75%; }
+.secondreversecircle:nth-child(17) { width: 12vw; height: 12vw; top: -25%; left: 90%; }
+.secondreversecircle:nth-child(18) { width: 10vw; height: 10vw; top: 15%; left: 20%; }
+.secondreversecircle:nth-child(19) { width: 22vw; height: 22vw; top: -45%; left: 60%; }
+.secondreversecircle:nth-child(20) { width: 16vw; height: 16vw; top: 0%; left: 35%; }
+.secondreversecircle:nth-child(21) { width: 14vw; height: 14vw; top: -15%; left: 80%; }
+.secondreversecircle:nth-child(22) { width: 17vw; height: 17vw; top: 0%; left: -5%; }
+.secondreversecircle:nth-child(23) { width: 12vw; height: 12vw; top: 30%; left: 45%; }
+
 .recta{
     width: 100%;
     height: 5vw;
@@ -455,7 +554,7 @@ html, body{
 }
 
 #ocean{
-    background: var(--primemint);
+    background: var(--seconddarkblue);
     width: 100%;
     height: 7vw;
     display: flex;
@@ -486,7 +585,7 @@ html, body{
 .waves:nth-child(9) { width: 20vw; height: 20vw; top: 0; left: -10%; border-radius: 51% 50% 0 0;}
 
 #rightforyou{
-    background-color: var(--darkmint);
+    background-image: linear-gradient(var(--darkmint),var(--seconddarkblue));
     display: flex;
     justify-content: center;
     gap: 5%;
@@ -494,8 +593,13 @@ html, body{
     padding: 2%;
 }
 
-.footer{
+#footer{
+    border-radius: 25px 25px 0 0;
     background-color: var(--darkyellow);
+}
+
+.footerbackground{
+    background-color: var(--seconddarkblue);
 }
 
 .cloudbutton{
@@ -529,7 +633,7 @@ html, body{
 }
 
 .resourceswrapper{
-    height: 640px;
+    height: 500px;
     display: flex;
     overflow-x: auto;
     gap: 5px;

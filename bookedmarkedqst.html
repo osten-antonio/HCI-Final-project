@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bookmarkedqststyle.css">
+    <link rel="stylesheet" href="globalstyles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="4069_gray_square.png" class="logoimg" alt="Logo">
+            <p class="regularfont" id="websitename">Name</p>
+        </div>
+        <a>
+            <img src="4069_gray_square.png" alt="Right Image" id="pfp">
+        </a>
+    </div>
+    <div id="container">
+        <div style="display: flex;align-items: center; justify-content: start; flex-wrap: wrap; width: 100%;gap: 50px; padding: 2% 10% 10% 2%;">
+            <a>
+                <button id="returnbutton">Return</button>
+            </a>
+            <p class="bigfont bookmarklabel">Question N</p>
+        </div>
+        <div class="questioncontainer">
+            <p class="bigfont questionlabel">Question?</p>
+            <form id="questionform">
+                <div class="choices">
+                    <label class="mediumfont"><input type="radio" name="choice" value="A"> A. Answer</label>
+                    <label class="mediumfont"><input type="radio" name="choice" value="B"> B. Answer</label>
+                    <label class="mediumfont"><input type="radio" name="choice" value="C"> C. Answer</label>
+                    <label class="mediumfont"><input type="radio" name="choice" value="D"> D. Answer</label>
+                    <label class="mediumfont"><input type="radio" name="choice" value="E"> E. Answer</label>
+                </div>
+                <button type="button" class="mediumfont checkbutton" onclick="">Check</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <table>
+            <tr>
+                <td>
+                    <a>
+                    <span class="material-symbols--dashboard"></span>  
+                    <p class="navbar-label">Dashboard</p>
+                    </a>
+                </td>
+                <td>
+                    <a>
+                    <span class="material-symbols--bookmark"></span>
+                    <p class="navbar-label">Bookmarks</p>
+                    </a>
+                </td>
+                <td>
+                    <a>
+                    <span class="iconamoon--profile-fill"></span> 
+                    <p class="navbar-label">Profile</p>
+                    <p></p>
+                    <p></p>
+                    <a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script src="homestyles.js"></script>
+</body>
+</html>

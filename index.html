@@ -9,15 +9,7 @@
     <script type="module" src="homemodule.js"></script>
 </head>
 <body>
-    <div class="header">
-        <div class="logo">
-            <img src="4069_gray_square.png" class="logoimg" alt="Logo">
-            <p class="regularfont" id="websitename">Name</p>
-        </div>
-        <a>
-        <img src="4069_gray_square.png" alt="Right Image" id="pfp">
-        </a>
-    </div>
+
     <div class="main">
         <div class="text-content">
             <p id="tagline">
@@ -26,7 +18,6 @@
             <p id="subtitle">
                 Making education fun, accessible, and meaningful for every child
             </p>
-            <!-- TODO: Cloud animation thing -->
             <button id="mainbutton">
                 <p class="regularfont mainbuttontext" id="dashboardbutton">Jump to dashboard</p>
             </button>
@@ -34,6 +25,15 @@
         <div class="image-content">
             <img src="https://png.pngtree.com/element_our/png/20180917/children-reading-book-png_100050.jpg" class="main-image">
             <img src="cloudcover.png" id="cloudcover"> <!--TODO: Edit to add shadow-->
+        </div>
+        <div class="header" style="background-color: rgba(0, 0, 0,0); margin: 0; padding: 0;">
+            <div class="logo">
+                <img src="4069_gray_square.png" class="logoimg" alt="Logo">
+                <p class="regularfont" id="websitename">Name</p>
+            </div>
+            <a>
+            <img src="4069_gray_square.png" alt="Right Image" id="pfp">
+            </a>
         </div>
     </div>
     <div class="cloudseperator">
@@ -49,9 +49,22 @@
         <span class="circle"></span>
         <span class="circle"></span>
         <span class="circle"></span>
+
+        <span class="secondcircle"></span>
+        <span class="secondcircle"></span>
+        <span class="secondcircle"></span>
+        <span class="secondcircle"></span>
+        <span class="secondcircle"></span>
+        <span class="secondcircle"></span>
+        <span class="secondcircle"></span>
+        <span class="secondcircle"></span>
+        <span class="secondcircle"></span>
+        <span class="secondcircle"></span>
+        <span class="secondcircle"></span>
+        <span class="secondcircle"></span>
         <div class="rect"></div>
         <div class="rectb"></div>
-        <p class="bigfont sep">Why us?</p>
+        <p class="bigfont sep" style="padding-top: 5%;">Why us?</p>
     </div>
     <div id="Courses">
         <p class="placeholder">placeholder</p>
@@ -73,24 +86,34 @@
     
     <div class="FAQseperator">
         <span class="sun"></span>
-        <p class="bigfont sep" style="padding-top: 10%;">FAQ</p>
+        <p class="bigfont sep" style="padding-top: 10%;">Our Courses</p>
     </div>
     <div id="FAQ">
-        <button class="regularfont accordion">Question Question Question</button>
-        <div class="smallfont panel">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla esse labore repudiandae modi tempore cumque deleniti, nemo natus quis nisi illum repellat ullam? Dolore possimus exercitationem corrupti maxime quos qui!</p>
+        <div class="coursedivider">
+            <a href="mathsselector.html" class="courselink">
+                <div class="coursebutton">
+                    <img src="https://flat-icons.com/wp-content/uploads/2022/09/Math-Mathematics-Icon-Set-Featured-Image.png" class="buttonimage">
+                    <p class="mediumfont coursename">Maths</p>
+                    <div class="progress">
+                        <span>placeholder</span>
+                    </div>
+                    <p class="regularfont coursename"><u>Last topic</u></p>
+                    <span>placeholder</span>
+                </div>
+            </a>
         </div>
-        <button class="regularfont accordion">Question Question Question</button>
-        <div class="smallfont panel">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla esse labore repudiandae modi tempore cumque deleniti, nemo natus quis nisi illum repellat ullam? Dolore possimus exercitationem corrupti maxime quos qui!</p>
-        </div>
-        <button class="regularfont accordion">Question Question Question</button>
-        <div class="smallfont panel">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla esse labore repudiandae modi tempore cumque deleniti, nemo natus quis nisi illum repellat ullam? Dolore possimus exercitationem corrupti maxime quos qui!</p>
-        </div>
-        <button class="regularfont accordion" style="margin-bottom: 10px;">Question Question Question</button>
-        <div class="smallfont panel" style="padding-bottom: 10px;">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla esse labore repudiandae modi tempore cumque deleniti, nemo natus quis nisi illum repellat ullam? Dolore possimus exercitationem corrupti maxime quos qui!</p>
+        <div class="coursedivider">
+            <a href="englishselector.html" class="courselink">
+                <div class="coursebutton">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuceyEbaXyE60-ms3OqDsLDauhOymmUVRz0A&s" class="buttonimage">
+                    <p class="mediumfont coursename">English</p>
+                    <div class="progress">
+                        <span>placeholder</span>
+                    </div>
+                    <p class="regularfont coursename"><u>Last topic</u></p>
+                    <span>placeholder</span>
+                </div>
+            </a>
         </div>
     </div>
     <div class="cloudseperator" style="background: #ffe932;">
@@ -105,6 +128,18 @@
         <span class="circle"></span>
         <span class="circle"></span>
         <span class="circle"></span>
+        <span class="secondcircle" style="background-color: #FFDFB9;"></span>
+        <span class="secondcircle" style="background-color: #FFDFB9;"></span>
+        <span class="secondcircle" style="background-color: #FFDFB9;"></span>
+        <span class="secondcircle" style="background-color: #FFDFB9;"></span>
+        <span class="secondcircle" style="background-color: #FFDFB9;"></span>
+        <span class="secondcircle" style="background-color: #FFDFB9;"></span>
+        <span class="secondcircle" style="background-color: #FFDFB9;"></span>
+        <span class="secondcircle" style="background-color: #FFDFB9;"></span>
+        <span class="secondcircle" style="background-color: #FFDFB9;"></span>
+        <span class="secondcircle" style="background-color: #FFDFB9;"></span>
+        <span class="secondcircle" style="background-color: #FFDFB9;"></span>
+        <span class="secondcircle" style="background-color: #FFDFB9;"></span>
         <div class="rect"></div>
         <p class="bigfont sep">Course structure</p>
     </div>
@@ -158,6 +193,17 @@
         <span class="reversecircle"></span>
         <span class="reversecircle"></span>
         <span class="reversecircle"></span>
+        <span class="secondreversecircle"></span>
+        <span class="secondreversecircle"></span>
+        <span class="secondreversecircle"></span>
+        <span class="secondreversecircle"></span>
+        <span class="secondreversecircle"></span>
+        <span class="secondreversecircle"></span>
+        <span class="secondreversecircle"></span>
+        <span class="secondreversecircle"></span>
+        <span class="secondreversecircle"></span>
+        <span class="secondreversecircle"></span>
+        <span class="secondreversecircle"></span>
         <p class="bigfont sep" style="padding-bottom: 5%;">Other resources</p>
     </div>
     <div id="otherresources"> 
@@ -227,48 +273,30 @@
     </div>
     <p class="bigfont sepo" style="padding-bottom: 1%;">Our course</p>
     <div id="rightforyou">
-        <div class="coursedivider">
-            <a href="mathsselector.html" class="courselink">
-                <div class="coursebutton">
-                    <img src="https://flat-icons.com/wp-content/uploads/2022/09/Math-Mathematics-Icon-Set-Featured-Image.png" class="buttonimage">
-                    <p class="mediumfont coursename">Maths</p>
-                    <div class="progress">
-                        <span>placeholder</span>
-                    </div>
-                    <p class="regularfont coursename"><u>Last topic</u></p>
-                    <span>placeholder</span>
-                </div>
-            </a>
+
+        <button class="regularfont accordion">Question Question Question</button>
+        <div class="smallfont panel">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla esse labore repudiandae modi tempore cumque deleniti, nemo natus quis nisi illum repellat ullam? Dolore possimus exercitationem corrupti maxime quos qui!</p>
         </div>
-        <div class="coursedivider">
-            <a href="englishselector.html" class="courselink">
-                <div class="coursebutton">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuceyEbaXyE60-ms3OqDsLDauhOymmUVRz0A&s" class="buttonimage">
-                    <p class="mediumfont coursename">English</p>
-                    <div class="progress">
-                        <span>placeholder</span>
-                    </div>
-                    <p class="regularfont coursename"><u>Last topic</u></p>
-                    <span>placeholder</span>
-                </div>
-            </a>
+        <button class="regularfont accordion">Question Question Question</button>
+        <div class="smallfont panel">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla esse labore repudiandae modi tempore cumque deleniti, nemo natus quis nisi illum repellat ullam? Dolore possimus exercitationem corrupti maxime quos qui!</p>
+        </div>
+        <button class="regularfont accordion">Question Question Question</button>
+        <div class="smallfont panel">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla esse labore repudiandae modi tempore cumque deleniti, nemo natus quis nisi illum repellat ullam? Dolore possimus exercitationem corrupti maxime quos qui!</p>
+        </div>
+        <button class="regularfont accordion" style="margin-bottom: 40px;">Question Question Question</button>
+        <div class="smallfont panel" style="padding-bottom: 10px;">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla esse labore repudiandae modi tempore cumque deleniti, nemo natus quis nisi illum repellat ullam? Dolore possimus exercitationem corrupti maxime quos qui!</p>
         </div>
     </div>
-    <div class="footer">
-        <p class="placeholder">placeholder</p>
-        <p class="placeholder">placeholder</p>
-        <p class="placeholder">placeholder</p>
-        <p class="placeholder">placeholder</p>
-        <p class="placeholder">placeholder</p>
-        <p class="placeholder">placeholder</p>
-        <p class="placeholder">placeholder</p>
-        <p class="placeholder">placeholder</p>
-        <p class="placeholder">placeholder</p>
-        <p class="placeholder">placeholder</p>
-        <p class="placeholder">placeholder</p>
-        <p class="placeholder">placeholder</p>
-        <p class="placeholder">placeholder</p>
-        <p class="placeholder">placeholder</p>
+    <div class="footerbackground">
+        <div id="footer">
+            placeholder
+            placeholder
+            placeholder
+        </div>
     </div>
     <script src="homestyles.js"></script>
 </body>
