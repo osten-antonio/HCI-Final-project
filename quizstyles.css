@@ -1,0 +1,78 @@
+:root{
+    --primemint: #34CFB5;
+    --primeyellow: #FFBB00;
+    --darkmint: #05525B;
+    --darkyellow: #CCC965;
+    --accentyellow:#f2dfae;
+    --confirm:#008000;
+    --confirmhover:#50C878;
+}
+
+
+html, body{
+    margin: 0;
+    background-image: linear-gradient(var(--accentyellow),white);
+    height: 100vh;
+    position:relative;
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.bookmarklabel{
+    color: var(--darkmint);
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+#returnbutton{
+    color: var(--darkmint);
+    border: 5px solid var(--darkmint);
+    border-radius: 25px;
+    padding: 20% 50% 20% 50%;
+    background-color: var(--primemint);
+    font-weight: bold;
+    font-size: clamp(0.9rem, 1.5vw, 2.3vw);;
+  }
+
+
+.checkbutton {
+    margin-top: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: var(--primemint);
+    color: var(--darkmint);
+    border: 3px solid var(--darkmint);
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    float: right;
+    margin-right: 5%;
+}
+
+label{
+    color: var(--darkmint);
+    font-weight: 550;
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+    margin-left: 5%;
+}
+
+.questionlabel{
+    margin: 0% 0% 5% 2%;
+    color: var(--darkmint);
+    font-weight: bolder;
+}
+
+
+#container{
+    margin: 0;
+}

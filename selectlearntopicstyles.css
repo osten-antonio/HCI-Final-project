@@ -1,0 +1,124 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styling */
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #fef8c3, #f7e794);
+    color: #333;
+    
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Container */
+  .container {
+    width: 360px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #00796b;
+    color: white;
+  }
+  
+  .return-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .profile-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: lightgray;
+  }
+  
+  /* Main Content */
+  main {
+    padding: 10px;
+  }
+  
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  .section h2 {
+    margin-bottom: 10px;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+  
+  .card{
+    color: var(--darkmint);
+    border: 5px solid var(--darkmint);
+    border-radius: 25px;
+    padding:1% 90% 1% 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+    min-height: 250px;
+    max-height: 250px;
+    background-color: var(--primemint);
+    font-weight: bold;
+    font-size: clamp(0.9rem, 1.5vw, 2.3vw);;
+  }
+  
+  /* Footer */
+  .footer {
+    background: #00796b;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .nav button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  #returnbutton{
+    color: var(--darkmint);
+    border: 5px solid var(--darkmint);
+    border-radius: 25px;
+    padding: 20% 50% 20% 50%;
+    background-color: var(--primemint);
+    font-weight: bold;
+    font-size: clamp(0.9rem, 1.5vw, 2.3vw);;
+  }
+
+  .bookmarklabel{
+    color: var(--darkmint);
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.questionlabel{
+    margin: 0% 0% 5% 2%;
+    color: var(--darkmint);
+    font-weight: bolder;
+}
