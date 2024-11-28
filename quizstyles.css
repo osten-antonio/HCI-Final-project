@@ -8,21 +8,18 @@
     --confirmhover:#50C878;
 }
 
-
 html, body{
     margin: 0;
     background-image: linear-gradient(var(--accentyellow),white);
-    height: 100vh;
+    height: 100%;
     position:relative;
 }
-
 
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
 
 .bookmarklabel{
     color: var(--darkmint);
@@ -40,8 +37,7 @@ html, body{
     background-color: var(--primemint);
     font-weight: bold;
     font-size: clamp(0.9rem, 1.5vw, 2.3vw);;
-  }
-
+}
 
 .checkbutton {
     margin-top: 20px;
@@ -71,7 +67,6 @@ label{
     color: var(--darkmint);
     font-weight: bolder;
 }
-
 
 #container{
     margin: 0;

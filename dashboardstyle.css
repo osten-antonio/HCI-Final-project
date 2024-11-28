@@ -37,6 +37,7 @@ html, body{
 .achievement-square{
     grid-column: 3;
     grid-row: 1 / span 4;
+    aspect-ratio: 1/1;
 }
 .topic-square{
     grid-column: 1;

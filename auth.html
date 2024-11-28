@@ -10,34 +10,45 @@
     <script type="module" src="auth.js"></script>
 </head>
 <body>
+  <div class="header">
+    <div class="logo">
+        <img src="4069_gray_square.png" class="logoimg" alt="Logo">
+        <p class="regularfont" id="websitename">Learningate</p>
+    </div>
+    <a>
+        <img src="4069_gray_square.png" alt="Right Image" id="pfp">
+    </a>
+  </div>
+  <div style="display: flex; flex-direction: row;">
+  <div class="auth-container">
     <div class="container" id="signUp" style="display:none;">
       <h1 class="formTitle bigfont">Register</h1>
       <form method="post" action="">
         <div class="inputGroup">
            <i class="fas fa-user"></i>
            <input type="text"  id="fName" placeholder="First Name" required>
-           <label for="fname" class="mediumfont">First Name</label>
+           <label for="fname" class="smallfont">First Name</label>
         </div>
         <div class="inputGroup">
             <i class="fas fa-user"></i>
             <input type="text"  id="lName" placeholder="Last Name" required>
-            <label for="lName" class="mediumfont">Last Name</label>
+            <label for="lName" class="smallfont">Last Name</label>
         </div>
         <div class="inputGroup">
             <i class="fas fa-envelope"></i>
             <input type="email"  id="emailR" placeholder="Email" required>
-            <label for="emailR" class="mediumfont">Email</label>
+            <label for="emailR" class="smallfont">Email</label>
         </div>
         <div class="inputGroup">
             <i class="fas fa-lock"></i>
             <input type="password" id="passwordR"  placeholder="Password" required>
-            <label for="rPassword" class="mediumfont">Password</label>
+            <label for="rPassword" class="smallfont">Password</label>
         </div>
        <button class="btn" id="submitSignUp" >Sign Up</button>
       </form>
       <div class="links">
-        <p class="mediumfont haveAccount">Already Have Account?</p>
-        <button id="signInButton" class="mediumfont">Sign In</button>
+        <p class="smallfont haveAccount">Already Have Account?</p>
+        <button id="signInButton" class="smallfont">Sign In</button>
       </div>
     </div>
 
@@ -49,23 +60,30 @@
           <div class="inputGroup">
               <i class="fas fa-envelope"></i>
               <input type="email"  id="email" placeholder="Email" required>
-              <label for="email" class="mediumfont">Email</label>
+              <label for="email" class="smallfont">Email</label>
           </div>
           <div class="inputGroup">
               <i class="fas fa-lock"></i>
             <input type="password" id="password"  placeholder="Password" required>
-              <label for="password" class="mediumfont">Password</label>
+              <label for="password" class="smallfont">Password</label>
           </div>
           <p class="recover">
-            <a href="#" class="regularfont">Recover Password</a>
+            <a href="#" class="smallfont">Recover Password</a>
           </p>
-         <button class="mediumfont" id="submitSignIn">Sign In</button>
+         <button class="smallfont" id="submitSignIn">Sign In</button>
         </form>
         <div class="links">
-          <p class="mediumfont haveAccount">Don't have account yet?</p>
-          <button id="signUpButton" class="mediumfont">Sign Up</button>
+          <p class="smallfont haveAccount">Don't have account yet?</p>
+          <button id="signUpButton" class="smallfont">Sign Up</button>
         </div>
+        
       </div>
+      <div class="imagecontainer" style="margin-right: 10%;">
+        <img src="4069_gray_square.png" alt="Image Description" style="width: 50px; height: 50px;">
+      </div>
+  
+    </div>
+
       <script src="authstyles.js"></script>
 </body>
 </html>

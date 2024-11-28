@@ -11,18 +11,29 @@
 
 html, body{
     margin: 0;
+    position: relative;
+    width: 100%;
 }
 
 body{
     background:linear-gradient(to right,var(--primemint),var(--primeyellow));
 }
+.auth-container {   
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    width: 80%;
+    max-width: 1200px;
+}
+
 .container{
     background:#fff;
     width:fit-content;
     padding:26px;
-    margin:50px auto;
+    margin:50px 0;
     border-radius:10px;
-    box-shadow:0 20px 35px rgba(0,0,1,0.9);
 }
 form{
     margin:0 64px;
@@ -63,7 +74,7 @@ label{
     color:#757575;
     position:relative;
     left:26px;
-    top:-20px;
+    top:-30px;
     cursor:auto;
     transition:0.3s ease all;
 }
@@ -126,4 +137,14 @@ button:hover{
 
 .haveAccount{
     color: var(--darkmint);
+}
+
+.imagecontainer {
+    width: 10%;
+    padding: 20px;
+}
+
+.imagecontainer img {
+    object-fit: cover;
+    border-radius: 8px;
 }
