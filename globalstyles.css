@@ -129,10 +129,12 @@ td {
     border-right: 1px solid var(--primemint); 
 }
 
-.navbar-label{
+.navbar-button{
     font-weight: 250;
     color: var(--primeyellow);    
     margin: 5px;
+    background-color: var(--darkmint);
+    border: 0;
 }
 
 td:last-child {
