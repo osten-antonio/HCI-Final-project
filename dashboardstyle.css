@@ -22,6 +22,18 @@ html, body{
     position:relative;
 }
 
+.progress-bar{
+    width: 80%;
+    margin: 5% 10%;
+    height: 15px;
+    background-color: var(--darkmint);
+    border-radius: 25px;
+}
+#maths-overall, #maths-last,#english-overall,#english-last{
+    background-color: var(--primeyellow);
+    height: 15px;
+    border-radius: 25px;
+}
 .container{
     margin: 2% 10%;
     display: grid;
@@ -107,7 +119,7 @@ html, body{
     padding: 15px;
 }
 
-#achievementvalue{
+#achievementvalue, #topics-completed, #login-streak{
     font-weight: bold;
     width: 100%;
     color: var(--darkmint);

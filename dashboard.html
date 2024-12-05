@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dashboardstyle.css">
     <link rel="stylesheet" href="globalstyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <title>Document</title>
 </head>
 <body>
@@ -13,8 +15,22 @@
             <img src="4069_gray_square.png" class="logoimg" alt="Logo">
             <p class="regularfont" id="websitename">Learningate</p>
         </div>
+        <div class="header-shortcuts">
+            <a>
+                <button class="mediumfont navbar-button">Dashboard</button>
+            </a>
+            <a>
+                <button class="mediumfont navbar-button">Bookmarks</button>
+            </a>
+            <a>
+                <button class="mediumfont navbar-button">English</button>
+            </a>
+            <a>
+                <button class="mediumfont navbar-button">Maths</button>
+            </a>
+        </div>
         <a>
-        <img src="4069_gray_square.png" alt="Right Image" id="pfp">
+            <img src="4069_gray_square.png" alt="Right Image" id="pfp">
         </a>
     </div>
     <div class="container">
@@ -44,7 +60,7 @@
             <div class="box">
                 <p class="bigfont heading">Topics<br>completed</p>
                 <div class="values">
-                <p id="achievementvalue">1</p>
+                <p id="topics-completed">1</p>
                 </div>
             </div>
         </div>
@@ -52,13 +68,13 @@
             <div class="box">
                 <p class="bigfont heading">Login<br>streak</p>
                 <div class="values">
-                <p id="achievementvalue">1</p>
+                <p id="login-streak">1</p>
                 </div>
             </div>
         </div>
         <div class="streak">
             <div class="streak-box">
-                <p class="mediumfont heading">This week's<br>streak</p>
+                <p class="mediumfont heading">This week's streak</p>
                 <div class="streak-days">
                     <p>placeholder</p>
                     <p>placeholder</p>
@@ -76,11 +92,13 @@
                     <div class="coursebutton">
                         <img src="https://flat-icons.com/wp-content/uploads/2022/09/Math-Mathematics-Icon-Set-Featured-Image.png" class="buttonimage">
                         <p class="mediumfont coursename">Maths</p>
-                        <div class="progress">
-                            <span>placeholder</span>
+                        <div class="progress-bar">
+                            <div class="mediumfont" id="maths-overall"></div>
                         </div>
                         <p class="regularfont coursename"><u>Last topic</u></p>
-                        <span>placeholder</span>
+                        <div class="progress-bar">
+                            <div class="mediumfont" id="maths-last"></div>
+                        </div>
                     </div>
                 </a>
             </div>
@@ -91,17 +109,19 @@
                     <div class="coursebutton">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuceyEbaXyE60-ms3OqDsLDauhOymmUVRz0A&s" class="buttonimage">
                         <p class="mediumfont coursename">English</p>
-                        <div class="progress">
-                            <span>placeholder</span>
+                        <div class="progress-bar">
+                            <div class="mediumfont" id="english-overall"></div>
                         </div>
                         <p class="regularfont coursename"><u>Last topic</u></p>
-                        <span>placeholder</span>
+                        <div class="progress-bar">
+                            <div class="mediumfont" id="english-last"></div>
+                        </div>
                     </div>
                 </a>
             </div>
         </div>
         <div class="mediumfont recent-content">
-            <p>---Recent---</p>
+            <p style="font-weight: bold;">---Recent---</p>
             <p class="regularfont recent-link">placeholder</p>
             <p class="regularfont recent-link">placeholder</p>
             <p class="regularfont recent-link">placeholder</p>
@@ -112,29 +132,56 @@
             <p class="regularfont recent-link">placeholder</p>
         </div>
     </div>
-    <div class="footer">
-        <table>
-            <tr>
-                <td>
-                    <a>
-                    <span class="material-symbols--dashboard"></span>  
-                    <p class="navbar-label">Dashboard</p>
-                    </a>
-                </td>
-                <td>
-                    <a>
-                    <span class="material-symbols--bookmark"></span>
-                    <p class="navbar-label">Bookmarks</p>
-                    </a>
-                </td>
-                <td>
-                    <a>
-                    <span class="iconamoon--profile-fill"></span> 
-                    <p class="navbar-label">Profile</p>
-                    <a>
-                </td>
-            </tr>
-        </table>
-    </div>
+
+    <footer>
+        <div class="footer-row">
+            <div class="footer-col">
+                <p class="mediumfont title">Newsletter</p>
+                <p class="regularfont">
+                  Subscribe to our newsletter for a weekly dose
+                  of news, updates, helpful tips, and
+                  exclusive offers.
+                </p>
+                <form action="#">
+                  <input type="text" placeholder="Your email" required>
+                  <button type="submit">SUBSCRIBE</button>
+                </form>
+                <div class="icons">
+                  <i class="fa-brands fa-facebook-f"></i>
+                  <i class="fa-brands fa-twitter"></i>
+                  <i class="fa-brands fa-linkedin"></i>
+                  <i class="fa-brands fa-github"></i>
+                </div>
+              </div>
+          <div class="footer-col">
+            <p class="mediumfont title">Info</p>
+            <ul class="links">
+              <li class="regularfont"><a href="#">About Us</a></li>
+              <li class="regularfont"><a href="#">Our courses</a></li>
+              <li class="regularfont"><a href="#">Course Structure</a></li>
+              <li class="regularfont"><a href="#">Our reviews</a></li>
+              <li class="regularfont"><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <p class="mediumfont title">Explore</p>
+            <ul class="links">
+              <li class="regularfont"><a href="#">Maths</a></li>
+              <li class="regularfont"><a href="#">English</a></li>
+              <li class="regularfont"><a href="#">Dashboard</a></li>
+              <li class="regularfont"><a href="#">New Contents</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <p class="mediumfont title">Legal</p>
+            <ul class="links">
+              <li class="regularfont"><a href="#">TOS</a></li>
+              <li class="regularfont"><a href="#">Privacy Policy</a></li>
+              <li class="regularfont"><a href="#">Security</a></li>
+            </ul>
+          </div>
+        </div>
+    </footer>
+    <script  type="module" src="dashboard.js"></script>
 </body>
 </html>

@@ -6,6 +6,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="globalstyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <script type="module" src="homemodule.js"></script>
 </head>
 <body>
@@ -29,7 +31,7 @@
         <div class="header" style="background-color: rgba(0, 0, 0,0); margin: 0; padding: 0;">
             <div class="logo">
                 <img src="4069_gray_square.png" class="logoimg" alt="Logo">
-                <p class="regularfont" id="websitename">Learningate</p>
+                <p class="mediumfont" id="websitenameindex">Learningate</p>
             </div>
             <a>
             <img src="4069_gray_square.png" alt="Right Image" id="pfp">
@@ -67,21 +69,15 @@
         <p class="bigfont sep" style="padding-top: 5%;">Why us?</p>
     </div>
     <div id="Courses">
-        <p class="placeholder">We provide an easy, intuitive, and fun way to learn for children around the ages of 7 to 10 </p>
-        <p class="placeholder">placeholder</p>
-        <p class="placeholder">placeholder</p>
-        <p class="placeholder">placeholder</p>
-        <p class="placeholder">placeholder</p>
-        <p class="placeholder">placeholder</p>
-        <p class="placeholder">placeholder</p>
-        <p class="placeholder">placeholder</p>
-        <p class="placeholder">placeholder</p>
-        <p class="placeholder">placeholder</p>
-        <p class="placeholder">placeholder</p>
-        <p class="placeholder">placeholder</p>
-        <p class="placeholder">placeholder</p>
-        <p class="placeholder">placeholder</p>
-        
+        <p class="webdescription regularfont">
+            We provide an easy, intuitive, and fun way to learn for children around the ages of 7 to 10. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius odit sit tempore neque consectetur, a molestiae harum laudantium dolore ratione, temporibus non? Tempora placeat ad totam culpa! Qui, ab maiores?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos qui quae provident quod ducimus architecto maiores ratione, autem fugit error quis delectus nostrum magnam accusamus tenetur reprehenderit nisi nobis quos?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, sit omnis, facilis laudantium eos sed obcaecati consequatur aliquam consequuntur optio veniam eaque culpa voluptate, impedit a. Ipsum possimus architecto sit.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, rerum iste doloribus fugit dolorum id vel, culpa qui dolore totam nostrum dignissimos ut distinctio consequuntur veniam accusantium! Eveniet, beatae magni.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis dolorum accusantium quos cum quisquam eveniet molestias beatae esse ratione quae ea dignissimos, dolores temporibus. Ipsum quod eius aspernatur nesciunt earum!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptas porro impedit cumque soluta. Expedita quia saepe iste fuga et quisquam delectus dolore pariatur eveniet? Nemo odit perspiciatis provident nostrum!
+        </p>
+        <img src="4069_gray_square.png" style="z-index: 4; width: 20%;">
     </div>
     
     <div class="FAQseperator">
@@ -94,11 +90,13 @@
                 <div class="coursebutton">
                     <img src="https://flat-icons.com/wp-content/uploads/2022/09/Math-Mathematics-Icon-Set-Featured-Image.png" class="buttonimage">
                     <p class="mediumfont coursename">Maths</p>
-                    <div class="progress">
-                        <span>placeholder</span>
+                    <div class="progress-bar">
+                        <div class="mediumfont" id="maths-overall"></div>
                     </div>
                     <p class="regularfont coursename"><u>Last topic</u></p>
-                    <span>placeholder</span>
+                    <div class="progress-bar">
+                        <div class="mediumfont" id="maths-last"></div>
+                    </div>
                 </div>
             </a>
         </div>
@@ -107,11 +105,13 @@
                 <div class="coursebutton">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuceyEbaXyE60-ms3OqDsLDauhOymmUVRz0A&s" class="buttonimage">
                     <p class="mediumfont coursename">English</p>
-                    <div class="progress">
-                        <span>placeholder</span>
+                    <div class="progress-bar">
+                        <div class="mediumfont" id="english-overall"></div>
                     </div>
                     <p class="regularfont coursename"><u>Last topic</u></p>
-                    <span>placeholder</span>
+                    <div class="progress-bar">
+                        <div class="mediumfont" id="english-last"></div>
+                    </div>
                 </div>
             </a>
         </div>
@@ -215,48 +215,54 @@
         <div class="resourceswrapper">
             <div class="cloudbutton">
                 <img src="4069_gray_square.png" class="cloudimage">
-                <p class="cloudname" style="font-size: 24.8px">Kenny</p>
-                <p class="clouddesc" style="font-size: 18px;">I love it! Very easy and simple to use.</p>
-                <p class="clouddesc" style="font-size: 18px;">DescDescDesc</p>
-                <p class="clouddesc" style="font-size: 18px;">DescDescDesc</p>
-                <p class="clouddesc" style="font-size: 18px;">DescDescDesc</p>
-                <p class="clouddesc" style="font-size: 18px;">DescDescDesc</p>
+                <p class="cloudname mediumfont">Kenny</p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <p class="clouddesc regularfont" style="font-size: 18px;">I love it! Very easy and simple to use.</p>
+
             </div>
             <div class="cloudbutton">
                 <img src="4069_gray_square.png" class="cloudimage">
-                <p class="cloudname" style="font-size: 24.8px;">William</p>
-                <p class="clouddesc" style="font-size: 18px;">I got an A in my English test because of this website. Would highly recommend!</p>
-                <p class="clouddesc" style="font-size: 18px;">DescDescDesc</p>
-                <p class="clouddesc" style="font-size: 18px;">DescDescDesc</p>
-                <p class="clouddesc" style="font-size: 18px;">DescDescDesc</p>
-                <p class="clouddesc"  style="font-size: 18px;">DescDescDesc</p>
+                <p class="cloudname mediumfont">William</p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <p class="clouddesc regularfont" style="font-size: 18px;">I got an A in my English test because of this website. Would highly recommend!</p>
             </div>
             <div class="cloudbutton">
                 <img src="4069_gray_square.png" class="cloudimage">
-                <p class="cloudname" style="font-size: 24.8px">Emily</p>
-                <p class="clouddesc" style="font-size: 18px;">This made me realise that Maths is actually very fun!</p>
-                <p class="clouddesc" style="font-size: 18px;">DescDescDesc</p>
-                <p class="clouddesc" style="font-size: 18px;">DescDescDesc</p>
-                <p class="clouddesc" style="font-size: 18px;">DescDescDesc</p>
-                <p class="clouddesc" style="font-size: 18px;">DescDescDesc</p>
+                <p class="cloudname mediumfont">Emily</p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <p class="clouddesc regularfont" style="font-size: 18px;">This made me realise that Maths is actually very fun!</p>
             </div>
             <div class="cloudbutton">
                 <img src="4069_gray_square.png" class="cloudimage">
-                <p class="cloudname" style="font-size: 24.8px">Kevin</p>
-                <p class="clouddesc" style="font-size: 18px;">My mom is happy with my grades :D</p>
-                <p class="clouddesc" style="font-size: 18px;">DescDescDesc</p>
-                <p class="clouddesc" style="font-size: 18px;">DescDescDesc</p>
-                <p class="clouddesc" style="font-size: 18px;">DescDescDesc</p>
-                <p class="clouddesc" style="font-size: 18px;">DescDescDesc</p>
+                <p class="cloudname mediumfont">Kevin</p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <p class="clouddesc regularfont" style="font-size: 18px;">My mom is happy with my grades :D</p>
             </div>
             <div class="cloudbutton">
                 <img src="4069_gray_square.png" class="cloudimage">
-                <p class="cloudname" style="font-size: 24.8px">Sarah</p>
-                <p class="clouddesc" style="font-size: 18px;">This website made me get good grades! I wouldn't have done it without it.</p>
-                <p class="clouddesc" style="font-size: 18px;">DescDescDesc</p>
-                <p class="clouddesc" style="font-size: 18px;">DescDescDesc</p>
-                <p class="clouddesc" style="font-size: 18px;">DescDescDesc</p>
-                <p class="clouddesc"  style="font-size: 18px;">DescDescDesc</p>
+                <p class="cloudname mediumfont">Sarah</p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <p class="clouddesc regularfont">This website made me get good grades! I wouldn't have done it without it.</p>
             </div>
         </div>
     </div>
@@ -291,13 +297,56 @@
           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla esse labore repudiandae modi tempore cumque deleniti, nemo natus quis nisi illum repellat ullam? Dolore possimus exercitationem corrupti maxime quos qui!</p>
         </div>
     </div>
-    <div class="footerbackground">
-        <div id="footer">
-            placeholder
-            placeholder
-            placeholder
+    <footer class="footerindex">
+        <div class="footer-row">
+            <div class="footer-col">
+                <p class="mediumfont titleindex">Newsletter</p>
+                <p class="regularfont newsletterdesc">
+                  Subscribe to our newsletter for a weekly dose
+                  of news, updates, helpful tips, and
+                  exclusive offers.
+                </p>
+                <form action="#">
+                  <input type="text" class="newsletter" placeholder="Your email" required>
+                  <button type="submit">SUBSCRIBE</button>
+                </form>
+                <div class="icons">
+                  <i class="fa-brands fa-facebook-f"></i>
+                  <i class="fa-brands fa-twitter"></i>
+                  <i class="fa-brands fa-linkedin"></i>
+                  <i class="fa-brands fa-github"></i>
+                </div>
+              </div>
+          <div class="footer-col">
+            <p class="mediumfont titleindex">Info</p>
+            <ul class="linksindex">
+              <li class="regularfont"><a href="#">About Us</a></li>
+              <li class="regularfont"><a href="#">Our courses</a></li>
+              <li class="regularfont"><a href="#">Course Structure</a></li>
+              <li class="regularfont"><a href="#">Our reviews</a></li>
+              <li class="regularfont"><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <p class="mediumfont titleindex">Explore</p>
+            <ul class="linksindex">
+              <li class="regularfont"><a href="#">Maths</a></li>
+              <li class="regularfont"><a href="#">English</a></li>
+              <li class="regularfont"><a href="#">Dashboard</a></li>
+              <li class="regularfont"><a href="#">New Contents</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <p class="mediumfont titleindex">Legal</p>
+            <ul class="linksindex">
+              <li class="regularfont"><a href="#">TOS</a></li>
+              <li class="regularfont"><a href="#">Privacy Policy</a></li>
+              <li class="regularfont"><a href="#">Security</a></li>
+            </ul>
+          </div>
         </div>
-    </div>
-    <script src="homestyles.js"></script>
+    </footer>
+    <script  type="module" src="homestyles.js"></script>
+    <script src="elements.js"></script>
 </body>
 </html>

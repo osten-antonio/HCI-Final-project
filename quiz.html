@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="quizstyles.css">
     <link rel="stylesheet" href="globalstyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <title>Document</title>
 </head>
 <body>
@@ -13,6 +15,20 @@
             <img src="4069_gray_square.png" class="logoimg" alt="Logo">
             <p class="regularfont" id="websitename">Learningate</p>
         </div>
+        <div class="header-shortcuts">
+            <a>
+                <button class="mediumfont navbar-button">Dashboard</button>
+            </a>
+            <a>
+                <button class="mediumfont navbar-button">Bookmarks</button>
+            </a>
+            <a>
+                <button class="mediumfont navbar-button">English</button>
+            </a>
+            <a>
+                <button class="mediumfont navbar-button">Maths</button>
+            </a>
+        </div>
         <a>
             <img src="4069_gray_square.png" alt="Right Image" id="pfp">
         </a>
@@ -20,11 +36,11 @@
     <div id="container">
         <div style="display: flex;align-items: center; justify-content: start; flex-wrap: wrap; width: 100%;gap: 50px; padding: 2% 10% 10% 2%;">
             <a>
-                <button id="returnbutton">Return</button>
+                <button id="returnbutton" class="regularfont">Return</button>
             </a>
             <p class="bigfont bookmarklabel">Quiz</p>
             <a>
-                <button id="returnbutton">Bookmark</button>
+                <button id="returnbutton" class="regularfont">Bookmark</button>
             </a>
         </div>
         <div style="display: flex; width: 100%; background-color: black;">
@@ -48,30 +64,55 @@
         </div>
     </div>
     
-    <div class="footer">
-        <table>
-            <tr>
-                <td>
-                    <a>
-                    <span class="material-symbols--dashboard"></span>  
-                    <p class="navbar-label">Dashboard</p>
-                    </a>
-                </td>
-                <td>
-                    <a>
-                    <span class="material-symbols--bookmark"></span>
-                    <p class="navbar-label">Bookmarks</p>
-                    </a>
-                </td>
-                <td>
-                    <a>
-                    <span class="iconamoon--profile-fill"></span> 
-                    <p class="navbar-label">Profile</p>
-                    <a>
-                </td>
-            </tr>
-        </table>
-    </div>
+    <footer style="margin-top: 25%;">
+        <div class="footer-row">
+            <div class="footer-col">
+                <p class="mediumfont title">Newsletter</p>
+                <p class="regularfont">
+                  Subscribe to our newsletter for a weekly dose
+                  of news, updates, helpful tips, and
+                  exclusive offers.
+                </p>
+                <form action="#">
+                  <input type="text" placeholder="Your email" required>
+                  <button type="submit">SUBSCRIBE</button>
+                </form>
+                <div class="icons">
+                  <i class="fa-brands fa-facebook-f"></i>
+                  <i class="fa-brands fa-twitter"></i>
+                  <i class="fa-brands fa-linkedin"></i>
+                  <i class="fa-brands fa-github"></i>
+                </div>
+              </div>
+          <div class="footer-col">
+            <p class="mediumfont title">Info</p>
+            <ul class="links">
+              <li class="regularfont"><a href="#">About Us</a></li>
+              <li class="regularfont"><a href="#">Our courses</a></li>
+              <li class="regularfont"><a href="#">Course Structure</a></li>
+              <li class="regularfont"><a href="#">Our reviews</a></li>
+              <li class="regularfont"><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <p class="mediumfont title">Explore</p>
+            <ul class="links">
+              <li class="regularfont"><a href="#">Maths</a></li>
+              <li class="regularfont"><a href="#">English</a></li>
+              <li class="regularfont"><a href="#">Dashboard</a></li>
+              <li class="regularfont"><a href="#">New Contents</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <p class="mediumfont title">Legal</p>
+            <ul class="links">
+              <li class="regularfont"><a href="#">TOS</a></li>
+              <li class="regularfont"><a href="#">Privacy Policy</a></li>
+              <li class="regularfont"><a href="#">Security</a></li>
+            </ul>
+          </div>
+        </div>
+    </footer>
     <script src="homestyles.js"></script>
 </body>
 </html>

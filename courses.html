@@ -3,16 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width= , initial-scale=1.0">
-    
     <link rel="stylesheet" href="globalstyles.css">
     <link rel="stylesheet" href="coursesstyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <title>Courses</title>
 </head>
-<body></body>
+<body>
 <div class="header">
     <div class="logo">
         <img src="4069_gray_square.png" class="logoimg" alt="Logo">
-        <p class="regularfont" id="websitename">Name</p>
+        <p class="regularfont" id="websitename">Learningate</p>
+    </div>
+    <div class="header-shortcuts">
+        <a>
+            <button class="mediumfont navbar-button">Dashboard</button>
+        </a>
+        <a>
+            <button class="mediumfont navbar-button">Bookmarks</button>
+        </a>
+        <a>
+            <button class="mediumfont navbar-button">English</button>
+        </a>
+        <a>
+            <button class="mediumfont navbar-button">Maths</button>
+        </a>
     </div>
     <a>
         <img src="4069_gray_square.png" alt="Right Image" id="pfp">
@@ -29,12 +44,24 @@
       <div class="grid">
         <button class="card"><img src="4069_gray_square.png">
             <p>Topic</p>
+            <p class="progresslabel regularfont"><u>Progress</u></p>
+            <div class="progress-bar">
+              <div class="mediumfont" id="learn-1"></div>
+            </div>
         </button>
         <button class="card"><img src="4069_gray_square.png">
             <p>Topic</p>
+            <p class="progresslabel regularfont"><u>Progress</u></p>
+            <div class="progress-bar">
+              <div class="mediumfont" id="learn-2"></div>
+            </div>
         </button>
         <button class="card"><img src="4069_gray_square.png">
             <p>Topic</p>
+            <p class="progresslabel regularfont"><u>Progress</u></p>
+            <div class="progress-bar">
+              <div class="mediumfont" id="learn-3"></div>
+            </div>
         </button>
       </div>
     </section>
@@ -61,53 +88,79 @@
       <div class="grid">
         <button class="card"><img src="4069_gray_square.png">
             <p>Topic</p>
-            <p class="progresslabel">Progress</p>
-            <p style="font-size: 16px; padding: 5%;"><u>Placeholder</u></p>
+            <p class="progresslabel regularfont"><u>Progress</u></p>
+            <div class="progress-bar">
+              <div class="mediumfont" id="quiz-1"></div>
+            </div>
         </button>
         <button class="card"><img src="4069_gray_square.png">
             <p>Topic</p>
-            <p class="progresslabel">Progress</p>
-            <p style="font-size: 16px; padding: 5%;"><u>Placeholder</u></p>
+            <p class="progresslabel regularfont"><u>Progress</u></p>
+            <div class="progress-bar">
+              <div class="mediumfont" id="quiz-2"></div>
+            </div>
         </button>
         <button class="card"><img src="4069_gray_square.png">
             <p>Topic</p>
-            <p class="progresslabel">Progress</p>
-            <p style="font-size: 16px; padding: 5%;"><u>Placeholder</u></p>
+            <p class="progresslabel regularfont"><u>Progress</u></p>
+            <div class="progress-bar">
+              <div class="mediumfont" id="quiz-3"></div>
+            </div>
         </button>
       </div>
     </section>
   
 
     </div>
-    <div class="footer" style="position: static;">
-        <table>
-            <tr>
-                <td>
-                    <a>
-                    <span class="material-symbols--dashboard"></span>  
-                    <p class="navbar-label">Dashboard</p>
-                    </a>
-                </td>
-                <td>
-                    <a>
-                    <span class="material-symbols--bookmark"></span>
-                    <p class="navbar-label">Bookmarks</p>
-                    </a>
-                </td>
-                <td>
-                    <a>
-                    <span class="iconamoon--profile-fill"></span> 
-                    <p class="navbar-label">Profile</p>
-                    <p></p>
-                    <p></p>
-                    <a>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <script src="homestyles.js"></script>
-    
-    
-
+    <footer>
+        <div class="footer-row">
+            <div class="footer-col">
+                <p class="mediumfont title">Newsletter</p>
+                <p class="regularfont">
+                  Subscribe to our newsletter for a weekly dose
+                  of news, updates, helpful tips, and
+                  exclusive offers.
+                </p>
+                <form action="#">
+                  <input type="text" placeholder="Your email" required>
+                  <button type="submit">SUBSCRIBE</button>
+                </form>
+                <div class="icons">
+                  <i class="fa-brands fa-facebook-f"></i>
+                  <i class="fa-brands fa-twitter"></i>
+                  <i class="fa-brands fa-linkedin"></i>
+                  <i class="fa-brands fa-github"></i>
+                </div>
+              </div>
+          <div class="footer-col">
+            <p class="mediumfont title">Info</p>
+            <ul class="links">
+              <li class="regularfont"><a href="#">About Us</a></li>
+              <li class="regularfont"><a href="#">Our courses</a></li>
+              <li class="regularfont"><a href="#">Course Structure</a></li>
+              <li class="regularfont"><a href="#">Our reviews</a></li>
+              <li class="regularfont"><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <p class="mediumfont title">Explore</p>
+            <ul class="links">
+              <li class="regularfont"><a href="#">Maths</a></li>
+              <li class="regularfont"><a href="#">English</a></li>
+              <li class="regularfont"><a href="#">Dashboard</a></li>
+              <li class="regularfont"><a href="#">New Contents</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <p class="mediumfont title">Legal</p>
+            <ul class="links">
+              <li class="regularfont"><a href="#">TOS</a></li>
+              <li class="regularfont"><a href="#">Privacy Policy</a></li>
+              <li class="regularfont"><a href="#">Security</a></li>
+            </ul>
+          </div>
+        </div>
+    </footer>
+    <script type="module" src="courses.js"></script>
 </body>
 </html>

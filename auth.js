@@ -20,8 +20,7 @@ signUp.addEventListener('click', (event)=>{
 event.preventDefault();
     const email=document.getElementById('emailR').value;
     const password=document.getElementById('passwordR').value;
-    const firstName=document.getElementById('fName').value;
-    const lastName=document.getElementById('lName').value;
+    const Name=document.getElementById('Uname').value;
     const auth=getAuth();
     const db=getFirestore();
 
@@ -30,9 +29,9 @@ event.preventDefault();
         const user=userCredential.user;
         const userData={
             email: email,
-            firstName: firstName,
-            lastName:lastName,
-            streak:0
+            Name: firstName,
+            streak:0,
+            topicsCompleted: 0
         };
         const englishData ={
             engLearnOne: 0,
@@ -41,6 +40,9 @@ event.preventDefault();
             engQuizOne: 0,
             engQuizTwo: 0,
             engQuizThree: 0,
+            engTopicOne: 0,
+            engTopicTwo: 0,
+            engTopicThree: 0,
         }
         const mathData ={
             mathLearnOne: 0,
@@ -49,15 +51,24 @@ event.preventDefault();
             mathQuizOne: 0,
             mathQuizTwo: 0,
             mathQuizThree: 0,
+            mathTopicOne: 0,
+            mathTopicTwo: 0,
+            mathTopicThree: 0,
         }
+        const achievementData ={
+            totalAchievement: 0,
+        }
+
 
         showMessage('Account Created Successfully', 'signUpMessage');
         const docRef=doc(db, "users", user.uid);
         const engRef=doc(db, "english", user.uid);
         const mathRef=doc(db, "math", user.uid);
+        const achievementRef=doc(db, "achievements", user.uid);
         setDoc(docRef,userData)
         setDoc(engRef,englishData)
         setDoc(mathRef,mathData)
+        setDoc(achievementRef,achievementData)
 
         .then(()=>{
             window.location.href='index.html';
@@ -114,10 +125,8 @@ event.preventDefault();
         .then((docSnap)=>{
             if(docSnap.exists()){
                 const userData=docSnap.data();
-                document.getElementById('loggedUserFName').innerText=userData.firstName;
+                document.getElementById('loggedUserUname').innerText=userData.Name;
                 document.getElementById('loggedUserEmail').innerText=userData.email;
-                document.getElementById('loggedUserLName').innerText=userData.lastName;
-
             }
             else{
                 console.log("no document found matching id")

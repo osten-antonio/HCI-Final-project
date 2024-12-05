@@ -16,7 +16,7 @@
 
 /* Body Styling */
 body {
-  background: linear-gradient(to bottom, #fef8c3, #f7e794);
+  background-image: linear-gradient(var(--accentyellow),white);
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -41,14 +41,19 @@ img{
 
 }
 
-/* Header */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-color: #00796b;
-  color: white;
+.progress-bar{
+  width: 80%;
+  margin: 5% 10%;
+  height: 15px;
+  background-color: var(--darkmint);
+  border-radius: 25px;
+}
+
+#quiz-1, #quiz-2,#quiz-3,#learn-1,#learn-2,#learn-3{
+  width: 0;
+  background-color: var(--primeyellow);
+  height: 15px;
+  border-radius: 25px;
 }
 
 

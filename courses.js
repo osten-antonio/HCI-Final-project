@@ -14,49 +14,28 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-
-function checkLoggedInProfile(){
-  const loggedInUserId=localStorage.getItem('loggedInUId');
-
-  if(loggedInUserId){
-    const mathRef = doc(db, "math", loggedInUserId)
-    const engRef = doc(db, "english", loggedInUserId)
-    getDoc(mathRef)
+loggedinuser=localStorage.getItem("loggedInUId")
+if(loggedinuser){
+    const docRef = doc(db, "english", loggedinuser)
+    getDoc(docRef)
     .then((docSnap) => {
       if (docSnap.exists()) {
         const data = docSnap.data();
         console.log("Datas", data)
         console.log("Overall progress:", data.overallProgress);
-        document.getElementById("maths-overall").style["width"] = (data.overallProgress * 100/80)+"%";
-      } else {
+        document.getElementById("learn-1").style["width"] = (data.engLearnOne * 100/80)+"%";
+        document.getElementById("learn-2").style["width"] = (data.engLearnTwo * 100/80)+"%";
+        document.getElementById("learn-3").style["width"] = (data.engLearnThree * 100/80)+"%";
+        document.getElementById("quiz-1").style["width"] = (data.engQuizOne * 100/80)+"%";
+        document.getElementById("quiz-2").style["width"] = (data.engQuizTwo * 100/80)+"%";
+        document.getElementById("quiz-3").style["width"] = (data.engQuizThree * 100/80)+"%";
+    } else {
         console.log("No data available.");
       }
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
     });
-    getDoc(engRef)
-    .then((docSnap) => {
-      if (docSnap.exists()) {
-        const data = docSnap.data();
-        console.log("Datas", data)
-        console.log("Overall progress:", data.overallProgress);
-        document.getElementById("english-overall").style["width"] = (data.overallProgress * 100/80)+"%";
-      } else {
-        console.log("No data available.");
-      }
-    })
-    .catch((error) => {
-      console.error("Error fetching data:", error);
-    });
-  }
-
-  else{
-
-  }
+}else{
+    window.location.replace("auth.html")
 }
-
-// TODO: adjust value here
-
-checkLoggedInProfile();
-

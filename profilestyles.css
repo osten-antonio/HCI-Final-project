@@ -12,9 +12,6 @@
 html, body{
     margin: 0;
     background-image: linear-gradient(var(--accentyellow),white);
-    height: max-content;
-    position:relative;
-    padding-bottom: 5%;
 }
 
 *{

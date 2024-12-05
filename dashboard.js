@@ -15,9 +15,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+
 function checkLoggedInProfile(){
   const loggedInUserId=localStorage.getItem('loggedInUId');
-
   if(loggedInUserId){
     const mathRef = doc(db, "math", loggedInUserId)
     const engRef = doc(db, "english", loggedInUserId)
@@ -49,14 +49,45 @@ function checkLoggedInProfile(){
     .catch((error) => {
       console.error("Error fetching data:", error);
     });
+    const userRef = doc(db, "users", loggedInUserId);
+    getDoc(userRef)
+    .then((docSnap) => {
+      if (docSnap.exists()) {
+        const data = docSnap.data();
+        console.log("data", data)
+        document.getElementById("login-streak").innerText = data.streak;
+        document.getElementById("topics-completed").innerText = data.topicsCompleted;
+      } else {
+        console.log("No data available.");
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+    // do the this weeks' streak here    
+    // do the recentlyvisited here
+
+    const achievementRef = doc(db, "achievements", loggedInUserId);
+    getDoc(achievementRef)
+    .then((docSnap) => {
+      if (docSnap.exists()) {
+        const data = docSnap.data();
+        console.log("data", data)
+        document.getElementById("achievementvalue").innerText = data.totalAchievement;
+      } else {
+        console.log("No data available.");
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+
+    // do the recent achievement here
   }
-
   else{
-
+    window.location.replace("auth.html")
   }
 }
-
-// TODO: adjust value here
 
 checkLoggedInProfile();
 

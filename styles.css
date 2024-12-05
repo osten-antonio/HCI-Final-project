@@ -9,11 +9,16 @@
     --seconddarkblue:#1A695C;
 }
 
+.checked{
+ color: orange;
+   
+}
 
-
-body{
+body,html{
     margin: 0;
+    height: max-content;
     overflow-x: hidden;
+    position: relative;
 }
 
 
@@ -54,11 +59,23 @@ body{
   }
   
   .active:after {
-    content: "\2796";
+    content: "-";
   }
 
+.progress-bar{
+    width: 80%;
+    margin-left:10%;
+    margin-right: 50%;
+    height: 15px;
+    background-color: var(--darkmint);
+    border-radius: 25px;
+}
 
-
+#maths-overall, #maths-last,#english-overall,#english-last{
+    background-color: var(--primeyellow);
+    height: 15px;
+    border-radius: 25px;
+}
 
 
 #cloudcover{
@@ -158,7 +175,7 @@ body{
     padding: 1px;
     border-radius: 15px;
 
-    animation: 3s spin linear infinite;
+    animation: 10s spin linear infinite;
 }
 
 @keyframes spin {
@@ -300,10 +317,18 @@ body{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+
     gap: 60px;
     width: 100%;
+}
+
+.webdescription{
+    color: var(--darkmint);
+    z-index: 4;
+    margin-left: 5%;
+    width: 60%;
+    text-align: justify;
+    
 }
 
 #coursestructure{
@@ -616,6 +641,11 @@ body{
 
 
 
+#websitenameindex{
+    color: var(--darkmint);
+    margin-left: 10px;
+    font-weight: bold;
+}
 
 
 .cloudimage{
@@ -626,10 +656,15 @@ body{
 .cloudname{
     margin-top: 0;
     font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--darkmint);
 }
 
 .clouddesc{
-    margin:0;
+    margin:0 auto;
+    width: 80%;
+
+    color: var(--darkmint);
 }
 
 .resourceswrapper{
@@ -683,4 +718,39 @@ body{
     justify-content: space-between;
     align-items: center; 
     z-index: 100; 
+}
+
+.footerindex{
+    background-color: var(--darkyellow);
+}
+
+
+.footer-col .titleindex{
+    color: var(--darkmint);
+    font-weight: bold;
+}
+
+.linksindex li{
+    color: var(--seconddarkblue);
+}
+
+.footer-col .newsletterdesc{
+    color: var(--seconddarkblue);
+}
+
+.footer-col .linksindex li {
+    list-style: none;
+    margin-bottom: 10px;
+  }
+
+  .footer-col .linksindex li a {
+    margin-left: -30%;
+    text-decoration: none;
+    color: var(--seconddarkblue);
+  }
+
+
+
+.footer-col .newsletter::placeholder{
+    color: var(--seconddarkblue);
 }
