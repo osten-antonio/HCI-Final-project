@@ -68,6 +68,8 @@ html, body{
     padding-top: auto;
     grid-column: 3;
     grid-row: 9/span 5;
+    color: var(--darkmint);
+    text-align: center;
 
 }
 
@@ -147,7 +149,9 @@ html, body{
     color: var(--darkmint);
 }
 
-
+.recent-link{
+    text-align: left;
+}
 
 @media screen and (max-width: 725px) {
     .container {
@@ -170,6 +174,9 @@ html, body{
 
     .achievement {
         margin-bottom: 10px;
+    }
+    .recent-link{
+        text-align: center;
     }
 }
 

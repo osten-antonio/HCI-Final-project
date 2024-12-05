@@ -107,10 +107,11 @@
 
 .footer{
     background-color: var(--darkmint);
-    height: 10vh;
+    height: 15vh;
     position: absolute; 
-    bottom: 0;  
+    bottom: -5;  
     width: 100%; 
+    margin: 0;
 }
 
 table {
@@ -123,6 +124,7 @@ table {
 td {
     text-align: center;  
     vertical-align: middle;  
+    height: 10vh;
     border-right: 1px solid var(--primemint); 
 }
 
