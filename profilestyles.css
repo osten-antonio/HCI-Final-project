@@ -1,18 +1,20 @@
 :root{
-    --primemint: #34CFB5;
-    --primeyellow: #FFBB00;
-    --darkmint: #05525B;
-    --darkyellow: #CCC965;
-    --accentyellow:#f2dfae;
-    --confirm:#008000;
-    --confirmhover:#50C878;
+  --primemint: #34CFB5;
+  --primeyellow: #ffe932;
+  --darkmint: #05525B;
+  --darkyellow: #FFBB00;
+  --accentyellow:#f2dfae;
+  --cloudblue:#C9EBE3;
+  --secondblue:#6ADDFF;
+  --seconddarkblue:#1A695C;
 }
 
 html, body{
     margin: 0;
     background-image: linear-gradient(var(--accentyellow),white);
-    height: 100vh;
+    height: max-content;
     position:relative;
+    padding-bottom: 5%;
 }
 
 *{
@@ -20,6 +22,26 @@ html, body{
   padding: 0;
   box-sizing: border-box;
 }
+
+.progress-bar{
+  width: 100%;
+  margin:2.5% 0%;
+  background-color: var(--primemint);
+  border: 5px solid var(--darkmint);
+  border-radius: 25px;
+}
+
+#english-1,#english-2,#english-3,
+#maths-1,#maths-2,#maths-3{
+  border: 5px solid var(--accentyellow);
+  border-radius: 20px;
+  background-color: var(--accentyellow);
+  width: 50%;
+  height: 50px;
+  padding:50px auto;
+}
+
+
 
 .accordion {
     background-color: var(--primeyellow);
