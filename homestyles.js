@@ -50,10 +50,6 @@ function checkLoggedInProfile(){
       console.error("Error fetching data:", error);
     });
   }
-
-  else{
-
-  }
 }
 
 // TODO: adjust value here

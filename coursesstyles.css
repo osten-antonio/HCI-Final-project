@@ -23,6 +23,14 @@ body {
   height: 100%;
 }
 
+.title{
+  color: var(--darkmint);
+  font-weight: bolder;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+}
 img{
   width:50px;
   height:50px;
@@ -118,9 +126,11 @@ main {
   margin-left: clamp(0px,25px,30px);
   margin-left: clamp(0px,25px,30px);
   margin: 0 auto; 
+  min-width: 240px;
   width: 100%; 
   max-width: 300px; 
   height: 250px;
+
   background-color: var(--primemint);
   font-weight: bold;
   font-size: clamp(0.9rem, 1.5vw, 2.3vw);

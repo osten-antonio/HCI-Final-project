@@ -12,7 +12,7 @@
 html, body{
     margin: 0;
     background-image: linear-gradient(var(--accentyellow),white);
-    height: 100vh;
+    height: auto;
     position:relative;
 }
 
@@ -75,4 +75,5 @@ label{
 
 #container{
     margin: 0;
+    
 }

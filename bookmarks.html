@@ -15,26 +15,38 @@
             <p class="regularfont" id="websitename">Learningate</p>
         </div>
         <div class="header-shortcuts">
-            <a>
-                <button class="mediumfont navbar-button">Dashboard</button>
-            </a>
-            <a>
-                <button class="mediumfont navbar-button">Bookmarks</button>
-            </a>
-            <a>
-                <button class="mediumfont navbar-button">English</button>
-            </a>
-            <a>
-                <button class="mediumfont navbar-button">Maths</button>
-            </a>
-        </div>
+          <a href="../dashboard.html">
+              <button class="mediumfont navbar-button">Dashboard</button>
+          </a>
+          <a href="#">
+              <button class="mediumfont navbar-button">Bookmarks</button>
+          </a>
+          <a href="#">
+              <button class="mediumfont navbar-button">English</button>
+          </a>
+          <a href="../Maths/selector.html">
+              <button class="mediumfont navbar-button">Maths</button>
+          </a>
+      </div>
         <a>
             <img src="4069_gray_square.png" alt="Right Image" id="pfp">
         </a>
+        <div class="profile">
+          <div style="display: flex; flex-direction: row;     justify-content: space-between;">
+            <p id="profile-name">Name</p>
+            <img src="4069_gray_square.png" alt="Right Image" id="pfp">
+          </div>
+          <div>
+            <a href="profile.html">
+              <button class="profile-buttons">Profile</button>
+            </a>
+            <button class="profile-buttons sign-out">Sign out</button>
+          </div>
+        </div>
     </div>
     <div id="container">
         <div style="display: flex;align-items: center; justify-content: start;  width: 100%; padding: 2% 10% 10% 2%;">
-            <a>
+            <a href="../dashboard.html">
                 <button id="returnbutton">Return</button>
             </a>
             <p class="bigfont bookmarklabel">Bookmarks</p>
@@ -103,5 +115,6 @@
     </footer>
     <script src="homestyles.js"></script>
     <script type="module" src="bookmarks.js"></script>
+    <script type="module" src="profile-hover.js"></script>
 </body>
 </html>

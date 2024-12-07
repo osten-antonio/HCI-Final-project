@@ -8,17 +8,30 @@
     --confirmhover:#50C878;
 }
 html,body{
-  heighh:100vh;
+
   margin:0;
   padding:0;
   position:relative;
   background-image: linear-gradient(var(--accentyellow),white);
 }
-/* General Layout */
+
+p{
+  color: var(--darkmint);
+}
+
+.selectedtopic{
+  font-weight: bolder;
+  font-size: x-large;
+}
+
+.selectedsubtopic{
+  font-weight: bolder;
+  font-size: medium;
+}
 .container {
     display: flex;
     flex-wrap: wrap;
-    height: 100vh;
+
   }
   
   .sidebar {
@@ -46,6 +59,7 @@ html,body{
     padding: 20px;
     padding-left:17%;
     padding-right:17;
+    color: var(--darkmint);
     
   }
   
@@ -53,7 +67,7 @@ html,body{
   color: var(--darkmint);
   border: 5px solid var(--darkmint);
   border-radius: 25px;
-  padding: 20% 50% 20% 50%;
+  padding: 5%;
   background-color: var(--primemint);
   font-weight: bold;
   font-size: clamp(0.9rem, 1.5vw, 2.3vw);;

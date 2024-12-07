@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width= , initial-scale=1.0">
-    <link rel="stylesheet" href="globalstyles.css">
-    <link rel="stylesheet" href="coursesstyles.css">
+    <link rel="stylesheet" href="../globalstyles.css">
+    <link rel="stylesheet" href="../coursesstyles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>Courses</title>
@@ -12,67 +12,76 @@
 <body>
 <div class="header">
     <div class="logo">
-        <img src="4069_gray_square.png" class="logoimg" alt="Logo">
+        <img src="../4069_gray_square.png" class="logoimg" alt="Logo">
         <p class="regularfont" id="websitename">Learningate</p>
     </div>
     <div class="header-shortcuts">
-        <a>
-            <button class="mediumfont navbar-button">Dashboard</button>
-        </a>
-        <a>
-            <button class="mediumfont navbar-button">Bookmarks</button>
-        </a>
-        <a>
-            <button class="mediumfont navbar-button">English</button>
-        </a>
-        <a>
-            <button class="mediumfont navbar-button">Maths</button>
-        </a>
-    </div>
+      <a href="../dashboard.html">
+          <button class="mediumfont navbar-button">Dashboard</button>
+      </a>
+      <a href="../bookmarks.html">
+          <button class="mediumfont navbar-button">Bookmarks</button>
+      </a>
+      <a href="#">
+          <button class="mediumfont navbar-button">English</button>
+      </a>
+      <a href="../Maths/selector.html">
+          <button class="mediumfont navbar-button">Maths</button>
+      </a>
+  </div>
     <a>
-        <img src="4069_gray_square.png" alt="Right Image" id="pfp">
+        <img src="../4069_gray_square.png" alt="Right Image" id="pfp">
     </a>
     <div class="profile">
       <div style="display: flex; flex-direction: row;     justify-content: space-between;">
         <p id="profile-name">Name</p>
-        <img src="4069_gray_square.png" alt="Right Image" id="pfp">
+        <img src="../4069_gray_square.png" alt="Right Image" id="pfp">
       </div>
       <div>
-        <button class="profile-buttons">Profile</button>
+        <a href="../profile.html">
+            <button class="profile-buttons">Profile</button>
+        </a>
         <button class="profile-buttons sign-out">Sign out</button>
       </div>
     </div>
 </div>
 <div style="display: flex;align-items: center; justify-content: start; flex-wrap: wrap; width: 100%;gap: 50px; padding: 2% 10% 2% 2%;">
-    <a>
+    <a href="../dashboard.html">
         <button id="returnbutton">Return</button>
     </a>
+    <p class="bigfont title">English</p>
 </div>
 <div id="container">
     <section class="section learn">
       <h2>Learn</h2>
       <div class="grid">
-        <button class="card"><img src="4069_gray_square.png">
-            <p>Topic</p>
-            <p class="progresslabel regularfont"><u>Progress</u></p>
-            <div class="progress-bar">
-              <div class="mediumfont" id="learn-1"></div>
-            </div>
-        </button>
-        <button class="card"><img src="4069_gray_square.png">
+        <a href="learn1.html" style="margin-left: auto; margin-right: auto;">
+          <button class="card"><img src="../4069_gray_square.png">
+              <p>Topic</p>
+              <p class="progresslabel regularfont"><u>Progress</u></p>
+              <div class="progress-bar">
+                <div class="mediumfont" id="learn-1"></div>
+              </div>
+          </button>
+          </a>
+        <a href="learn2.html" style="margin-left: auto; margin-right: auto;">
+        <button class="card"><img src="../4069_gray_square.png">
             <p>Topic</p>
             <p class="progresslabel regularfont"><u>Progress</u></p>
             <div class="progress-bar">
               <div class="mediumfont" id="learn-2"></div>
             </div>
         </button>
-        <button class="card"><img src="4069_gray_square.png">
+        </a>
+        <a href="learn3.html" style="margin-left: auto; margin-right: auto;">
+        <button class="card"><img src="../4069_gray_square.png">
             <p>Topic</p>
             <p class="progresslabel regularfont"><u>Progress</u></p>
             <div class="progress-bar">
               <div class="mediumfont" id="learn-3"></div>
             </div>
         </button>
+        </a>
       </div>
     </section>
 
@@ -80,15 +89,21 @@
     <section class="section notes">
       <h2>Notes</h2>
       <div class="grid">
-        <button class="card"><img src="4069_gray_square.png">
+        <a href="notes1.html" style="margin-left: auto; margin-right: auto;">
+        <button class="card"><img src="../4069_gray_square.png">
             <p>Topic</p>
         </button>
-        <button class="card"><img src="4069_gray_square.png">
+        </a>
+        <a href="notes2.html" style="margin-left: auto; margin-right: auto;">
+        <button class="card"><img src="../4069_gray_square.png">
             <p>Topic</p>
         </button>
-        <button class="card"><img src="4069_gray_square.png">
+        </a>
+        <a href="notes3.html" style="margin-left: auto; margin-right: auto;">
+        <button class="card"><img src="../4069_gray_square.png">
             <p>Topic</p>
         </button>
+        </a>
       </div>
     </section>
 
@@ -96,27 +111,33 @@
     <section class="section practice">
       <h2>Practice Questions</h2>
       <div class="grid">
-        <button class="card"><img src="4069_gray_square.png">
+        <a href="quiz1.html" style="margin-left: auto; margin-right: auto;">
+        <button class="card"><img src="../4069_gray_square.png">
             <p>Topic</p>
             <p class="progresslabel regularfont"><u>Progress</u></p>
             <div class="progress-bar">
               <div class="mediumfont" id="quiz-1"></div>
             </div>
         </button>
-        <button class="card"><img src="4069_gray_square.png">
+        </a>
+        <a href="quiz2.html" style="margin-left: auto; margin-right: auto;">
+        <button class="card"><img src="../4069_gray_square.png">
             <p>Topic</p>
             <p class="progresslabel regularfont"><u>Progress</u></p>
             <div class="progress-bar">
               <div class="mediumfont" id="quiz-2"></div>
             </div>
         </button>
-        <button class="card"><img src="4069_gray_square.png">
+        </a>
+        <a href="quiz3.html" style="margin-left: auto; margin-right: auto;">
+        <button class="card"><img src="../4069_gray_square.png">
             <p>Topic</p>
             <p class="progresslabel regularfont"><u>Progress</u></p>
             <div class="progress-bar">
               <div class="mediumfont" id="quiz-3"></div>
             </div>
         </button>
+        </a>
       </div>
     </section>
   
@@ -171,7 +192,7 @@
           </div>
         </div>
     </footer>
-    <script type="module" src="courses.js"></script>
-    <script type="module" src="profile-hover.js"></script>
+    <script type="module" src="selector.js"></script>
+    <script type="module" src="../profile-hover.js"></script>
 </body>
 </html>

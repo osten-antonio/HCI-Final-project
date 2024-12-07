@@ -23,7 +23,7 @@ html, body{
 .progress-bar{
   width: 100%;
   margin:2.5% 0%;
-  background-color: var(--primemint);
+  background-color: var(--seconddarkblue);
   border: 5px solid var(--darkmint);
   border-radius: 25px;
 }
@@ -46,14 +46,15 @@ html, body{
     color: var(--darkmint);
     cursor: pointer;
     padding: 18px;
-    width: 100%;
+    width: 95%;
     text-align: left;
     border: 5px solid var(--darkmint);
     border-radius: 25px;
     outline: none;
     transition: 0.4s;
     font-weight: bold;
-    margin-top: 10px
+    margin-top: 10px;
+    margin-left: 2.5%;
   }
   
 
@@ -69,6 +70,7 @@ html, body{
     color: var(--darkmint);
 }
 .accordion:after {
+
     content: '+'; 
     font-size: 13px;
     color: #777;
@@ -160,4 +162,12 @@ html, body{
   color: var(--darkmint);
   font-weight: bold;
   margin-right: 5px;
+}
+
+.subject-seperator{
+  background-color: var(--primemint);
+  margin:5% 2%;
+  border: 5px solid var(--darkmint);
+  border-radius: 25px;
+  padding: 2%;
 }

@@ -9,13 +9,12 @@
     --confirm:#008000;
     --confirmhover:#50C878;
     --violet:#7489C6;
+    --red:#F37C7C;
 }
 
 *{
     font-family: 'Open Sans', sans-serif;
     box-sizing: border-box;
-
-
 }
 
 .bigfont{
@@ -59,10 +58,48 @@
     margin-left: 10px;
     font-weight: bold;
 }
+.profile-buttons{
+  border: 2px solid var(--darkmint);
+  border-radius: 10px;
+  color: var(--darkmint);
+  background-color: var(--confirmhover);
+  height: 30px;
+  width: 80px;
+  margin-top: 10px;
+  
+}
 
+#profile-name{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.sign-out{
+  background-color: var(--red);
+}
+
+.profile{
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 15px;
+  width: 200px;
+  height: 120px;
+  border: 2px solid var(--darkmint);
+  border-radius: 25px; 
+  background-color: var(--primemint);
+  z-index: 10;
+  padding: 10px;
+  flex-direction: column;
+}
+
+.profile.show {
+  display: block; /* Show the profile menu when the 'show' class is added */
+}
 
 #pfp{
     max-width: 40px;
+    max-height: 40px;
+    aspect-ratio: 1/1;
     height: auto;
     margin:5px; 
     border-radius: 50%;

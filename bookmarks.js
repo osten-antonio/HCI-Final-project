@@ -23,17 +23,6 @@ function checkLoggedInProfile(){
         getDoc(userRef)
         .then((docSnap) =>{
         if(docSnap.exists()){
-            const recentArray = docSnap.data().recentlyVisited;
-            console.log(recentArray);
-            for(var i=5;i>=0;i--){
-                recentArray[i] = recentArray[i-1]
-            }
-            recentArray.pop()
-            recentArray[0] = "bookmarks.html";
-            console.log(recentArray)
-            const change = {
-                recentlyVisited: recentArray
-            }
             updateDoc(userRef,change)
             .then(() => console.log("Name updated successfully"))
             .catch((error) => console.error("Error updating name:", error));
