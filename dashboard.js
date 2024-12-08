@@ -188,7 +188,6 @@ function checkLoggedInProfile(){
       console.error("Error fetching data:", error);
     });
 
-    // do the recent achievement here
   }
   else{
     window.location.replace("auth.html")
