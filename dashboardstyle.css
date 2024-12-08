@@ -15,11 +15,28 @@
     box-sizing: border-box;
 }
 
+
 html, body{
     background-image: linear-gradient(var(--accentyellow),white);
     background-repeat: no-repeat;
     margin: 0;
     position:relative;
+}
+.streak-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.streak-label {
+    font-weight: bolder;
+    margin-top: 5px; 
+    color: var(--darkmint);
+}
+.streak-days {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .progress-bar{

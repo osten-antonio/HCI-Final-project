@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width= , initial-scale=1.0">
     
-    <link rel="stylesheet" href="globalstyles.css">
-    <link rel="stylesheet" href="selectlearntopicstyles.css">
+    <link rel="stylesheet" href="../globalstyles.css">
+    <link rel="stylesheet" href="../selectlearntopicstyles.css">
     <title>Courses</title>
 </head>
 <div class="header">
     <div class="logo">
-        <img src="4069_gray_square.png" class="logoimg" alt="Logo">
+        <img src="../4069_gray_square.png" class="logoimg" alt="Logo">
         <p class="regularfont" id="websitename">Learningate</p>
     </div>
     <div class="header-shortcuts">
       <a href="../dashboard.html">
           <button class="mediumfont navbar-button">Dashboard</button>
       </a>
-      <a href="#">
+      <a href="../#">
           <button class="mediumfont navbar-button">Bookmarks</button>
       </a>
-      <a href="#">
+      <a href="../#">
           <button class="mediumfont navbar-button">English</button>
       </a>
       <a href="../Maths/selector.html">
@@ -28,15 +28,15 @@
       </a>
   </div>
     <a>
-        <img src="4069_gray_square.png" alt="Right Image" id="pfp">
+        <img src="../4069_gray_square.png" alt="Right Image" id="pfp">
     </a>
     <div class="profile">
       <div style="display: flex; flex-direction: row;     justify-content: space-between;">
         <p id="profile-name">Name</p>
-        <img src="4069_gray_square.png" alt="Right Image" id="pfp">
+        <img src="../4069_gray_square.png" alt="Right Image" id="pfp">
       </div>
       <div>
-        <a href="profile.html">
+        <a href="../profile.html">
           <button class="profile-buttons">Profile</button>
         </a>
         <button class="profile-buttons sign-out">Sign out</button>
@@ -59,25 +59,28 @@
     <section class="section learn">
       
       <div class="grid">
+      <a id="subtopic1">
         <button class="card">Subtopic<p>Description</p></button>
+      </a>
       </div>
     </section>
 
 
     <section class="section notes">
-      
       <div class="grid">
-        <button class="card">Subtopic<p>Description</p></button>
-        
-      </div>
+        <a id="subtopic2" href="learn.html?id=1.2">
+          <button class="card">Subtopic<p>Description</p></button>
+        </a>
+        </div>
     </section>
 
 
     <section class="section practice">
       
       <div class="grid">
-        <button class="card">Subtopic<p>Description</p></button>
-        
+        <a  id="subtopic3" href="learn.html?id=1.3">
+          <button class="card">Subtopic<p>Description</p></button>
+        </a>
       </div>
     </section>
   
@@ -106,35 +109,34 @@
         <div class="footer-col">
           <p class="mediumfont title">Info</p>
           <ul class="links">
-            <li class="regularfont"><a href="#">About Us</a></li>
-            <li class="regularfont"><a href="#">Our courses</a></li>
-            <li class="regularfont"><a href="#">Course Structure</a></li>
-            <li class="regularfont"><a href="#">Our reviews</a></li>
-            <li class="regularfont"><a href="#">FAQ</a></li>
+            <li class="regularfont"><a href="../#">About Us</a></li>
+            <li class="regularfont"><a href="../#">Our courses</a></li>
+            <li class="regularfont"><a href="../#">Course Structure</a></li>
+            <li class="regularfont"><a href="../#">Our reviews</a></li>
+            <li class="regularfont"><a href="../#">FAQ</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <p class="mediumfont title">Explore</p>
           <ul class="links">
-            <li class="regularfont"><a href="#">Maths</a></li>
-            <li class="regularfont"><a href="#">English</a></li>
-            <li class="regularfont"><a href="#">Dashboard</a></li>
-            <li class="regularfont"><a href="#">New Contents</a></li>
+            <li class="regularfont"><a href="../#">Maths</a></li>
+            <li class="regularfont"><a href="../#">English</a></li>
+            <li class="regularfont"><a href="../#">Dashboard</a></li>
+            <li class="regularfont"><a href="../#">New Contents</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <p class="mediumfont title">Legal</p>
           <ul class="links">
-            <li class="regularfont"><a href="#">TOS</a></li>
-            <li class="regularfont"><a href="#">Privacy Policy</a></li>
-            <li class="regularfont"><a href="#">Security</a></li>
+            <li class="regularfont"><a href="../#">TOS</a></li>
+            <li class="regularfont"><a href="../#">Privacy Policy</a></li>
+            <li class="regularfont"><a href="../#">Security</a></li>
           </ul>
         </div>
       </div>
   </footer>
   <script type="module" src="../profile-hover.js"></script>
-    
-    
-
+  <!-- <script type="module" src="../recent.js"></script> -->
+  <script src="learnsubtopic.js"></script>
 </body>
 </html>

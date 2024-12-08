@@ -1,3 +1,14 @@
+:root{
+  --primemint: #34CFB5;
+  --primeyellow: #ffe932;
+  --darkmint: #05525B;
+  --darkyellow: #FFBB00;
+  --accentyellow:#f2dfae;
+  --cloudblue:#C9EBE3;
+  --secondblue:#6ADDFF;
+  --seconddarkblue:#1A695C;
+}
+
 /* General Reset */
 * {
     margin: 0;
@@ -6,16 +17,10 @@
   }
   
   /* Body Styling */
-  body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #fef8c3, #f7e794);
-    color: #333;
-    
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
+  html, body{
+    margin: 0;
+    background-image: linear-gradient(var(--accentyellow),white);
+}
   /* Container */
   .container {
     width: 360px;
@@ -31,7 +36,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #00796b;
+    background-color: var(--darkmint);
     color: white;
   }
   

@@ -49,7 +49,7 @@ html, body{
     gap: 15%; 
 }
 
-.explanation {
+#explanation {
     flex-basis: 100%; 
     text-align: center; 
     order: 1; 

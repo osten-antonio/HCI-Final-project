@@ -15,9 +15,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+
 function writeRecent(){
-  const curWindow = window.location.pathname;
-  const loggedinuser = localStolage.getItem("loggedInUId");
+  const curWindow = window.location.pathname + window.location.search;
+  const loggedinuser = localStorage.getItem("loggedInUId");
   console.log(curWindow)
   if(loggedinuser){
     const docRef = doc(db, "users", loggedinuser)
@@ -25,10 +26,9 @@ function writeRecent(){
     .then((docSnap) => {
       if (docSnap.exists()) {
         const recentArray = docSnap.data().recentlyVisited;
-        if(data.recentlyVisited.includes(curWindow)){
+        if(recentArray.includes(curWindow)){
             for(var i=recentArray.indexOf(curWindow);i>=0;i--){
-              recentArray[i]
-              recentArray[i - 1]
+              recentArray[i]=recentArray[i - 1]
             }
             recentArray[0]=curWindow;
             const change = {
@@ -37,8 +37,7 @@ function writeRecent(){
             updateDoc(docRef, change);// Also this
         }else{
           for (var i = 5; i >= 0; i--) {
-            recentArray[i]
-            recentArray[i - 1]
+            recentArray[i]=recentArray[i - 1]
           }
           recentArray.pop()
           recentArray[0] = curWindow;
@@ -50,8 +49,6 @@ function writeRecent(){
           // Test this
           
         }
-          
-        
        }
    
     })
