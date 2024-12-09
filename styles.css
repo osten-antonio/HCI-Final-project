@@ -63,7 +63,7 @@ body,html{
   }
 
 .progress-bar{
-    width: 80%;
+    width: 100%;
     margin-left:10%;
     margin-right: 50%;
     height: 15px;

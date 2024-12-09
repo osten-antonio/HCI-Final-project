@@ -60,18 +60,19 @@
             <p style="color: white;">Image related to question</p>
         </div>
         <div class="questioncontainer">
-            <p class="bigfont questionlabel">Question?</p>
-            <form id="questionform">
-                <div class="choices">
-                    <label class="mediumfont"><input type="radio" name="choice" value="A"> A. Answer</label>
-                    <label class="mediumfont"><input type="radio" name="choice" value="B"> B. Answer</label>
-                    <label class="mediumfont"><input type="radio" name="choice" value="C"> C. Answer</label>
-                    <label class="mediumfont"><input type="radio" name="choice" value="D"> D. Answer</label>
-                    <label class="mediumfont"><input type="radio" name="choice" value="E"> E. Answer</label>
-                </div>
-                <button type="button" class="mediumfont checkbutton" id="next" onclick="">Next</button>
-            </form>
-        </div>
+          <p class="bigfont" id="questionlabel">Question?</p>
+          <form id="questionform">
+              <div class="choices">
+                  <label class="mediumfont" style="display: flex; flex-direction: row; gap: 10px;"><input type="radio" name="choice" value="A"><p id = "A"> A. Answer </p></label>
+                  <label class="mediumfont" style="display: flex; flex-direction: row; gap: 10px;"><input type="radio" name="choice" value="B"><p id = "B"> B. Answer </p></label>
+                  <label class="mediumfont" style="display: flex; flex-direction: row; gap: 10px;"><input type="radio" name="choice" value="C"><p id = "C"> C. Answer </p></label>
+                  <label class="mediumfont" style="display: flex; flex-direction: row; gap: 10px;"><input type="radio" name="choice" value="D"><p id = "D"> D. Answer </p></label>
+                  <label class="mediumfont" style="display: flex; flex-direction: row; gap: 10px;"  ><input type="radio" name="choice" value="E"><p id = "E"> E. Answer </p></label>
+              </div>
+              <button type="button" class="mediumfont checkbutton" id="next">Next</button>
+              <button type="button" class="mediumfont checkbutton" id="back">Back</button>
+          </form>
+      </div>
     </div>
     
     <footer style="margin-top: 25%;">

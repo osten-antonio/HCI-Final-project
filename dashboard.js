@@ -1,5 +1,4 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
 import{getFirestore, setDoc, doc, getDoc, updateDoc} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js"
 
 const firebaseConfig = {
@@ -56,50 +55,69 @@ function capitalizeFirstLetter(val) {
   return String(val).charAt(0).toUpperCase() + String(val).slice(1);
 }
 
-function checkLoggedInProfile(){
-  const loggedInUserId=localStorage.getItem('loggedInUId');
-  if(loggedInUserId){
-    const mathRef = doc(db, "math", loggedInUserId)
-    const engRef = doc(db, "english", loggedInUserId)
-    getDoc(mathRef)
-    .then((docSnap) => {
-      if (docSnap.exists()) {
-        const data = docSnap.data();
-        console.log("Datas", data)
-        console.log("Overall progress:", data.overallProgress);
-        document.getElementById("maths-overall").style["width"] = (data.overallProgress * 100/80)+"%";
-      } else {
-        console.log("No data available.");
-      }
-    })
-    .catch((error) => {
-      console.error("Error fetching data:", error);
-    });
-    getDoc(engRef)
-    .then((docSnap) => {
-      if (docSnap.exists()) {
-        const data = docSnap.data();
-        console.log("Datas", data)
-        console.log("Overall progress:", data.overallProgress);
-        document.getElementById("english-overall").style["width"] = (data.overallProgress * 100/80)+"%";
-      } else {
-        console.log("No data available.");
-      }
-    })
-    .catch((error) => {
-      console.error("Error fetching data:", error);
-    });
-
+async function checkLoggedInProfile() {
+  const loggedInUserId = localStorage.getItem('loggedInUId');
+  if (loggedInUserId) {
+    const mathRef = doc(db, "math", loggedInUserId);
+    const engRef = doc(db, "english", loggedInUserId);
+    const achievementRef = doc(db, "achievements", loggedInUserId);
     const userRef = doc(db, "users", loggedInUserId);
-    getDoc(userRef)
-    .then((docSnap) => {
-      if (docSnap.exists()) {
-        const data = docSnap.data();
-        console.log("data", data)
-        document.getElementById("topics-completed").innerText = data.topicsCompleted;
-        // Recently visited
+
+    try {
+      // Fetch achievement data first
+      const achievementdocSnap = await getDoc(achievementRef);
+      if (!achievementdocSnap.exists()) {
+        throw new Error("No achievement data found");
+      }
+      
+      const achievementdata = achievementdocSnap.data();
+      let totalAchievement = achievementdata.totalAchievement;
+      let change = {};
+
+      console.log("Current achievement data:", achievementdata);
+
+      // Fetch math progress
+      const mathDocSnap = await getDoc(mathRef);
+      if (mathDocSnap.exists()) {
+        const mathData = mathDocSnap.data();
+        const mathProgress = mathData.overallProgress;
+        document.getElementById("maths-overall").style["width"] = `${(mathProgress * 100) / 80}%`;
+
+        if (mathProgress >= 100 && !achievementdata.mathCompletion["get"]) {
+          alert("Achievement unlocked!\nMaths completion");
+          change.mathCompletion = {
+            get: true,
+            dateAchieved: new Date()
+          };
+          totalAchievement += 1; // Increment achievement count
+          console.log(`total achievement: ${totalAchievement}`);
+        }
+      }
+
+      // Fetch English progress
+      const engDocSnap = await getDoc(engRef);
+      if (engDocSnap.exists()) {
+        const engData = engDocSnap.data();
+        const engProgress = engData.overallProgress;
+        document.getElementById("english-overall").style["width"] = `${(engProgress * 100) / 80}%`;
+
+        if (engProgress >= 100 && !achievementdata.engCompletion.get) {
+          alert("Achievement unlocked!\nEnglish completion");
+          change.engCompletion = {
+            get: true,
+            dateAchieved: new Date()
+          };
+          totalAchievement += 1; // Increment achievement count
+          console.log(`total achievement: ${totalAchievement}`);
+        }
+      }
+
+      // Fetch user data for streak
+      const userDocSnap = await getDoc(userRef);
+      if (userDocSnap.exists()) {
+        const userData = userDocSnap.data();
         const regex = /\/(\w+)\/(quiz|notes|learn)\.html\?id=(\d+)(?:\.(\d+))?/;
-        const recentArray = data.recentlyVisited;
+        const recentArray = userData.recentlyVisited;
         const elements = ["first", "second", "third", "fourth", "fifth"];
 
         for (var i = 0; i < recentArray.length; i++) {
@@ -111,7 +129,6 @@ function checkLoggedInProfile(){
           // Access topicList and correctly handle the nested topics
           var topicName = topicList[subject.toLowerCase()][temp[3]][0]; // Get the main topic name
           var subTopicName = typeof temp[4] !== 'undefined' ? topicList[subject.toLowerCase()][temp[3]][1][temp[4]] : null; 
-      
           // Construct the text with both main and sub-topic
           var text = `${subject} | ${capitalizeFirstLetter(temp[2])} | ${topic}. ${subTopicName ? ` ${subTopicName}` : topicName}`;
       
@@ -120,79 +137,78 @@ function checkLoggedInProfile(){
           document.getElementById(`${elements[i]}p`).innerText = text;
         }
 
-        var currentStreak = data.streak;
-        var dateArray = data.streakDays;
+        let currentStreak = userData.streak;
+        let dateArray = userData.streakDays;
 
-        const today = new Date(); 
-        const todayDay = today.getDay(); 
-      
-        for(var i = 0; i<7;i++){
-          dateArray[i.toString()]["date"] = dateArray[i.toString()]["date"].toDate();
-          currentStreak = dateArray[i.toString()]["logged"] == true ? currentStreak+=1 : currentStreak=0
+        const today = new Date();
+        const todayDay = today.getDay();
+
+        // Update streak based on logged days 
+        for (let i = todayDay-1; i > 0; i--) {
+          dateArray[(7-i).toString()]["date"] = dateArray[(7-i).toString()]["date"].toDate();
+          console.log((7-i).toString())
+          if (!dateArray[(7-i).toString()]["logged"]) {
+            currentStreak = 0;
+          }
         }
-        console.log(dateArray)
-        // check if it is new week
-        const startOfWeek = new Date(today);
-        startOfWeek.setDate(today.getDate() - todayDay); 
-        startOfWeek.setHours(0, 0, 0, 0); // Time midnight
-      
-        const previousWeekStart = dateArray[0]?.date; // Get the first day of the previous week
-        if (previousWeekStart && previousWeekStart < startOfWeek) {
-          // reset dateArray if new week
+
+        const curDate = new Date(today);
+        curDate.setDate(today.getDate() + (7 - todayDay)); // Set to next Sunday
+        curDate.setHours(0,0,0,0);
+  
+        if (curDate > dateArray[0].date.toDate().setHours(0,0,0,0)) {
+          console.log("New week")
+          const thisSunday = new Date(today);
+          thisSunday.setDate(today.getDate() - todayDay); // Get current Sunday
+
           dateArray = Array.from({ length: 7 }, (_, i) => ({
             logged: false,
-            date: new Date(startOfWeek.getTime() - i * 24 * 60 * 60 * 1000),
+            date: new Date(curDate.getTime() - i * 24 * 60 * 60 * 1000),
           }));
         }
-      
-        dateArray[todayDay.toString()]["logged"] = true;
-        
-        console.log(dateArray)
-        console.log(currentStreak)
+        console.log(dateArray[(7-todayDay).toString()])
+        console.log(7-todayDay)
+        if(!dateArray[(7-todayDay).toString()]["logged"]){
+          console.log("Updated streak")
+          currentStreak += 1
+          dateArray[(7 - todayDay).toString()]["logged"] = true;
+        }
+
         document.getElementById("login-streak").innerText = currentStreak;
-        const streakIcons= ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"]
+        const streakIcons= ["sunday","saturday","friday","thursday","wednesday","tuesday","monday"]
         for(var i=0;i<7;i++){
-          console.log(i)
-          console.log( dateArray[i.toString()])
           document.getElementById(streakIcons[i]).setAttribute("fill", dateArray[i.toString()]["logged"] ? "#FFBB00" : "#05525B");
         }
-      } else {
-        console.log("No data available.");
+
+        const streakChanges = {
+          streakDays: dateArray,
+          streak: currentStreak,
+        };
+
+        await updateDoc(userRef, streakChanges);
+
+        if (currentStreak >= 10 && !achievementdata["10day"]["get"]) {
+          alert("Achievement unlocked!\n10 Day streak");
+          change["10day"] = {
+            get: true,
+            dateAchieved: Date.now(),
+          };
+          totalAchievement += 1; // Increment achievement count
+          console.log(`total achievement: ${totalAchievement}`);
+        }
       }
 
-      const changes = {
-        streakDays: dateArray,
-        streak: currentStreak
-      }
-      updateDoc(userRef,changes)
-      .catch((error) => {
-        console.error("Error writing data:", error);
-      });
-    })
-    .catch((error) => {
-      console.error("Error fetching data:", error);
-    });
-    
-    const achievementRef = doc(db, "achievements", loggedInUserId);
-    getDoc(achievementRef)
-    .then((docSnap) => {
-      if (docSnap.exists()) {
-        const data = docSnap.data();
-        console.log("data", data)
-        document.getElementById("achievementvalue").innerText = data.totalAchievement;
-      } else {
-        console.log("No data available.");
-      }
-    })
-    .catch((error) => {
-      console.error("Error fetching data:", error);
-    });
-
-  }
-  else{
-    window.location.replace("auth.html")
+      // After all data is fetched and logic is applied, update achievements
+      change.totalAchievement = totalAchievement;
+      console.log("Achievement updated:", change);
+      await updateDoc(achievementRef, change);
+      console.log("Total achievement updated successfully");
+    } catch (error) {
+      console.error("Error processing user data:", error);
+    }
+  } else {
+    window.location.replace("auth.html");
   }
 }
 
 checkLoggedInProfile();
-
