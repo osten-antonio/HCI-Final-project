@@ -62,28 +62,30 @@ function loadQuestions(){
                     answer2:"B. churches",
                     answer3:"C. church's",
                     answer4:"D. churchi",
-                    answer5:"E. sulk",
+                    answer5:"E. churchee",
                     correct:"B"},
                     {
-                    question:"",
-                    answer1:"A. 1st answer",
-                    answer2:"B. 2nd answer",
-                    answer3:"C. 3rd answer",
-                    answer4:"D. 4th answer",
-                    answer5:"E. 5th answer",
+                    question:"The teacher marked their ______ for the answer with a red pen.",
+                    answer1:"A. quizzes",
+                    answer2:"B. quiz",
+                    answer3:"C. quizs",
+                    answer4:"D. quizer",
+                    answer5:"E. quizzi",
                     correct:"A"},
                     {
-                    question:"fifth question",
-                    answer1:"A. 1st answer",
-                    answer2:"B. 2nd answer",
-                    answer3:"C. 3rd answer",
-                    answer4:"D. 4th answer",
-                    answer5:"E. 5th answer",
+                    question:"What is the best synonym for choice:",
+                    answer1:"A. price",
+                    answer2:"B. way",
+                    answer3:"C. stuff",
+                    answer4:"D. decision",
+                    answer5:"E. prize",
                     correct:"D"}
                 ]
 
                 getQna(qna,cur)
                 document.getElementById("next").addEventListener("click",(event)=>{
+                    console.log(qna[cur].correct)
+                    console.log(document.getElementById(qna[cur].correct).checked)
                     if(document.getElementById(qna[cur].correct).checked == true){
                         correct++
                     }
@@ -91,8 +93,8 @@ function loadQuestions(){
                     if(cur > 4){
                         cur--
                         if(window.confirm("Do you want to submit?")){
-                            change.mathQuizOne = correct/5 * 100
-                            updateDoc(mathRef,change)
+                            change.engQuizOne = correct/5 * 100
+                            updateDoc(engRef,change)
                         }
                     }
                     console.log((cur+1/5 * 100).toString() + "%")
@@ -122,36 +124,36 @@ function loadQuestions(){
                     answer5:"E. whose",
                     correct:"B"},
                     {
-                    question:"second question",
-                    answer1:"A. 1st answer",
-                    answer2:"B. 2nd answer",
-                    answer3:"C. 3rd answer",
-                    answer4:"D. 4th answer",
-                    answer5:"E. 5th answer",
+                    question:"You won't pass the test _________ you study.",
+                    answer1:"A. what",
+                    answer2:"B. when",
+                    answer3:"C. unless",
+                    answer4:"D. if",
+                    answer5:"E. maybe",
                     correct:"C"},
                     {
-                    question:"third question",
-                    answer1:"A. 1st answer",
-                    answer2:"B. 2nd answer",
-                    answer3:"C. 3rd answer",
-                    answer4:"D. 4th answer",
-                    answer5:"E. 5th answer",
+                    question:"My grandfather walks extremely slowly. The adverb 'extremely' modifies:",
+                    answer1:"A. verb",
+                    answer2:"B. adverb",
+                    answer3:"C. noun",
+                    answer4:"D. adjective",
+                    answer5:"E. pronoun",
                     correct:"B"},
                     {
-                    question:"fourth question",
-                    answer1:"A. 1st answer",
-                    answer2:"B. 2nd answer",
-                    answer3:"C. 3rd answer",
-                    answer4:"D. 4th answer",
-                    answer5:"E. 5th answer",
+                    question:"We rarely go to the movies on the weekends. The adverb 'rarely' modifies:",
+                    answer1:"A. verb",
+                    answer2:"B. adverb",
+                    answer3:"C. noun",
+                    answer4:"D. adjective",
+                    answer5:"E. pronoun",
                     correct:"A"},
                     {
-                    question:"fifth question",
-                    answer1:"A. 1st answer",
-                    answer2:"B. 2nd answer",
-                    answer3:"C. 3rd answer",
-                    answer4:"D. 4th answer",
-                    answer5:"E. 5th answer",
+                    question:"We saw _____ animals at the zoo.",
+                    answer1:"A. of",
+                    answer2:"B. number",
+                    answer3:"C. much",
+                    answer4:"D. many",
+                    answer5:"E. while",
                     correct:"D"}
                 ]
 
@@ -164,8 +166,8 @@ function loadQuestions(){
                     if(cur > 5){
                         cur--
                         if(window.confirm("Do you want to submit?")){
-                            change.mathQuizOne = correct/5 * 100
-                            updateDoc(mathRef,change)
+                            change.engQuizOne = correct/5 * 100
+                            updateDoc(engRef,change)
                         }
                     }
                     document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%" 
@@ -186,44 +188,44 @@ function loadQuestions(){
                 var correct = 0;
                 var cur=0;
                 var qna = [{
-                    question:"First question",
-                    answer1:"A. 1st answer",
-                    answer2:"B. 2nd answer",
-                    answer3:"C. 3rd answer",
-                    answer4:"D. 4th answer",
-                    answer5:"E. 5th answer",
+                    question:"They climbed ___ the highest hill they could find.",
+                    answer1:"A. up",
+                    answer2:"B. under",
+                    answer3:"C. for",
+                    answer4:"D. while",
+                    answer5:"E. of",
                     correct:"A"},
                     {
-                    question:"second question",
-                    answer1:"A. 1st answer",
-                    answer2:"B. 2nd answer",
-                    answer3:"C. 3rd answer",
-                    answer4:"D. 4th answer",
-                    answer5:"E. 5th answer",
+                    question:"We have to get ___ the bus at the next stop.",
+                    answer1:"A. from",
+                    answer2:"B. down",
+                    answer3:"C. off",
+                    answer4:"D. where",
+                    answer5:"E. up",
                     correct:"C"},
                     {
-                    question:"third question",
-                    answer1:"A. 1st answer",
-                    answer2:"B. 2nd answer",
-                    answer3:"C. 3rd answer",
-                    answer4:"D. 4th answer",
-                    answer5:"E. 5th answer",
+                    question:"I was born ___ May.",
+                    answer1:"A. on",
+                    answer2:"B. in",
+                    answer3:"C. at",
+                    answer4:"D. over",
+                    answer5:"E. under",
                     correct:"B"},
                     {
-                    question:"fourth question",
-                    answer1:"A. 1st answer",
-                    answer2:"B. 2nd answer",
-                    answer3:"C. 3rd answer",
-                    answer4:"D. 4th answer",
-                    answer5:"E. 5th answer",
+                    question:"The farmer wakes up ___ sunrise.",
+                    answer1:"A. at",
+                    answer2:"B. in",
+                    answer3:"C. on",
+                    answer4:"D. under",
+                    answer5:"E. over",
                     correct:"A"},
                     {
-                    question:"fifth question",
-                    answer1:"A. 1st answer",
-                    answer2:"B. 2nd answer",
-                    answer3:"C. 3rd answer",
-                    answer4:"D. 4th answer",
-                    answer5:"E. 5th answer",
+                    question:"Every morning I get ___ my bicycle and go to school.",
+                    answer1:"A. over",
+                    answer2:"B. under",
+                    answer3:"C. in",
+                    answer4:"D. on",
+                    answer5:"E. at",
                     correct:"D"}
                 ]
 
@@ -236,8 +238,8 @@ function loadQuestions(){
                     if(cur > 5){
                         cur--
                         if(window.confirm("Do you want to submit?")){
-                            change.mathQuizOne = correct/5 * 100
-                            updateDoc(mathRef,change)
+                            change.engQuizOne = correct/5 * 100
+                            updateDoc(engRef,change)
                         }
                     }
                     document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%"
