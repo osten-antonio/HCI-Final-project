@@ -88,8 +88,6 @@ function loadQuestions(){
                         correct++
                     }
                     cur++
-                    document.getElementById("quiz-progress").style["width"] = cur/5 * 100
-                    getQna(qna,cur)
                     if(cur > 5){
                         cur--
                         if(window.confirm("Do you want to submit?")){
@@ -97,11 +95,14 @@ function loadQuestions(){
                             updateDoc(mathRef,change)
                         }
                     }
+                    document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%"
+                    getQna(qna,cur)
+
                 })
                 document.getElementById("back").addEventListener("click",(event)=>{
                     if(cur!=0){
                         cur--
-                        document.getElementById("quiz-progress").style["width"] = cur/5 * 
+                        document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%"
                         correct--
                     }
                     getQna(qna,cur)
@@ -159,20 +160,21 @@ function loadQuestions(){
                         correct++
                     }
                     cur++
-                    document.getElementById("quiz-progress").style["width"] = cur/5 * 
-                    getQna(qna,cur)
                     if(cur > 5){
                         cur--
                         if(window.confirm("Do you want to submit?")){
-                            change.mathQuizTwo = correct/5 * 100
+                            change.mathQuizOne = correct/5 * 100
                             updateDoc(mathRef,change)
                         }
                     }
+                    document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%"
+                    getQna(qna,cur)
+
                 })
                 document.getElementById("back").addEventListener("click",(event)=>{
                     if(cur!=0){
                         cur--
-                        document.getElementById("quiz-progress").style["width"] = cur/5 * 
+                        document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%" 
                         correct--
                     }
                     getQna(qna,cur)
@@ -231,20 +233,21 @@ function loadQuestions(){
                         correct++
                     }
                     cur++
-                    document.getElementById("quiz-progress").style["width"] = cur/5 * 
-                    getQna(qna,cur)
                     if(cur > 5){
                         cur--
                         if(window.confirm("Do you want to submit?")){
-                            change.mathQuizThree = correct/5 * 100
+                            change.mathQuizOne = correct/5 * 100
                             updateDoc(mathRef,change)
                         }
                     }
+                    document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%" 
+                    getQna(qna,cur)
+
                 })
                 document.getElementById("back").addEventListener("click",(event)=>{
                     if(cur!=0){
                         cur--
-                        document.getElementById("quiz-progress").style["width"] = cur/5 * 
+                        document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%" 
                         correct--
                     }
                     getQna(qna,cur)
