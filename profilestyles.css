@@ -20,6 +20,18 @@ html, body{
   box-sizing: border-box;
 }
 
+#achievements{
+  width: 100%;
+  height: 180px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  color: var(--darkmint);
+  font-weight: bold;
+  gap: 15px;
+  padding:20px;
+}
+
 .progress-bar{
   width: 100%;
   margin:2.5% 0%;

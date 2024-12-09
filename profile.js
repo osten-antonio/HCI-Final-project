@@ -60,20 +60,71 @@ function checkLoggedInProfile(){
       console.error("Error fetching data:", error);
     });
     const userRef = doc(db, "users", loggedInUserId)
-  getDoc(userRef)
-  .then((docSnap) => {
-    if (docSnap.exists()) {
-      const data = docSnap.data();
-      console.log("Datas", data)
-      document.getElementById("name").innerText=data.Name;
-    } else {
-      console.log("No data available.");
+    getDoc(userRef)
+    .then((docSnap) => {
+      if (docSnap.exists()) {
+        const data = docSnap.data();
+        console.log("Datas", data)
+        document.getElementById("name").innerText=data.Name;
+      } else {
+        console.log("No data available.");
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+    const achievementRef = doc(db, "achievements", loggedInUserId);
+    getDoc(achievementRef)
+    .then((docSnap) => {
+      if (docSnap.exists()) {
+        const recentachievementdata = docSnap.data();
+        var achievement_array = [["10day",recentachievementdata["10day"]],["engCompletion",recentachievementdata.engCompletion],["mathCompletion",recentachievementdata.mathCompletion]];
+        const iconMap={
+          "10day":"./assets/10_days.png",
+          "engCompletion":"./assets/eng_achievement.png",
+          "mathCompletion":"./assets/maths_achievement.png"
+        }
+        const labelMap={
+          "10day":"10 Day Streak",
+          "engCompletion":"English Completionist",
+          "mathCompletion":"Math Completionist"
+        }
+        // Appends each achievement
+
+      const achievementIconsContainer = document.getElementById("achievements");
+
+      achievementIconsContainer.innerHTML = "";
+
+      achievement_array.forEach(([key, data]) => {
+
+        const achievementContainer = document.createElement("div");
+        achievementContainer.classList.add("achievement-container");
+        
+
+        const icon = document.createElement("img");
+        icon.src = iconMap[key];
+        icon.alt = key + " achievement icon";
+        icon.width = 100;
+        icon.height = 100;
+
+
+        const label = document.createElement("div");
+        label.classList.add("achievement-label");
+        label.textContent = labelMap[key]; 
+
+        achievementContainer.appendChild(icon);
+        achievementContainer.appendChild(label);
+
+        achievementIconsContainer.appendChild(achievementContainer);
+      });
+      } else {
+        console.log("No data available.");
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
     }
-  })
-  .catch((error) => {
-    console.error("Error fetching data:", error);
-  });
-  }
   else{
     window.location.replace("auth.html")
   }

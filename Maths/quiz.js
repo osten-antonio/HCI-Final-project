@@ -13,10 +13,15 @@ const firebaseConfig = {
   
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const loggedInUserId = localStorage.getItem('loggedInUId')
+const engRef = doc(db,"english",loggedInUserId)
+const bookmarkRef = doc(db,"bookmarks",loggedInUserId)
+const engDocSnap = await getDoc(engRef)
+const bookmarkDocSnap = await getDoc(bookmarkRef)
 
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id'); 
-
+var bookmarks = []
 console.log(id)
 
 function getQna(qna,cur){
@@ -28,12 +33,8 @@ function getQna(qna,cur){
     document.getElementById("E").innerHTML = qna[cur].answer5;
 }
 function loadQuestions(){
-    const loggedInUserId = localStorage.getItem('loggedInUId')
     if(loggedInUserId){
-    }
-    const mathRef = doc(db,"users",loggedInUserId)
-    const mathDocSnap = getDoc(mathRef);
-    if (mathDocSnap.exists()) {
+    if (mathDocSnap.exists() && bookmarkDocSnap.exists()) {
         var change={};
         switch(id){
             case "1":
@@ -83,6 +84,21 @@ function loadQuestions(){
                 ]
 
                 getQna(qna,cur)
+                document.getElementById("bookmark").addEventListener("click",(event)=>{
+                    bookmarks.push({
+                        quizId:id,
+                        questionIndex:cur
+                    })
+                    bookmarks = Array.from(
+                        new Set(bookmarks.map(bookmark => JSON.stringify(bookmark)))
+                    ).map(str => JSON.parse(str));
+
+                    const bookmarkChanges = {
+                        engBookmarks: Array.from(new Set(bookmarkData.engBookmarks.concat(bookmarks))) 
+                    }
+                    console.log(bookmarkChanges)
+                    updateDoc(bookmarkRef,bookmarkChanges)
+                })
                 document.getElementById("next").addEventListener("click",(event)=>{
                     if(document.getElementById(qna[cur].correct).checked == True){
                         correct++
@@ -93,6 +109,7 @@ function loadQuestions(){
                         if(window.confirm("Do you want to submit?")){
                             change.mathQuizOne = correct/5 * 100
                             updateDoc(mathRef,change)
+
                         }
                     }
                     document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%"
@@ -107,6 +124,7 @@ function loadQuestions(){
                     }
                     getQna(qna,cur)
                 })
+
                 break
             case "2":
                 // Second topic
@@ -155,6 +173,21 @@ function loadQuestions(){
                 ]
 
                 getQna(qna,cur)
+                document.getElementById("bookmark").addEventListener("click",(event)=>{
+                    bookmarks.push({
+                        quizId:id,
+                        questionIndex:cur
+                    })
+                    bookmarks = Array.from(
+                        new Set(bookmarks.map(bookmark => JSON.stringify(bookmark)))
+                    ).map(str => JSON.parse(str));
+
+                    const bookmarkChanges = {
+                        engBookmarks: Array.from(new Set(bookmarkData.engBookmarks.concat(bookmarks))) 
+                    }
+                    console.log(bookmarkChanges)
+                    updateDoc(bookmarkRef,bookmarkChanges)
+                })
                 document.getElementById("next").addEventListener("click",(event)=>{
                     if(document.getElementById(qna[cur].correct).checked == True){
                         correct++
@@ -164,7 +197,9 @@ function loadQuestions(){
                         cur--
                         if(window.confirm("Do you want to submit?")){
                             change.mathQuizOne = correct/5 * 100
+
                             updateDoc(mathRef,change)
+
                         }
                     }
                     document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%"
@@ -228,6 +263,21 @@ function loadQuestions(){
                 ]
 
                 getQna(qna,cur)
+                document.getElementById("bookmark").addEventListener("click",(event)=>{
+                    bookmarks.push({
+                        quizId:id,
+                        questionIndex:cur
+                    })
+                    bookmarks = Array.from(
+                        new Set(bookmarks.map(bookmark => JSON.stringify(bookmark)))
+                    ).map(str => JSON.parse(str));
+
+                    const bookmarkChanges = {
+                        engBookmarks: Array.from(new Set(bookmarkData.engBookmarks.concat(bookmarks))) 
+                    }
+                    console.log(bookmarkChanges)
+                    updateDoc(bookmarkRef,bookmarkChanges)
+                })
                 document.getElementById("next").addEventListener("click",(event)=>{
                     if(document.getElementById(qna[cur].correct).checked == True){
                         correct++
@@ -254,7 +304,7 @@ function loadQuestions(){
                 })
                 break
         }
-
+    }
     }
 }
 function load(){

@@ -81,7 +81,7 @@ async function checkLoggedInProfile() {
       if (mathDocSnap.exists()) {
         const mathData = mathDocSnap.data();
         const mathProgress = mathData.overallProgress;
-        document.getElementById("maths-overall").style["width"] = `${(mathProgress * 100) / 80}%`;
+        document.getElementById("maths-overall").style["width"] = `${(mathProgress)}%`;
 
         if (mathProgress >= 100 && !achievementdata.mathCompletion["get"]) {
           alert("Achievement unlocked!\nMaths completion");
@@ -99,7 +99,7 @@ async function checkLoggedInProfile() {
       if (engDocSnap.exists()) {
         const engData = engDocSnap.data();
         const engProgress = engData.overallProgress;
-        document.getElementById("english-overall").style["width"] = `${(engProgress * 100) / 80}%`;
+        document.getElementById("english-overall").style["width"] = `${(engProgress)}%`;
 
         if (engProgress >= 100 && !achievementdata.engCompletion.get) {
           alert("Achievement unlocked!\nEnglish completion");
@@ -197,12 +197,57 @@ async function checkLoggedInProfile() {
           console.log(`total achievement: ${totalAchievement}`);
         }
       }
-
+      document.getElementById("achievementvalue").innerText=totalAchievement;
       // After all data is fetched and logic is applied, update achievements
       change.totalAchievement = totalAchievement;
-      console.log("Achievement updated:", change);
+
       await updateDoc(achievementRef, change);
       console.log("Total achievement updated successfully");
+      
+      const recentachievementdata = achievementdocSnap.data();
+      var achievement_array = [["10day",recentachievementdata["10day"]],["engCompletion",recentachievementdata.engCompletion],["mathCompletion",recentachievementdata.mathCompletion]];
+      achievement_array.sort((a, b) => b[1].dateAchieved.seconds - a[1].dateAchieved.seconds);
+      achievement_array.reverse();
+      const iconMap={
+        "10day":"./assets/10_days.png",
+        "engCompletion":"./assets/eng_achievement.png",
+        "mathCompletion":"./assets/maths_achievement.png"
+      }
+      const labelMap={
+        "10day":"10 Day Streak",
+        "engCompletion":"English Completionist",
+        "mathCompletion":"Math Completionist"
+      }
+
+      // Appends recent achievement
+
+      const achievementIconsContainer = document.getElementById("achievement-icons");
+
+      achievementIconsContainer.innerHTML = "";
+
+      achievement_array.forEach(([key, data]) => {
+
+        const achievementContainer = document.createElement("div");
+        achievementContainer.classList.add("achievement-container");
+        
+
+        const icon = document.createElement("img");
+        icon.src = iconMap[key];
+        icon.alt = key + " achievement icon";
+        icon.width = 100;
+        icon.height = 100;
+
+
+        const label = document.createElement("div");
+        label.classList.add("achievement-label");
+        label.textContent = labelMap[key]; 
+
+        achievementContainer.appendChild(icon);
+        achievementContainer.appendChild(label);
+
+        achievementIconsContainer.appendChild(achievementContainer);
+      });
+      
     } catch (error) {
       console.error("Error processing user data:", error);
     }

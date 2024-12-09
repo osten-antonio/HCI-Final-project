@@ -13,10 +13,15 @@ const firebaseConfig = {
   
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const loggedInUserId = localStorage.getItem('loggedInUId')
+const engRef = doc(db,"english",loggedInUserId)
+const bookmarkRef = doc(db,"bookmarks",loggedInUserId)
+const engDocSnap = await getDoc(engRef)
+const bookmarkDocSnap = await getDoc(bookmarkRef)
 
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id'); 
-
+var bookmarks = [];
 console.log(id)
 
 function getQna(qna,cur){
@@ -28,11 +33,8 @@ function getQna(qna,cur){
     document.getElementById("E").innerHTML = qna[cur].answer5;
 }
 function loadQuestions(){
-    const loggedInUserId = localStorage.getItem('loggedInUId')
     if(loggedInUserId){
-    }
-    const engRef = doc(db,"english",loggedInUserId)
-    const engDocSnap = getDoc(engRef);
+    const bookmarkData = bookmarkDocSnap.data()
     if (engDocSnap) {
         var change={};
         switch(id){
@@ -83,6 +85,24 @@ function loadQuestions(){
                 ]
 
                 getQna(qna,cur)
+                console.log(document.getElementById("bookmark"))
+                document.getElementById("bookmarkbutton").addEventListener("click",(event)=>{
+                    bookmarks.push({
+                        quizId:id,
+                        questionIndex:cur
+                    })
+                    bookmarks = Array.from(
+                        new Set(bookmarks.map(bookmark => JSON.stringify(bookmark)))
+                    ).map(str => JSON.parse(str));
+
+                    const bookmarkChanges = {
+                        engBookmarks: Array.from(new Set(bookmarkData.engBookmarks.concat(bookmarks))) 
+                    }
+                    console.log(bookmarkChanges)
+                    updateDoc(bookmarkRef,bookmarkChanges)
+                })
+      
+                
                 document.getElementById("next").addEventListener("click",(event)=>{
                     console.log(qna[cur].correct)
                     console.log(document.getElementById(qna[cur].correct).checked)
@@ -94,7 +114,9 @@ function loadQuestions(){
                         cur--
                         if(window.confirm("Do you want to submit?")){
                             change.engQuizOne = correct/5 * 100
+
                             updateDoc(engRef,change)
+
                         }
                     }
                     console.log((cur+1/5 * 100).toString() + "%")
@@ -158,6 +180,21 @@ function loadQuestions(){
                 ]
 
                 getQna(qna,cur)
+                document.getElementById("bookmark").addEventListener("click",(event)=>{
+                    bookmarks.push({
+                        quizId:id,
+                        questionIndex:cur
+                    })
+                    bookmarks = Array.from(
+                        new Set(bookmarks.map(bookmark => JSON.stringify(bookmark)))
+                    ).map(str => JSON.parse(str));
+
+                    const bookmarkChanges = {
+                        engBookmarks: Array.from(new Set(bookmarkData.engBookmarks.concat(bookmarks))) 
+                    }
+                    console.log(bookmarkChanges)
+                    updateDoc(bookmarkRef,bookmarkChanges)
+                })
                 document.getElementById("next").addEventListener("click",(event)=>{
                     if(document.getElementById(qna[cur].correct+"choice").checked == True){
                         correct++
@@ -167,7 +204,11 @@ function loadQuestions(){
                         cur--
                         if(window.confirm("Do you want to submit?")){
                             change.engQuizOne = correct/5 * 100
+                            const bookmarkChanges = {
+                                engBookmarks: Array.from(new Set(bookmarkData.engBookmarks.concat(bookmarks))) 
+                            }
                             updateDoc(engRef,change)
+                            updateDoc(bookmarkRef,bookmarkChanges)
                         }
                     }
                     document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%" 
@@ -230,6 +271,21 @@ function loadQuestions(){
                 ]
 
                 getQna(qna,cur)
+                document.getElementById("bookmark").addEventListener("click",(event)=>{
+                    bookmarks.push({
+                        quizId:id,
+                        questionIndex:cur
+                    })
+                    bookmarks = Array.from(
+                        new Set(bookmarks.map(bookmark => JSON.stringify(bookmark)))
+                    ).map(str => JSON.parse(str));
+
+                    const bookmarkChanges = {
+                        engBookmarks: Array.from(new Set(bookmarkData.engBookmarks.concat(bookmarks))) 
+                    }
+                    console.log(bookmarkChanges)
+                    updateDoc(bookmarkRef,bookmarkChanges)
+                })
                 document.getElementById("next").addEventListener("click",(event)=>{
                     if(document.getElementById(qna[cur].correct+"choice").checked == True){
                         correct++
@@ -239,7 +295,11 @@ function loadQuestions(){
                         cur--
                         if(window.confirm("Do you want to submit?")){
                             change.engQuizOne = correct/5 * 100
+                            const bookmarkChanges = {
+                                engBookmarks: Array.from(new Set(bookmarkData.engBookmarks.concat(bookmarks))) 
+                            }
                             updateDoc(engRef,change)
+                            updateDoc(bookmarkRef,bookmarkChanges)
                         }
                     }
                     document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%"
@@ -256,7 +316,7 @@ function loadQuestions(){
                 })
                 break
         }
-
+    }
     }
 }
 function load(){

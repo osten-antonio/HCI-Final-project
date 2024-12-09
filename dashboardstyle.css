@@ -62,6 +62,12 @@ html, body{
 
 #achievement-icons{
     height: 150px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    color: var(--darkmint);
+    font-weight: bold;
+    justify-content: space-evenly;
 }
 
 .achievement{

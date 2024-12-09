@@ -32,6 +32,20 @@ html, body{
     white-space: nowrap;
 }
 
+.progress-bar{
+    width: 100%;
+    margin: 5px;
+    height: 15px;
+    background-color: var(--darkmint);
+    border-radius: 25px;
+}
+
+#progress{
+    background-color: var(--darkyellow);
+    border-radius: 25px;
+    height: 15px;
+}
+
 #returnbutton{
     color: var(--darkmint);
     border: 5px solid var(--darkmint);
@@ -45,6 +59,7 @@ html, body{
 .container {
     display: flex;
     flex-wrap: wrap; 
+    flex: row;
     justify-content: center; 
     gap: 15%; 
 }
