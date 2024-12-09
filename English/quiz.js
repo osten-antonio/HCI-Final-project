@@ -86,7 +86,7 @@ function loadQuestions(){
                 document.getElementById("next").addEventListener("click",(event)=>{
                     console.log(qna[cur].correct)
                     console.log(document.getElementById(qna[cur].correct).checked)
-                    if(document.getElementById(qna[cur].correct).checked == true){
+                    if(document.getElementById(qna[cur].correct+"choice").checked == true){
                         correct++
                     }
                     cur++
@@ -159,7 +159,7 @@ function loadQuestions(){
 
                 getQna(qna,cur)
                 document.getElementById("next").addEventListener("click",(event)=>{
-                    if(document.getElementById(qna[cur].correct).checked == True){
+                    if(document.getElementById(qna[cur].correct+"choice").checked == True){
                         correct++
                     }
                     cur++
@@ -231,7 +231,7 @@ function loadQuestions(){
 
                 getQna(qna,cur)
                 document.getElementById("next").addEventListener("click",(event)=>{
-                    if(document.getElementById(qna[cur].correct).checked == True){
+                    if(document.getElementById(qna[cur].correct+"choice").checked == True){
                         correct++
                     }
                     cur++

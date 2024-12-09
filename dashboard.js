@@ -123,7 +123,7 @@ async function checkLoggedInProfile() {
         for (var i = 0; i < recentArray.length; i++) {
           var temp = regex.exec(recentArray[i]);
       
-          var subject = temp[1] == "Maths" ? "Maths" : "Eng";
+          var subject = temp[1] == "Maths" ? "Maths" : "Eng"; // Add validation
           var topic = typeof temp[4] === 'undefined' ? temp[3] : `${temp[3]}.${temp[4]}`;
 
           // Access topicList and correctly handle the nested topics
