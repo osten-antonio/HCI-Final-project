@@ -27,7 +27,8 @@ function checkLoggedInProfile(){
         const data = docSnap.data();
         console.log("Datas", data)
         console.log("Overall progress:", data.overallProgress);
-        document.getElementById("maths-overall").style["width"] = (data.overallProgress * 100/80)+"%";
+        document.getElementById("maths-overall").style["width"] = (data.overallProgress)+"%";
+        document.getElementById("maths-overall-label").innerText = (data.overallProgress)+"%";
       } else {
         console.log("No data available.");
       }
@@ -41,7 +42,8 @@ function checkLoggedInProfile(){
         const data = docSnap.data();
         console.log("Datas", data)
         console.log("Overall progress:", data.overallProgress);
-        document.getElementById("english-overall").style["width"] = (data.overallProgress * 100/80)+"%";
+        document.getElementById("english-overall").style["width"] = (data.overallProgress)+"%";
+        document.getElementById("eng-overall-label").innerText = (data.overallProgress)+"%";
       } else {
         console.log("No data available.");
       }

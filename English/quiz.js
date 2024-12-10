@@ -43,7 +43,7 @@ function loadQuestions(){
                 var correct = 0;
                 var cur=0;
                 var qna = [{
-                    question:"I didn't ____ what she said.",
+                    question:"1. I didn't ____ what she said.",
                     answer1:"A. here",
                     answer2:"B. hear",
                     answer3:"C. hare",
@@ -51,7 +51,7 @@ function loadQuestions(){
                     answer5:"E. horse",
                     correct:"B"},
                     {
-                    question:"They forgot to take ____ printouts.",
+                    question:"2. They forgot to take ____ printouts.",
                     answer1:"A. they're",
                     answer2:"B. there",
                     answer3:"C. their",
@@ -59,7 +59,7 @@ function loadQuestions(){
                     answer5:"E. deer",
                     correct:"C"},
                     {
-                    question:"The plural of 'church' is ....",
+                    question:"3. The plural of 'church' is ....",
                     answer1:"A. church",
                     answer2:"B. churches",
                     answer3:"C. church's",
@@ -67,7 +67,7 @@ function loadQuestions(){
                     answer5:"E. churchee",
                     correct:"B"},
                     {
-                    question:"The teacher marked their ______ for the answer with a red pen.",
+                    question:"4. The teacher marked their ______ for the answer with a red pen.",
                     answer1:"A. quizzes",
                     answer2:"B. quiz",
                     answer3:"C. quizs",
@@ -75,7 +75,7 @@ function loadQuestions(){
                     answer5:"E. quizzi",
                     correct:"A"},
                     {
-                    question:"What is the best synonym for choice:",
+                    question:"5. What is the best synonym for choice:",
                     answer1:"A. price",
                     answer2:"B. way",
                     answer3:"C. stuff",
@@ -138,7 +138,7 @@ function loadQuestions(){
                 var correct = 0;
                 var cur=0;
                 var qna = [{
-                    question:"This is the place _________ we stayed last time we visited.",
+                    question:"1. This is the place _________ we stayed last time we visited.",
                     answer1:"A. when",
                     answer2:"B. where",
                     answer3:"C. what",
@@ -146,7 +146,7 @@ function loadQuestions(){
                     answer5:"E. whose",
                     correct:"B"},
                     {
-                    question:"You won't pass the test _________ you study.",
+                    question:"2. You won't pass the test _________ you study.",
                     answer1:"A. what",
                     answer2:"B. when",
                     answer3:"C. unless",
@@ -154,7 +154,7 @@ function loadQuestions(){
                     answer5:"E. maybe",
                     correct:"C"},
                     {
-                    question:"My grandfather walks extremely slowly. The adverb 'extremely' modifies:",
+                    question:"3. My grandfather walks extremely slowly. The adverb 'extremely' modifies:",
                     answer1:"A. verb",
                     answer2:"B. adverb",
                     answer3:"C. noun",
@@ -162,7 +162,7 @@ function loadQuestions(){
                     answer5:"E. pronoun",
                     correct:"B"},
                     {
-                    question:"We rarely go to the movies on the weekends. The adverb 'rarely' modifies:",
+                    question:"4. We rarely go to the movies on the weekends. The adverb 'rarely' modifies:",
                     answer1:"A. verb",
                     answer2:"B. adverb",
                     answer3:"C. noun",
@@ -170,7 +170,7 @@ function loadQuestions(){
                     answer5:"E. pronoun",
                     correct:"A"},
                     {
-                    question:"We saw _____ animals at the zoo.",
+                    question:"5. We saw _____ animals at the zoo.",
                     answer1:"A. of",
                     answer2:"B. number",
                     answer3:"C. much",
@@ -229,7 +229,7 @@ function loadQuestions(){
                 var correct = 0;
                 var cur=0;
                 var qna = [{
-                    question:"They climbed ___ the highest hill they could find.",
+                    question:"1. They climbed ___ the highest hill they could find.",
                     answer1:"A. up",
                     answer2:"B. under",
                     answer3:"C. for",
@@ -237,7 +237,7 @@ function loadQuestions(){
                     answer5:"E. of",
                     correct:"A"},
                     {
-                    question:"We have to get ___ the bus at the next stop.",
+                    question:"2. We have to get ___ the bus at the next stop.",
                     answer1:"A. from",
                     answer2:"B. down",
                     answer3:"C. off",
@@ -245,7 +245,7 @@ function loadQuestions(){
                     answer5:"E. up",
                     correct:"C"},
                     {
-                    question:"I was born ___ May.",
+                    question:"3. I was born ___ May.",
                     answer1:"A. on",
                     answer2:"B. in",
                     answer3:"C. at",
@@ -253,7 +253,7 @@ function loadQuestions(){
                     answer5:"E. under",
                     correct:"B"},
                     {
-                    question:"The farmer wakes up ___ sunrise.",
+                    question:"4. The farmer wakes up ___ sunrise.",
                     answer1:"A. at",
                     answer2:"B. in",
                     answer3:"C. on",
@@ -261,7 +261,7 @@ function loadQuestions(){
                     answer5:"E. over",
                     correct:"A"},
                     {
-                    question:"Every morning I get ___ my bicycle and go to school.",
+                    question:"5. Every morning I get ___ my bicycle and go to school.",
                     answer1:"A. over",
                     answer2:"B. under",
                     answer3:"C. in",

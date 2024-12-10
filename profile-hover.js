@@ -65,6 +65,3 @@ window.addEventListener('DOMContentLoaded', () => {
   checkLoggedInProfile()
 })
 
-function test(){
-  console.log("works")
-}

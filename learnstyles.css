@@ -1,23 +1,30 @@
 :root{
     --primemint: #34CFB5;
-    --primeyellow: #FFBB00;
+    --primeyellow: #ffe932;
     --darkmint: #05525B;
-    --darkyellow: #CCC965;
+    --darkyellow: #FFBB00;
     --accentyellow:#f2dfae;
-    --confirm:#008000;
-    --confirmhover:#50C878;
+    --cloudblue:#C9EBE3;
+    --secondblue:#6ADDFF;
+    --seconddarkblue:#1A695C;
+    --mainbg:#F3E0B5;
+    --bgyellow:#D5B177;
+    --bgblue:#6A9AB9;
+    --bggreen:#7BBF9E;
+    --bgwhite:#E1D2B8;
+    --bgbrown:#B89B6A;
+    --bgpeach:#F0B6A0;
 }
 
 
 
 html, body{
     margin: 0;
-    background-image: linear-gradient(var(--accentyellow),white);
     height: 100vh;
     position:relative;
+    overflow-x: hidden;
 }
-
-
+  
 *{
     box-sizing: border-box;
     margin: 0;
@@ -33,7 +40,7 @@ html, body{
 }
 
 .progress-bar{
-    width: 100%;
+    width: 99%;
     margin: 5px;
     height: 15px;
     background-color: var(--darkmint);
@@ -41,7 +48,8 @@ html, body{
 }
 
 #progress{
-    background-color: var(--darkyellow);
+    background-color: var(--primeyellow);
+    border: 2px solid var(--darkmint);
     border-radius: 25px;
     height: 15px;
 }

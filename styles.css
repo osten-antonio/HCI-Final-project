@@ -25,16 +25,16 @@ body,html{
 .accordion {
     background-color: var(--darkyellow);
     color: var(--darkmint);
+    border: 2px solid var(--accentyellow);
     cursor: pointer;
     padding: 18px;
     width: 100%;
     text-align: left;
-    border: none;
     border-radius: 25px;
     outline: none;
-    transition: 0.4s;
     font-weight: bold;
-    margin-top: 10px
+    margin-top: 10px;
+    transition: 0.4s;
   }
   
 
@@ -42,14 +42,6 @@ body,html{
     background-color: var(--accentyellow);
 }
 
-
-.panel {
-    padding: 0 18px;
-    background-color: var(--primeyellow);
-    display: none;
-    overflow: hidden;
-    color: var(--darkmint);
-}
 .accordion:after {
     content: '+'; 
     font-size: 13px;
@@ -63,7 +55,7 @@ body,html{
   }
 
 .progress-bar{
-    width: 100%;
+    width: 80%;
     margin-left:10%;
     margin-right: 50%;
     height: 15px;
@@ -97,9 +89,23 @@ body,html{
     padding-left: 40px;
     padding-top: 20px;
     flex-wrap: wrap-reverse; 
-    background: var(--primemint);
-    background: linear-gradient(45deg, var(--primemint) 0%, var(--secondblue) 100%); 
+    background: linear-gradient(-45deg, var(--secondblue), var(--primemint), #23a6d5, #23d5ab);
+    background-size: 300% 300%;
+    animation: gradient 10s ease infinite;
+    height: 100vh;
 }
+
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 
 .text-content{
     flex: 1; 
@@ -134,14 +140,14 @@ body,html{
     font-size: clamp(1.3rem, 4.5vw, 6vw);
     color: var(--darkmint);
     padding-right: 10px;
-    text-shadow: 2px 2px 0px #FFFFFF;
+    text-shadow: 2px 2px 4px #FFFFFF;
 
 }
 #subtitle{
     font-size:  clamp(1.3rem, 2vw, 3vw);
     color: var(--darkmint);
     padding-right: 10px;
-    text-shadow: 2px 2px 0px #FFFFFF;
+    text-shadow: 2px 2px 4px #FFFFFF;
 }
 
 #mainbutton{
@@ -201,7 +207,8 @@ body,html{
 }
 
 .cloudseperator {
-    background: linear-gradient(45deg, var(--primemint) 0%, var(--secondblue) 100%); 
+    background-color: var(--secondblue);
+    animation: gradient 20s ease infinite;
     width: 100%;
     height: 15vw;
     display: flex;
@@ -325,8 +332,8 @@ body,html{
 .webdescription{
     color: var(--darkmint);
     z-index: 4;
-    margin-left: 5%;
-    width: 60%;
+    margin-left: 15%;
+    width: 50%;
     text-align: justify;
     
 }
@@ -337,6 +344,7 @@ body,html{
     flex-wrap: wrap;
     align-items: center;
     width: 100%;
+    height: auto;
     justify-content: space-between;
     z-index: 3;
     position: relative;
@@ -368,44 +376,7 @@ body,html{
     box-sizing: border-box; 
 }
 
-.accordionc {
-    background-color: gainsboro;
-    color: var(--darkmint);
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    border-radius: 25px 25px 25px 25px;
-    outline: none;
-    transition: 0.4s;
-    font-weight: bold;
-    margin-top: 10px;
-    box-sizing: border-box; 
-}
 
-.accordionc:hover,.active {
-    background-color: whitesmoke;
-}
-
-.panelc {
-    padding: 0 18px;
-    background-color: gainsboro;
-    border-radius: 25px 25px 25px 25px;
-    display: none;
-    overflow: hidden;
-    color: var(--darkmint);
-    width: 100%; 
-    box-sizing: border-box;
-}
-
-.accordionc:after {
-    content: '+'; 
-    font-size: 13px;
-    color: #777;
-    float: right;
-    margin-left: 5px;
-}
 
 .courselink {
     width: 50%;
@@ -421,17 +392,10 @@ body,html{
     text-align: center;
     width: 20vw;  
     min-width: 220px; 
-    height: auto;
-    min-height: 320px;
-    max-height: 480px;
+    min-height: 340px;
     cursor: pointer;
-    transition: transform 0.2s;
     padding-bottom: 20px;
     margin: 10px 0;
-}
-
-.coursebutton:hover {
-    transform: scale(1.05);
 }
 
 .buttonimage {
@@ -581,7 +545,6 @@ body,html{
 #ocean{
     background: var(--seconddarkblue);
     width: 100%;
-    height: 7vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -589,25 +552,6 @@ body,html{
     overflow: hidden;
 }
 
-.waves{
-    background: var(--darkmint);
-    height: 15vw; 
-    width: 15vw;
-    border-radius: 42% 50% 0 0;
-    position: absolute;
-    z-index: 1;
-    border: 2px solid #FFFFFF;
-}
-
-.waves:nth-child(1) { width: 20vw; height: 20vw; top: 0; left: 0; }
-.waves:nth-child(2) { width: 20vw; height: 20vw; top: 0; left: 10%; border-radius: 45% 50% 0 0;}
-.waves:nth-child(3) { width: 20vw; height: 20vw; top: 0; left: 25%; border-radius: 51% 50% 0 0;}
-.waves:nth-child(4) { width: 20vw; height: 20vw; top: 0; left: 50%; border-radius: 51% 50% 0 0;}
-.waves:nth-child(5) { width: 20vw; height: 20vw; top: 0; left: 40%; border-radius: 51% 50% 0 0;}
-.waves:nth-child(6) { width: 20vw; height: 20vw; top: 0; left: 63%; border-radius: 51% 50% 0 0;}
-.waves:nth-child(7) { width: 20vw; height: 20vw; top: 0; left: 80%; border-radius: 51% 50% 0 0;}
-.waves:nth-child(8) { width: 20vw; height: 20vw; top: 0; left: 90%; border-radius: 51% 50% 0 0;}
-.waves:nth-child(9) { width: 20vw; height: 20vw; top: 0; left: -10%; border-radius: 51% 50% 0 0;}
 
 #rightforyou{
     background-image: linear-gradient(var(--darkmint),var(--seconddarkblue));
@@ -671,7 +615,7 @@ body,html{
     height: 500px;
     display: flex;
     overflow-x: auto;
-    gap: 5px;
+    gap: 5%;
     flex-shrink: 0;
 }
 
@@ -754,3 +698,53 @@ body,html{
 .footer-col .newsletter::placeholder{
     color: var(--seconddarkblue);
 }
+
+.waves {
+    position:relative;
+    width: 100%;
+    height:15vh;
+    margin-bottom:-7px; /*Fix for safari gap*/
+    min-height:100px;
+    max-height:150px;
+  }
+
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+  }
+  .parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+  }
+  .parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+  }
+  .parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+  }
+  .parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+  }
+  @keyframes move-forever {
+    0% {
+     transform: translate3d(-90px,0,0);
+    }
+    100% { 
+      transform: translate3d(85px,0,0);
+    }
+  }
+  /*Shrinking for mobile*/
+  @media (max-width: 768px) {
+    .waves {
+      height:40px;
+      min-height:40px;
+    }
+    .content {
+      height:30vh;
+    }
+    h1 {
+      font-size:24px;
+    }
+  }

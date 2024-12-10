@@ -82,7 +82,7 @@ async function checkLoggedInProfile() {
         const mathData = mathDocSnap.data();
         const mathProgress = mathData.overallProgress;
         document.getElementById("maths-overall").style["width"] = `${(mathProgress)}%`;
-
+        document.getElementById("maths-overall-label").innerText = `${(mathProgress)}%`;
         if (mathProgress >= 100 && !achievementdata.mathCompletion["get"]) {
           alert("Achievement unlocked!\nMaths completion");
           change.mathCompletion = {
@@ -100,7 +100,7 @@ async function checkLoggedInProfile() {
         const engData = engDocSnap.data();
         const engProgress = engData.overallProgress;
         document.getElementById("english-overall").style["width"] = `${(engProgress)}%`;
-
+        document.getElementById("eng-overall-label").innerText = `${(engProgress)}%`;
         if (engProgress >= 100 && !achievementdata.engCompletion.get) {
           alert("Achievement unlocked!\nEnglish completion");
           change.engCompletion = {

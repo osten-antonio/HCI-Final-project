@@ -10,7 +10,6 @@
 
 html, body{
     margin: 0;
-    background-image: linear-gradient(var(--accentyellow),white);
     position:relative;
 }
 
@@ -24,6 +23,7 @@ html, body{
 
 #quiz-progress{
     background-color: var(--darkyellow);
+    border: 2px solid var(--darkmint);
     border-radius: 25px;
     height: 15px;
 }

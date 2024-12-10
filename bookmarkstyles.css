@@ -6,12 +6,12 @@
     --accentyellow:#f2dfae;
     --confirm:#008000;
     --confirmhover:#50C878;
+    --red:#F37C7C;
 }
 
 
 html, body{
     margin: 0;
-    background-image: linear-gradient(var(--accentyellow),white);
     position:relative;
 }
 
@@ -22,14 +22,32 @@ html, body{
 }
 
 .bookmark-button{
-  width: 100%;
+  width: 95%;
   border-radius: 25px;
-  margin:2% auto 2% auto;
+  margin:1.5% -2% 1% auto;
   color: var(--darkmint);
   background-color: var(--primemint);
   border: 5px solid var(--darkmint);
-  height: 70px;
+  height: 75px;
 }
+
+
+.delete-button{
+  width: 80px;
+  height: 100px;
+  border-radius: 10px;
+  background-color: var(--red);
+  border: 5px solid var(--darkmint);
+  z-index: 5;
+
+  margin-top: 0.5%;
+}
+
+.bookmark-container {
+  position: relative;
+}
+
+
 
 .bookmarklabel{
     color: var(--darkmint);
@@ -68,13 +86,6 @@ html, body{
     background-color: var(--accentyellow);
 }
 
-
-.panel {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
-    color: var(--darkmint);
-}
 .accordion:after {
     content: '+'; 
     font-size: 13px;
@@ -87,32 +98,3 @@ html, body{
     content: "\2796";
   }
 
-  .accordionc {
-    background-color: var(--primemint);
-    color: var(--darkmint);
-    border: 5px solid var(--darkmint);
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-    border-radius: 25px;
-    outline: none;
-    transition: 0.4s;
-    font-weight: bold;
-    margin-top: 10px
-  }
-  
-
-.active, .accordionc:hover {
-    background-color: var(--accentyellow);
-}
-
-
-
-.accordionc:after {
-    content: '+'; 
-    font-size: 13px;
-    color: #777;
-    float: right;
-    margin-left: 5px;
-  }
