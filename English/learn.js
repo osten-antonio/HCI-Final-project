@@ -82,7 +82,6 @@ function writeLearn(){
     }
     switch(topic[0]){
         case "1":
-            
             switch(topic[1]){
                 case "1": // TOPIC 1.1
                     var content=[{

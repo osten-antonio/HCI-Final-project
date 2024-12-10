@@ -12,7 +12,6 @@
 html, body{
     margin: 0;
     background-image: linear-gradient(var(--accentyellow),white);
-    height: 100vh;
     position:relative;
 }
 
@@ -22,6 +21,15 @@ html, body{
     padding: 0;
 }
 
+.bookmark-button{
+  width: 100%;
+  border-radius: 25px;
+  margin:2% auto 2% auto;
+  color: var(--darkmint);
+  background-color: var(--primemint);
+  border: 5px solid var(--darkmint);
+  height: 70px;
+}
 
 .bookmarklabel{
     color: var(--darkmint);

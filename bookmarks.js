@@ -1,5 +1,4 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
 import{getFirestore, setDoc, doc, getDoc, updateDoc} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js"
 
 const firebaseConfig = {
@@ -30,6 +29,8 @@ function createBookmarkButtons(bookmarks, panelId, subject) {
           window.location.href = url;
       };
       
+      button.classList.add("bookmark-button")
+      button.classList.add("mediumfont")
 
       //CONTINUE HERE, STyle Buttons
 

@@ -14,9 +14,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const loggedInUserId = localStorage.getItem('loggedInUId')
-const engRef = doc(db,"english",loggedInUserId)
+const mathRef = doc(db,"maths",loggedInUserId)
 const bookmarkRef = doc(db,"bookmarks",loggedInUserId)
-const engDocSnap = await getDoc(engRef)
+const mathDocSnap = await getDoc(mathRef)
 const bookmarkDocSnap = await getDoc(bookmarkRef)
 
 const urlParams = new URLSearchParams(window.location.search);
