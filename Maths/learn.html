@@ -10,6 +10,14 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="background-container">
+      <div class="shape1"></div>
+      <div class="shape2"></div>
+      <div class="shape3"></div>
+      <div class="shape4"></div>
+      <div class="shape5"></div>
+      <div class="shape6"></div>
+    </div>
     <div class="header">
         <div class="logo">
             <img src="../4069_gray_square.png" class="logoimg" alt="Logo">
@@ -49,23 +57,25 @@
         <a href="learnsubtopic.html" id="return-button-link">
             <button id="returnbutton">Return</button>
         </a>
-        <p class="bigfont bookmarklabel">Subtopic</p>
+        <p class="bigfont bookmarklabel" id="subtitle">Subtopic</p>
     </div>
-    <div style="display: flex; width: 100%; background-color: black;">
-        <p style="color: white;">Progress placeholder</p>
+    <div class="progress-bar">
+      <div class="mediumfont" id="progress"></div>
     </div>
-    <div style="display: flex; width: 100%; background-color: darkgray; height: 20vh;">
+    <div style="display: flex; width: 100%; background-color: darkgray; height: 20vh;" id = "content">
         <p style="color: white;">Content</p>
     </div>
     <div class="container">
-        <button class="lbutton back">Back</button>
-        <p class="regularfont" id="explanation">
+        <button class="lbutton back" id="back">Back</button>
+        <div class="regularfont" id="explanation">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid quod ipsa maiores sit repellendus pariatur eaque recusandae ut, vero ad. Ab sunt quae et vero assumenda odio. Natus, soluta molestiae.
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur ipsam maxime deleniti, eius magni voluptatibus sint, et incidunt ratione rem maiores quisquam ipsum culpa dolor laborum debitis commodi iusto animi!
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad provident sequi quasi, dolor optio porro tempora sint corrupti voluptatum, praesentium tempore eum, enim laborum! Maxime vero veritatis voluptatem odit cupiditate.
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt exercitationem perspiciatis delectus unde, sunt dolorem saepe adipisci cumque impedit perferendis blanditiis ex quos facilis, libero natus. Numquam quia dicta iure!
-        </p>
-        <button class="lbutton next">Next</button>
+        </div>
+        <a id="nextLink" style="    display: inline-flex;     order: 2; ">
+        <button class="lbutton next" id="next">Next</button>
+        </a>
     </div>
 
     <footer style="margin-top: 5%;">
@@ -118,7 +128,7 @@
         </div>
     </footer>
     <script type="module" src="../profile-hover.js"></script>
-    <script src="learn.js"></script>
+    <script type="module" src="learn.js"></script>
     <script type="module" src="../recent.js"></script>
 </body>
 </html>

@@ -1,5 +1,4 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
 import{getFirestore, setDoc, doc, getDoc, updateDoc} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js"
 
 const firebaseConfig = {
@@ -27,6 +26,7 @@ function checkLoggedInProfile(){
         const data = docSnap.data();
         console.log("Datas", data)
         console.log("Overall progress:", data.overallProgress);
+        document.getElementById("maths-percentage").innerText= (data.overallProgress)+"%";
         document.getElementById("maths-1").style["width"] = (data.mathTopicOne)+"%";
         document.getElementById("maths-1").textContent = "Topic One "+ data.mathTopicOne +"%";
         document.getElementById("maths-2").style["width"] = (data.mathTopicTwo)+"%";
@@ -46,6 +46,7 @@ function checkLoggedInProfile(){
         const data = docSnap.data();
         console.log("Datas", data)
         console.log("Overall progress:", data.overallProgress);
+        document.getElementById("eng-percentage").innerText= (data.overallProgress)+"%";
         document.getElementById("english-1").style["width"] = (data.engTopicOne)+"%";
         document.getElementById("english-1").textContent = "Topic One "+ data.engTopicOne +"%";
         document.getElementById("english-2").style["width"] = (data.engTopicTwo)+"%";

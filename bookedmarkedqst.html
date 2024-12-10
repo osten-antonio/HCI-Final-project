@@ -10,6 +10,14 @@
     <title>Document</title>
 </head>
 <body>
+  <div class="background-container">
+    <div class="shape1"></div>
+    <div class="shape2"></div>
+    <div class="shape3"></div>
+    <div class="shape4"></div>
+    <div class="shape5"></div>
+    <div class="shape6"></div>
+  </div>
     <div class="header">
         <div class="logo">
             <img src="4069_gray_square.png" class="logoimg" alt="Logo">
@@ -47,22 +55,22 @@
     </div>
     <div id="container">
         <div style="display: flex;align-items: center; justify-content: start; flex-wrap: wrap; width: 100%;gap: 50px; padding: 2% 10% 10% 2%;">
-            <a>
+            <a href="bookmarks.html">
                 <button id="returnbutton">Return</button>
             </a>
-            <p class="bigfont bookmarklabel">Question N</p>
+            <p class="bigfont bookmarklabel" id="number">Question N</p>
         </div>
         <div class="questioncontainer">
-            <p class="bigfont questionlabel">Question?</p>
+            <p class="bigfont questionlabel" id="question">Question?</p>
             <form id="questionform">
                 <div class="choices">
-                    <label class="mediumfont"><input type="radio" name="choice" value="A"> A. Answer</label>
-                    <label class="mediumfont"><input type="radio" name="choice" value="B"> B. Answer</label>
-                    <label class="mediumfont"><input type="radio" name="choice" value="C"> C. Answer</label>
-                    <label class="mediumfont"><input type="radio" name="choice" value="D"> D. Answer</label>
-                    <label class="mediumfont"><input type="radio" name="choice" value="E"> E. Answer</label>
+                    <label class="mediumfont" style="display: flex; flex-direction: row; gap: 10px;"><input type="radio" name="choice" id="Achoice" value="A"><p id = "A"> A. Answer </p></label>
+                    <label class="mediumfont" style="display: flex; flex-direction: row; gap: 10px;"><input type="radio" name="choice" id="Bchoice" value="B"><p id = "B"> B. Answer </p></label>
+                    <label class="mediumfont" style="display: flex; flex-direction: row; gap: 10px;"><input type="radio" name="choice" id="Cchoice" value="C"><p id = "C"> C. Answer </p></label>
+                    <label class="mediumfont" style="display: flex; flex-direction: row; gap: 10px;"><input type="radio" name="choice" id="Dchoice" value="D"><p id = "D"> D. Answer </p></label>
+                    <label class="mediumfont" style="display: flex; flex-direction: row; gap: 10px;"><input type="radio" name="choice" id="Echoice" value="E"><p id = "E"> E. Answer </p></label>
                 </div>
-                <button type="button" class="mediumfont checkbutton">Check</button>
+                <button type="button" class="mediumfont checkbutton" id="check">Check</button>
             </form>
         </div>
 
@@ -116,8 +124,9 @@
           </div>
         </div>
     </footer>
-    
-    <script src="homestyles.js"></script>
+    <script src="bookmarkqst.js"></script>
+    <script type="module" src="homestyles.js"></script>
     <script type="module" src="profile-hover.js"></script>
+
 </body>
 </html>

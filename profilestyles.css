@@ -11,7 +11,6 @@
 
 html, body{
     margin: 0;
-    background-image: linear-gradient(var(--accentyellow),white);
 }
 
 *{
@@ -54,7 +53,7 @@ html, body{
 
 .accordion {
     background-color: var(--primeyellow);
-
+    box-shadow: 0px 0px 11px 0px rgba(5,82,91,1);
     color: var(--darkmint);
     cursor: pointer;
     padding: 18px;
@@ -74,13 +73,6 @@ html, body{
     background-color: var(--accentyellow);
 }
 
-
-.panel {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
-    color: var(--darkmint);
-}
 .accordion:after {
 
     content: '+'; 
@@ -170,10 +162,14 @@ html, body{
   font-size: clamp(0.9rem, 1.5vw, 2.3vw);;
 }
 
-#name{
+#name, #english-1, #english-2, #english-3, #maths-1, #maths-2, #maths-3{
   color: var(--darkmint);
   font-weight: bold;
   margin-right: 5px;
+}
+.course-title{
+  color: var(--darkmint);
+  font-weight: bolder;
 }
 
 .subject-seperator{
@@ -182,4 +178,6 @@ html, body{
   border: 5px solid var(--darkmint);
   border-radius: 25px;
   padding: 2%;
+  box-shadow: 0px 0px 11px 0px rgba(5,82,91,1);
 }
+

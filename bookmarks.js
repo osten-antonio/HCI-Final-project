@@ -11,6 +11,19 @@ const firebaseConfig = {
   measurementId: "G-RFYWMXZBTT"
 };
 
+const topicList = {
+    "English":{
+      1:"Spelling",
+      2:"Grammar",
+      3:"Prepositions",
+    },
+    "Maths":{
+    1:"Operations",
+    2:"Geometry",
+    3:"Fractions",
+  },
+  }
+
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const loggedInUserId=localStorage.getItem('loggedInUId');
@@ -19,23 +32,33 @@ const loggedInUserId=localStorage.getItem('loggedInUId');
 function createBookmarkButtons(bookmarks, panelId, subject) {
   const panel = document.getElementById(panelId);
 
-  bookmarks.forEach(bookmark => {
-      console.log("Created")
-      const button = document.createElement('button');
-      button.textContent = `Go to Quiz ${bookmark.quizId}, Question ${bookmark.questionIndex}`;
-      
-      button.onclick = () => {
-          const url = `bookedmarkedqst.html?subject=${subject}&quizId=${bookmark.quizId}&questionIndex=${bookmark.questionIndex}`; 
-          window.location.href = url;
-      };
-      
-      button.classList.add("bookmark-button")
-      button.classList.add("mediumfont")
+    bookmarks.forEach(bookmark => {
 
-      //CONTINUE HERE, STyle Buttons
+    const container = document.createElement('div');
+    
+    const button = document.createElement('button');
+    button.textContent = `${subject} | ${topicList[subject][Number(bookmark.quizId)]} | Number ${bookmark.questionIndex+1}`;
+    button.onclick = () => {
+        const url = `bookedmarkedqst.html?subject=${subject}&quizId=${bookmark.quizId}&questionIndex=${bookmark.questionIndex}`; 
+        window.location.href = url;
+    };
+    console.log(subject)
+    button.classList.add("bookmark-button");
+    button.classList.add("mediumfont");
+    
+    const deleteButton = document.createElement('button');
+    deleteButton.id = 'delete';
+    deleteButton.innerHTML = `<i class="material-icons" style="font-size:36px;color:#05525B;">delete</i>`;
+    deleteButton.classList.add('delete-button');
+    deleteButton.setAttribute('key',`${subject}.${bookmark.quizId}.${bookmark.questionIndex}`)
+    
+    container.appendChild(button);
+    container.appendChild(deleteButton);
 
-      panel.appendChild(button);
-  });
+    panel.appendChild(container);
+    });
+
+
 }
 
 function checkLoggedInProfile(){
@@ -50,10 +73,10 @@ function checkLoggedInProfile(){
                 console.log(englishBookmarks)
                 console.log(!(englishBookmarks === undefined || englishBookmarks.length == 0))
                 if(!(englishBookmarks === undefined || englishBookmarks.length == 0)){
-                    createBookmarkButtons(englishBookmarks, 'eng-panel', 'english');
+                    createBookmarkButtons(englishBookmarks, 'eng-panel', 'English');
                 }
                 if(!(mathsBookmarks === undefined || mathsBookmarks.length == 0)){
-                    createBookmarkButtons(mathsBookmarks, 'eng-panel', 'english');
+                    createBookmarkButtons(mathsBookmarks, 'eng-panel', 'Maths');
                 }
 
             } else{

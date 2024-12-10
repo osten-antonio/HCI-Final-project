@@ -10,7 +10,7 @@
 
     <script type="module" src="homemodule.js"></script>
 </head>
-<body>
+<body style="background-color: white;">
 
     <div class="main">
         <div class="text-content">
@@ -70,7 +70,7 @@
     </div>
     <div id="Courses">
         <p class="webdescription regularfont">
-            At Learningate, we believe learning English and Maths should be engaging, accessible, and tailored to each student's needs. Our app adapts to your pace, offering personalized lessons and exercises that ensure consistent progress. With interactive content like quizzes and games, we make learning both subjects enjoyable and effective, moving away from traditional textbooks. Developed by education experts, our curriculum builds a solid foundation, reinforcing key concepts over time. Real-time progress tracking helps you stay on top of your goals, while 24/7 accessibility allows you to learn at your convenience. Plus, you'll have access to a supportive community of learners and experts to motivate you along the way. Whether you're mastering equations or perfecting grammar, Learningate is here to guide you on a fun, rewarding learning journey.
+            At Learningate, we believe learning English and Maths should be engaging, accessible, and tailored to each student's needs. Our app adapts to your pace, offering personalized lessons and exercises that ensure consistent progress. With interactive content like quizzes and games, we make learning both subjects enjoyable and effective, moving away from traditional textbooks. Our curriculum builds a solid foundation, reinforcing key concepts over time. Real-time progress tracking helps you stay on top of your goals, while 24/7 accessibility allows you to learn at your convenience. Plus, you'll have access to a supportive community of learners and experts to motivate you along the way. Whether you're mastering equations or perfecting grammar, Learningate is here to guide you on a fun, rewarding learning journey.
 
 
 
@@ -89,31 +89,25 @@
     <div id="FAQ">
         <div class="coursedivider">
             <a href="./Maths/selector.html"" class="courselink">
-                <div class="coursebutton">
+                <div class="coursebutton raise">
                     <img src="https://flat-icons.com/wp-content/uploads/2022/09/Math-Mathematics-Icon-Set-Featured-Image.png" class="buttonimage">
                     <p class="mediumfont coursename">Maths</p>
                     <div class="progress-bar">
                         <div class="mediumfont" id="maths-overall"></div>
                     </div>
-                    <p class="regularfont coursename"><u>Last topic</u></p>
-                    <div class="progress-bar">
-                        <div class="mediumfont" id="maths-last"></div>
-                    </div>
+                    <p class="mediumfont coursename" style="float:right; padding-right: 10%;" id="maths-overall-label">n%</p>
                 </div>
             </a>
         </div>
         <div class="coursedivider">
             <a href="./English/selector.html"" class="courselink">
-                <div class="coursebutton">
+                <div class="coursebutton raise">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuceyEbaXyE60-ms3OqDsLDauhOymmUVRz0A&s" class="buttonimage">
                     <p class="mediumfont coursename">English</p>
                     <div class="progress-bar">
                         <div class="mediumfont" id="english-overall"></div>
                     </div>
-                    <p class="regularfont coursename"><u>Last topic</u></p>
-                    <div class="progress-bar">
-                        <div class="mediumfont" id="english-last"></div>
-                    </div>
+                    <p class="mediumfont coursename" style="float:right; padding-right: 10%;" id="eng-overall-label">n%</p>
                 </div>
             </a>
         </div>
@@ -148,8 +142,8 @@
     <div id="coursestructure">
         <!-- TODO: Change font color  -->
         <div class="coursestructurediv">
-            <button class="mediumfont accordionc" style="padding: 10px;">English</button>
-            <div class="regularfont panelc">
+            <button class="mediumfont accordion raise" style="padding: 10px; background-color: gainsboro; border: 2px solid grey;">English</button>
+            <div class="regularfont panel" style="color:#05525B;">
               <p>Spelling</p>
               <p class="smallfont">Homophones</p>
               <p class="smallfont">Regular and Irregular Plurals</p>
@@ -165,8 +159,8 @@
             </div>
         </div>
         <div class="coursestructurediv">
-            <button class="mediumfont accordionc" style="padding: 10px;">Maths</button>
-            <div class="regularfont panelc">
+            <button class="mediumfont accordion raise" style="padding: 10px; background-color: gainsboro; border: 2px solid grey;">Maths</button>
+            <div class="regularfont panel" style="color:#05525B;">
               <p>Operations</p>
               <p class="smallfont">Addition and Subtraction</p>
               <p class="smallfont">Multiplication</p>
@@ -269,32 +263,35 @@
         </div>
     </div>
     <div id="ocean">
-        <span class="waves"></span>
-        <span class="waves"></span>
-        <span class="waves"></span>
-        <span class="waves"></span>
-        <span class="waves"></span>
-        <span class="waves"></span>
-        <span class="waves"></span>
-        <span class="waves"></span>
-        <span class="waves"></span>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+        <use xlink:href="#gentle-wave" stroke="white" stroke-width="0.8" x="48" y="0" fill="rgba(5,82,91,0.7" />
+        <use xlink:href="#gentle-wave" stroke="white" stroke-width="0.5" x="48" y="3" fill="rgba(5,82,91,0.5)" />
+        <use xlink:href="#gentle-wave" stroke="white" stroke-width="0.7" x="48" y="5" fill="rgba(5,82,91,0.3)" />
+        <use xlink:href="#gentle-wave" stroke="white" stroke-width="0.6" x="48" y="7" fill="#05525B" />
+        </g>
+        </svg>
     </div>
     <p class="bigfont sepo" style="padding-bottom: 1%;">FAQ</p>
     <div id="rightforyou">
 
-        <button class="regularfont accordion">How does the app personalize my learning experience?</button>
+        <button class="regularfont accordion raise">How does the app personalize my learning experience?</button>
         <div class="mediumfont panel">
           <p>Our app adapts to your learning pace, adjusting lessons and exercises based on your progress and skill level, ensuring a tailored experience in both English and Maths.</p>
         </div>
-        <button class="regularfont accordion">Can I learn at my own pace?</button>
+        <button class="regularfont accordion raise">Can I learn at my own pace?</button>
         <div class="mediumfont panel">
           <p>Yes! You can learn at your own speed, taking as much time as you need to master concepts before moving on to more challenging material.</p>
         </div>
-        <button class="regularfont accordion">How can I track my progress?</button>
+        <button class="regularfont accordion raise">How can I track my progress?</button>
         <div class="mediumfont panel">
           <p>Our app provides detailed progress reports, allowing you to monitor your improvements, set learning goals, and stay motivated throughout your journey.</p>
         </div>
-        <button class="regularfont accordion" style="margin-bottom: 40px;">Is the app available on multiple devices?</button>
+        <button class="regularfont accordion raise" style="margin-bottom: 40px;">Is the app available on multiple devices?</button>
         <div class="mediumfont panel" style="padding-bottom: 10px;">
           <p>Yes, you can access the app on various devices, including smartphones, tablets, and computers, making learning convenient anytime, anywhere.</p>
         </div>
