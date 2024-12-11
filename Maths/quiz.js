@@ -16,23 +16,65 @@ const db = getFirestore(app);
 const loggedInUserId = localStorage.getItem('loggedInUId')
 const mathRef = doc(db,"math",loggedInUserId)
 const bookmarkRef = doc(db,"bookmarks",loggedInUserId)
+const bookmarkDocSnap = await getDoc(bookmarkRef);
 const mathDocSnap = await getDoc(mathRef)
-const bookmarkDocSnap = await getDoc(bookmarkRef)
-
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id'); 
-var bookmarks = []
+
 console.log(id)
 
-function getQna(qna,cur){
-    console.log(qna)
-    console.log(cur)
-    document.getElementById("questionlabel").innerText = qna[cur].question; 
+const bookmarkIcon = document.getElementById("bookmarkicon");
+
+function getQna(qna, cur) {
+    document.getElementById("questionlabel").innerText = qna[cur].question;
     document.getElementById("A").innerHTML = qna[cur].answer1;
     document.getElementById("B").innerHTML = qna[cur].answer2;
     document.getElementById("C").innerHTML = qna[cur].answer3;
     document.getElementById("D").innerHTML = qna[cur].answer4;
     document.getElementById("E").innerHTML = qna[cur].answer5;
+
+    fetchBookmarkData().then(bookmarkArray => {
+        const isBookmarked = bookmarkArray.some(bookmark => bookmark.quizId === id && bookmark.questionIndex === cur);
+        if (isBookmarked) {
+            bookmarkIcon.classList.remove("fa-bookmark-o");
+            bookmarkIcon.classList.add("fa-bookmark");
+        } else {
+            bookmarkIcon.classList.remove("fa-bookmark");
+            bookmarkIcon.classList.add("fa-bookmark-o");
+        }
+    });
+}
+
+  
+async function fetchBookmarkData() {
+    const bookmarkDocSnap = await getDoc(bookmarkRef);
+    if (bookmarkDocSnap.exists()) {
+        return bookmarkDocSnap.data().mathBookmarks || [];
+    }
+    return [];  
+}
+async function updateBookmarkData(updatedBookmarks) {
+    const bookmarkChanges = { mathBookmarks: updatedBookmarks };
+    await updateDoc(bookmarkRef, bookmarkChanges);
+}
+
+function toggleBookmark(cur) {
+    fetchBookmarkData().then(bookmarkArray => {
+        const isBookmarked = bookmarkArray.some(bookmark => bookmark.quizId === id && bookmark.questionIndex === cur);
+        
+        if (isBookmarked) {
+
+            const updatedBookmarks = bookmarkArray.filter(bookmark => !(bookmark.quizId === id && bookmark.questionIndex === cur));
+            updateBookmarkData(updatedBookmarks);
+            bookmarkIcon.classList.remove("fa-bookmark");
+            bookmarkIcon.classList.add("fa-bookmark-o");
+        } else {
+            const updatedBookmarks = [...bookmarkArray, { quizId: id, questionIndex: cur }];
+            updateBookmarkData(updatedBookmarks);
+            bookmarkIcon.classList.remove("fa-bookmark-o");
+            bookmarkIcon.classList.add("fa-bookmark");
+        }
+    });
 }
 function loadQuestions(){
     if(loggedInUserId){
@@ -88,20 +130,8 @@ function loadQuestions(){
                 ]
 
                 getQna(qna,cur)
-                document.getElementById("bookmark").addEventListener("click",(event)=>{
-                    bookmarks.push({
-                        quizId:id,
-                        questionIndex:cur
-                    })
-                    bookmarks = Array.from(
-                        new Set(bookmarks.map(bookmark => JSON.stringify(bookmark)))
-                    ).map(str => JSON.parse(str));
-
-                    const bookmarkChanges = {
-                        engBookmarks: Array.from(new Set(bookmarkData.engBookmarks.concat(bookmarks))) 
-                    }
-                    console.log(bookmarkChanges)
-                    updateDoc(bookmarkRef,bookmarkChanges)
+                document.getElementById("bookmarkbutton").addEventListener("click",(event)=>{
+                    toggleBookmark(cur);
                 })
                 document.getElementById("next").addEventListener("click",(event)=>{
                     if(document.getElementById(qna[cur].correct).checked == true){
@@ -135,7 +165,7 @@ function loadQuestions(){
                 var correct = 0;
                 var cur=0;
                 var qna = [{
-                    question:"The length of a rectangle is 6cm and its height is 4cm. What is the area of the rectangle?",
+                    question:"The lmathth of a rectangle is 6cm and its height is 4cm. What is the area of the rectangle?",
                     answer1:"A. 24cm",
                     answer2:"B. 24m",
                     answer3:"C. 26cm",
@@ -143,7 +173,7 @@ function loadQuestions(){
                     answer5:"E. 2km",
                     correct:"A"},
                     {
-                    question:"The length of a the base of a triangle is 5cm and its height is 3cm. What is the area of the triangle?",
+                    question:"The lmathth of a the base of a triangle is 5cm and its height is 3cm. What is the area of the triangle?",
                     answer1:"A. 6.5cm",
                     answer2:"B. 7cm",
                     answer3:"C. 7.5cm",
@@ -151,7 +181,7 @@ function loadQuestions(){
                     answer5:"E. 10cm",
                     correct:"C"},
                     {
-                    question:"The length of a rectangle is 8cm and its height is 6cm. What is the perimiter of the rectangle?",
+                    question:"The lmathth of a rectangle is 8cm and its height is 6cm. What is the perimiter of the rectangle?",
                     answer1:"A. 26cm",
                     answer2:"B. 28cm",
                     answer3:"C. 30cm",
@@ -159,7 +189,7 @@ function loadQuestions(){
                     answer5:"E. 34cm",
                     correct:"B"},
                     {
-                    question:"The length of one side of a square is 9cm. What is the perimiter of the square?",
+                    question:"The lmathth of one side of a square is 9cm. What is the perimiter of the square?",
                     answer1:"A. 36cm",
                     answer2:"B. 45cm",
                     answer3:"C. 35cm",
@@ -177,20 +207,8 @@ function loadQuestions(){
                 ]
 
                 getQna(qna,cur)
-                document.getElementById("bookmark").addEventListener("click",(event)=>{
-                    bookmarks.push({
-                        quizId:id,
-                        questionIndex:cur
-                    })
-                    bookmarks = Array.from(
-                        new Set(bookmarks.map(bookmark => JSON.stringify(bookmark)))
-                    ).map(str => JSON.parse(str));
-
-                    const bookmarkChanges = {
-                        engBookmarks: Array.from(new Set(bookmarkData.engBookmarks.concat(bookmarks))) 
-                    }
-                    console.log(bookmarkChanges)
-                    updateDoc(bookmarkRef,bookmarkChanges)
+                document.getElementById("bookmarkbutton").addEventListener("click",(event)=>{
+                    toggleBookmark(cur);
                 })
                 document.getElementById("next").addEventListener("click",(event)=>{
                     if(document.getElementById(qna[cur].correct).checked == true){
@@ -267,20 +285,8 @@ function loadQuestions(){
                 ]
 
                 getQna(qna,cur)
-                document.getElementById("bookmark").addEventListener("click",(event)=>{
-                    bookmarks.push({
-                        quizId:id,
-                        questionIndex:cur
-                    })
-                    bookmarks = Array.from(
-                        new Set(bookmarks.map(bookmark => JSON.stringify(bookmark)))
-                    ).map(str => JSON.parse(str));
-
-                    const bookmarkChanges = {
-                        engBookmarks: Array.from(new Set(bookmarkData.engBookmarks.concat(bookmarks))) 
-                    }
-                    console.log(bookmarkChanges)
-                    updateDoc(bookmarkRef,bookmarkChanges)
+                document.getElementById("bookmarkbutton").addEventListener("click",(event)=>{
+                    toggleBookmark(cur);
                 })
                 document.getElementById("next").addEventListener("click",(event)=>{
                     if(document.getElementById(qna[cur].correct).checked == true){
