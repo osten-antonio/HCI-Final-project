@@ -85,7 +85,7 @@ function writeLearn(){
             switch(topic[1]){
                 case "1": // TOPIC 1.1
                     var content=[{
-                        subtopic:"Subtitle",
+                        subtopic:"Homophones",
                         content:`
                             You can put HTML tags here
                             like <img> this is for the additional content thingamabob
@@ -118,7 +118,7 @@ function writeLearn(){
                     break
                 case "2": // TOPIC 1.2
                     var content=[{
-                        subtopic:"Subtitle",
+                        subtopic:"Regular Plurals",
                         content:`
                             You can put HTML tags here
                             like <img> this is for the additional content thingamabob
@@ -127,7 +127,7 @@ function writeLearn(){
                             <p>Content, you can put HTML tags here</p>
                         `
                     },{
-                        subtopic:"Subtitle",
+                        subtopic:"Irregular Plurals",
                         content:`
                             You can put HTML tags here
                             like <img> this is for the additional content thingamabob
@@ -152,7 +152,7 @@ function writeLearn(){
                 case "3": // TOPIC 1.3
                     
                     var content=[{
-                        subtopic:"Subtitle",
+                        subtopic:"Vocabulary",
                         content:`
                             You can put HTML tags here
                             like <img> this is for the additional content thingamabob
@@ -190,7 +190,7 @@ function writeLearn(){
                 case "1": // TOPIC 2.1
                     
                     var content=[{
-                        subtopic:"Subtitle",
+                        subtopic:"Conjuctions",
                         content:`
                             You can put HTML tags here
                             like <img> this is for the additional content thingamabob
@@ -224,7 +224,7 @@ function writeLearn(){
                 case "2": // TOPIC 2.2
                     
                     var content=[{
-                        subtopic:"Subtitle",
+                        subtopic:"Adverbs",
                         content:`
                             You can put HTML tags here
                             like <img> this is for the additional content thingamabob
@@ -258,7 +258,7 @@ function writeLearn(){
                 case "3": // TOPIC 2.3
                     
                     var content=[{
-                        subtopic:"Subtitle",
+                        subtopic:"Adjectives",
                         content:`
                             You can put HTML tags here
                             like <img> this is for the additional content thingamabob
@@ -296,7 +296,7 @@ function writeLearn(){
                 case "1": // TOPIC 3.1
                     
                     var content=[{
-                        subtopic:"Subtitle",
+                        subtopic:"Place",
                         content:`
                             You can put HTML tags here
                             like <img> this is for the additional content thingamabob
@@ -330,7 +330,7 @@ function writeLearn(){
                 case "2": // TOPIC 3.2
                     
                     var content=[{
-                        subtopic:"Subtitle",
+                        subtopic:"Time",
                         content:`
                             You can put HTML tags here
                             like <img> this is for the additional content thingamabob
@@ -364,7 +364,7 @@ function writeLearn(){
                 case "3": // TOPIC 3.3
                     
                     var content=[{
-                        subtopic:"Subtitle",
+                        subtopic:"Movement",
                         content:`
                             You can put HTML tags here
                             like <img> this is for the additional content thingamabob
