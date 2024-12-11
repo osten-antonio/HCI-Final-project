@@ -4,12 +4,6 @@ console.log(id);
 
 
 switch(id) {
-var urlParams = new URLSearchParams(window.location.search); 
-var id = urlParams.get('id');
-console.log(id);
-
-
-switch(id) {
     case "1":
         console.log(id);
         var notes = document.getElementById("notes");
