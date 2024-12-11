@@ -60,6 +60,7 @@ img{
   background-color: var(--primeyellow);
   height: 15px;
   border-radius: 25px;
+  border:2px solid var(--darkmint);
 }
 
 
@@ -132,6 +133,7 @@ main {
   background-color: var(--primemint);
   font-weight: bold;
   font-size: clamp(0.9rem, 1.5vw, 2.3vw);
+  box-shadow: 0px 0px 11px 0px rgba(5,82,91,1);
 }
 
 #returnbutton{
