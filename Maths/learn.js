@@ -86,31 +86,30 @@ function writeLearn(){
             switch(topic[1]){
                 case "1": // TOPIC 1.1
                     var content=[{
-                        subtopic:"Subtitle",
+                        subtopic:"What are Adittion and subtraction?",
                         content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
+                            <img>
                         `,
                         explanation:`
-                            <p>Content, you can put HTML tags here</p>
+                            <p>Addition and Substraction are both a way to comobine two or more number that is dependent on the symbol. The symbol (+) means to add like 5 + 5 becomes 10. The (-) symbol is to substract which meant it is decreasing the value on the left by the right value such as 10 - 5 = 5</p>
                         `
                     },{
-                        subtopic:"Subtitle",
+                        subtopic:"what is multiplication?",
                         content:`
                             You can put HTML tags here
                             like <img> this is for the additional content thingamabob
                         `,
                         explanation:`
-                            <p>Content, you can put HTML tags here</p>
+                            <p>Multiplication is a sytem that multiply the number by a certain ammount. the multiply symbol is an (x) and when used in an equation such as 5 x 5 the eqatuion works by multiplying the first digit  to the last digits times so when the equation says 5 x 5 it means that 5 is added by itself a 5 ammoount of time(5 + 5 + 5 + 5 + 5) equaling to 25.</p>
                         `
                     },{
-                        subtopic:"Subtitle",
+                        subtopic:"What is division?",
                         content:`
                             You can put HTML tags here
                             like <img> this is for the additional content thingamabob
                         `,
                         explanation:`
-                            <p>Content, you can put HTML tags here</p>
+                            <p>division is a system that devides a number by another number the symbol itslef is (:) such as 10 : 2 = 5. the simplest way of doing division is by thinking it as sharing an item such as there are 10 pizza and 2 people how much can the 2 equally gets is 5 the same logic as 5 : 2  </p>
                         `
                     }] // Change it to how many as you want
                     var done = 2; // Please change to how many content you provided, -1
