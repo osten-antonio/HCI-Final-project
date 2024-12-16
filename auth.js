@@ -1,6 +1,6 @@
  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
- import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
- import{getFirestore, setDoc, doc} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js"
+ import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,onAuthStateChanged , signOut} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+ import{getFirestore, setDoc,getDoc, doc, Timestamp} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js"
  
  const firebaseConfig = {
     apiKey: "AIzaSyCIneOjj2SFDdXV0h_5Vc-0Lgw2v_HWZ5o",
@@ -13,27 +13,63 @@
  };
 
 const app = initializeApp(firebaseConfig);
+const auth=getAuth();
+const db=getFirestore();
 
 
 const signUp=document.getElementById('submitSignUp');
 signUp.addEventListener('click', (event)=>{
-event.preventDefault();
+    event.preventDefault();
     const email=document.getElementById('emailR').value;
     const password=document.getElementById('passwordR').value;
     const Name=document.getElementById('Uname').value;
-    const auth=getAuth();
-    const db=getFirestore();
-
+    
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential)=>{
         const user=userCredential.user;
+        localStorage.setItem('loggedInUId',user.uid)
         const userData={
             email: email,
-            Name: firstName,
+            Name: Name,
             streak:0,
-            topicsCompleted: 0
+            topicsCompleted: 0,
+            recentlyVisited:["","","","",""],
+            streak:0,
+            streakDays:[
+                {
+                    date:  new Date(new Date().setDate(new Date().getDate() + 6)),
+                    logged: false,
+                },
+                {
+                    date:  new Date(new Date().setDate(new Date().getDate() + 5)),
+                    logged: false,
+                },
+                {
+                    date:  new Date(new Date().setDate(new Date().getDate() + 4)),
+                    logged: false,
+                },
+                {
+                    date:  new Date(new Date().setDate(new Date().getDate() + 3)),
+                    logged: false,
+                },                {
+                    date:  new Date(new Date().setDate(new Date().getDate() + 2)),
+                    logged: false,
+                },                {
+                    date:  new Date(new Date().setDate(new Date().getDate() + 1)),
+                    logged: false,
+                },                {
+                    date:  new Date(new Date().setDate(new Date().getDate())),
+                    logged: false,
+                }
+            ],
+            topicsCompleted:0
         };
         const englishData ={
+            learnCompletion:{
+                First:[0,0,0],
+                Second:[0,0,0],
+                Third:[0,0,0]
+            },
             engLearnOne: 0,
             engLearnTwo: 0,
             engLearnThree: 0,
@@ -43,8 +79,14 @@ event.preventDefault();
             engTopicOne: 0,
             engTopicTwo: 0,
             engTopicThree: 0,
+            overallProgress:0
         }
         const mathData ={
+            learnCompletion:{
+                First:[0,0,0],
+                Second:[0,0,0],
+                Third:[0,0,0]
+            },
             mathLearnOne: 0,
             mathLearnTwo: 0,
             mathLearnThree: 0,
@@ -54,38 +96,73 @@ event.preventDefault();
             mathTopicOne: 0,
             mathTopicTwo: 0,
             mathTopicThree: 0,
+            overallProgress:0
         }
         const achievementData ={
             totalAchievement: 0,
+            "10day": {
+                dateAchieved: Date.now(),
+                get: false
+            },
+            engCompletion: {
+                dateAchieved: Date.now(),
+                get: false
+            },
+            mathCompletion:{
+                dateAchieved: Date.now(),
+                get: false
+            }
+        }
+        const bookmarksData = {
+            engBookmarks:[],
+            mathBookmarks:[]
         }
 
-
-        showMessage('Account Created Successfully', 'signUpMessage');
         const docRef=doc(db, "users", user.uid);
         const engRef=doc(db, "english", user.uid);
         const mathRef=doc(db, "math", user.uid);
+        const bookmarkRef=doc(db, "bookmarks", user.uid);
         const achievementRef=doc(db, "achievements", user.uid);
+
         setDoc(docRef,userData)
+        .catch((error) => {
+            console.error("Error writing Firestore documents:", error);
+            alert("Failed to create account. Please try again later.");
+          });
         setDoc(engRef,englishData)
+        .catch((error) => {
+            console.error("Error writing Firestore documents:", error);
+            alert("Failed to create account. Please try again later.");
+          });
         setDoc(mathRef,mathData)
+        .catch((error) => {
+            console.error("Error writing Firestore documents:", error);
+            alert("Failed to create account. Please try again later.");
+          });
         setDoc(achievementRef,achievementData)
+        .catch((error) => {
+            console.error("Error writing Firestore documents:", error);
+            alert("Failed to create account. Please try again later.");
+          });
+        setDoc(bookmarkRef,bookmarksData)
 
         .then(()=>{
+            localStorage.setItem('loggedInUId',user.uid)
             window.location.href='index.html';
         })
+        .catch((error) => {
+            console.error("Error writing Firestore documents:", error);
+            alert("Failed to create account. Please try again later.");
+          });
+        showMessage('Account Created Successfully', 'signUpMessage');
+        
 
-        .catch((error)=>{
-            alert("An error occurred");
-
-        });
+  
     })
     .catch((error)=>{
         const errorCode=error.code;
         if(errorCode=='auth/email-already-in-use'){
             alert("Email already exists");
-        }
-        else{
-            alert("An error occurred");
         }
     })
  });
@@ -114,43 +191,4 @@ event.preventDefault();
         }
     })
  })
-
-
- onAuthStateChanged(auth, (user)=>{
-    const loggedInUserId=localStorage.getItem('loggedInUId');
-    if(loggedInUserId){
-        console.log(user);
-        const docRef = doc(db, "users", loggedInUserId);
-        getDoc(docRef)
-        .then((docSnap)=>{
-            if(docSnap.exists()){
-                const userData=docSnap.data();
-                document.getElementById('loggedUserUname').innerText=userData.Name;
-                document.getElementById('loggedUserEmail').innerText=userData.email;
-            }
-            else{
-                console.log("no document found matching id")
-            }
-        })
-        .catch((error)=>{
-            console.log("Error getting document");
-        })
-    }
-    else{
-        console.log("User Id not Found in Local storage")
-    }
-  })
-
-  const logoutButton=document.getElementById('logout');
-
-  logoutButton.addEventListener('click',()=>{
-    localStorage.removeItem('loggedInUId');
-    signOut(auth)
-    .then(()=>{
-        window.location.href='index.html';
-    })
-    .catch((error)=>{
-        console.error('Error Signing out:', error);
-    })
-  })
 

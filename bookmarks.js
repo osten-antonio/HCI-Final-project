@@ -51,7 +51,37 @@ function createBookmarkButtons(bookmarks, panelId, subject) {
     deleteButton.innerHTML = `<i class="material-icons" style="font-size:36px;color:#05525B;">delete</i>`;
     deleteButton.classList.add('delete-button');
     deleteButton.setAttribute('key',`${subject}.${bookmark.quizId}.${bookmark.questionIndex}`)
+
+    deleteButton.onclick = async () => {
+
+        const docRef = doc(db,"bookmarks",loggedInUserId);
+        getDoc(docRef)
+        .then((docSnap) => {
+            if (docSnap.exists()) {
+                let bookmarksArray = subject == "English" ? docSnap.data().engBookmarks : docSnap.data().mathBookmarks;
+                const index = bookmarksArray.findIndex(item => 
+                    item.quizId === bookmark.quizId && item.questionIndex === bookmark.questionIndex
+                );
     
+                if (index !== -1) {
+                    bookmarksArray.splice(index, 1); 
+                }
+    
+                const updatedData = subject == "English" ? { engBookmarks: bookmarksArray } : { mathBookmarks: bookmarksArray };
+    
+                updateDoc(docRef, updatedData)
+                    .then(() => {
+
+                        container.remove(); 
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+            }
+        } );
+
+      };
+
     container.appendChild(button);
     container.appendChild(deleteButton);
 
@@ -62,7 +92,6 @@ function createBookmarkButtons(bookmarks, panelId, subject) {
 }
 
 function checkLoggedInProfile(){
-    console.log(loggedInUserId)
     if(loggedInUserId){
         const bookmarksRef = doc(db,"bookmarks",loggedInUserId)
         getDoc(bookmarksRef)
@@ -70,8 +99,6 @@ function checkLoggedInProfile(){
             if(docSnap.exists()){
                 const englishBookmarks = docSnap.data().engBookmarks;
                 const mathsBookmarks = docSnap.data().mathBookmarks;
-                console.log(englishBookmarks)
-                console.log(!(englishBookmarks === undefined || englishBookmarks.length == 0))
                 if(!(englishBookmarks === undefined || englishBookmarks.length == 0)){
                     createBookmarkButtons(englishBookmarks, 'eng-panel', 'English');
                 }

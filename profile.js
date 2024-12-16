@@ -97,7 +97,7 @@ function checkLoggedInProfile(){
       achievementIconsContainer.innerHTML = "";
 
       achievement_array.forEach(([key, data]) => {
-
+        if (data.get){
         const achievementContainer = document.createElement("div");
         achievementContainer.classList.add("achievement-container");
         
@@ -116,7 +116,7 @@ function checkLoggedInProfile(){
         achievementContainer.appendChild(icon);
         achievementContainer.appendChild(label);
 
-        achievementIconsContainer.appendChild(achievementContainer);
+        achievementIconsContainer.appendChild(achievementContainer);}
       });
       } else {
         console.log("No data available.");
