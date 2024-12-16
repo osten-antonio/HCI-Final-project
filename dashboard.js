@@ -122,7 +122,11 @@ async function checkLoggedInProfile() {
 
         for (var i = 0; i < recentArray.length; i++) {
           var temp = regex.exec(recentArray[i]);
-      
+          if (temp === null) {
+            // If regex doesn't match, use a placeholder
+            document.getElementById(`${elements[i]}`).href = "#";
+            document.getElementById(`${elements[i]}p`).innerText = "Unknown";
+          } else {
           var subject = temp[1] == "Maths" ? "Maths" : "Eng"; // Add validation
           var topic = typeof temp[4] === 'undefined' ? temp[3] : `${temp[3]}.${temp[4]}`;
 
@@ -135,6 +139,7 @@ async function checkLoggedInProfile() {
           // Update the inner text for the corresponding element
           document.getElementById(`${elements[i]}`).href = recentArray[i];
           document.getElementById(`${elements[i]}p`).innerText = text;
+          }
         }
 
         let currentStreak = userData.streak;
@@ -203,9 +208,11 @@ async function checkLoggedInProfile() {
 
       await updateDoc(achievementRef, change);
       console.log("Total achievement updated successfully");
-      
-      const recentachievementdata = achievementdocSnap.data();
+      const achievementdocSnap1 = await getDoc(achievementRef);
+
+      const recentachievementdata = achievementdocSnap1.data();
       var achievement_array = [["10day",recentachievementdata["10day"]],["engCompletion",recentachievementdata.engCompletion],["mathCompletion",recentachievementdata.mathCompletion]];
+      console.log(achievement_array)
       achievement_array.sort((a, b) => b[1].dateAchieved.seconds - a[1].dateAchieved.seconds);
       achievement_array.reverse();
       const iconMap={
@@ -226,26 +233,27 @@ async function checkLoggedInProfile() {
       achievementIconsContainer.innerHTML = "";
 
       achievement_array.forEach(([key, data]) => {
+        if (data.get) {
+          const achievementContainer = document.createElement("div");
+          achievementContainer.classList.add("achievement-container");
+          
 
-        const achievementContainer = document.createElement("div");
-        achievementContainer.classList.add("achievement-container");
-        
-
-        const icon = document.createElement("img");
-        icon.src = iconMap[key];
-        icon.alt = key + " achievement icon";
-        icon.width = 100;
-        icon.height = 100;
+          const icon = document.createElement("img");
+          icon.src = iconMap[key];
+          icon.alt = key + " achievement icon";
+          icon.width = 100;
+          icon.height = 100;
 
 
-        const label = document.createElement("div");
-        label.classList.add("achievement-label");
-        label.textContent = labelMap[key]; 
+          const label = document.createElement("div");
+          label.classList.add("achievement-label");
+          label.textContent = labelMap[key]; 
 
-        achievementContainer.appendChild(icon);
-        achievementContainer.appendChild(label);
+          achievementContainer.appendChild(icon);
+          achievementContainer.appendChild(label);
 
-        achievementIconsContainer.appendChild(achievementContainer);
+          achievementIconsContainer.appendChild(achievementContainer);
+        }
       });
       
     } catch (error) {

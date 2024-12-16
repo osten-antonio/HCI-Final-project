@@ -86,7 +86,7 @@ function writeLearn(){
             switch(topic[1]){
                 case "1": // TOPIC 1.1
                     var content=[{
-                        subtopic:"What are Adittion and subtraction?",
+                        subtopic:"Addition",
                         content:`
                             <img>
                         `,
@@ -94,7 +94,7 @@ function writeLearn(){
                             <p>Addition and Substraction are both a way to comobine two or more number that is dependent on the symbol. The symbol (+) means to add like 5 + 5 becomes 10. The (-) symbol is to substract which meant it is decreasing the value on the left by the right value such as 10 - 5 = 5</p>
                         `
                     },{
-                        subtopic:"what is multiplication?",
+                        subtopic:"Subtraction",
                         content:`
                             You can put HTML tags here
                             like <img> this is for the additional content thingamabob
@@ -118,7 +118,7 @@ function writeLearn(){
                     break
                 case "2": // TOPIC 1.2
                     var content=[{
-                        subtopic:"Subtitle",
+                        subtopic:"Multiplication",
                         content:`
                             You can put HTML tags here
                             like <img> this is for the additional content thingamabob
@@ -152,7 +152,7 @@ function writeLearn(){
                 case "3": // TOPIC 1.3
                     
                     var content=[{
-                        subtopic:"Subtitle",
+                        subtopic:"Division",
                         content:`
                             You can put HTML tags here
                             like <img> this is for the additional content thingamabob
@@ -190,7 +190,7 @@ function writeLearn(){
                 case "1": // TOPIC 2.1
                     
                     var content=[{
-                        subtopic:"Subtitle",
+                        subtopic:"Area",
                         content:`
                             You can put HTML tags here
                             like <img> this is for the additional content thingamabob
@@ -224,7 +224,7 @@ function writeLearn(){
                 case "2": // TOPIC 2.2
                     
                     var content=[{
-                        subtopic:"Subtitle",
+                        subtopic:"Perimeter",
                         content:`
                             You can put HTML tags here
                             like <img> this is for the additional content thingamabob
@@ -258,7 +258,7 @@ function writeLearn(){
                 case "3": // TOPIC 2.3
                     
                     var content=[{
-                        subtopic:"Subtitle",
+                        subtopic:"Angles",
                         content:`
                             You can put HTML tags here
                             like <img> this is for the additional content thingamabob
@@ -296,7 +296,7 @@ function writeLearn(){
                 case "1": // TOPIC 3.1
                     
                     var content=[{
-                        subtopic:"Subtitle",
+                        subtopic:"Equivalent",
                         content:`
                             You can put HTML tags here
                             like <img> this is for the additional content thingamabob
@@ -330,7 +330,7 @@ function writeLearn(){
                 case "2": // TOPIC 3.2
                     
                     var content=[{
-                        subtopic:"Subtitle",
+                        subtopic:"Comparing",
                         content:`
                             You can put HTML tags here
                             like <img> this is for the additional content thingamabob
@@ -364,7 +364,7 @@ function writeLearn(){
                 case "3": // TOPIC 3.3
                     
                     var content=[{
-                        subtopic:"Subtitle",
+                        subtopic:"Simplifying",
                         content:`
                             You can put HTML tags here
                             like <img> this is for the additional content thingamabob

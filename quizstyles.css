@@ -23,6 +23,7 @@ html, body{
 
 #quiz-progress{
     background-color: var(--darkyellow);
+    transition: 0.4s;
     border: 2px solid var(--darkmint);
     border-radius: 25px;
     height: 15px;
@@ -58,6 +59,10 @@ html, body{
     padding: 20% 30% 20% 30%;
     background-color: var(--primemint);
     font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5%;
 }
 
 
