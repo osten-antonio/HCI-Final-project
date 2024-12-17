@@ -66,6 +66,7 @@ body,html{
 }
 
 #maths-overall, #maths-last,#english-overall,#english-last{
+    border: 2px solid var(--darkmint);
     background-color: var(--primeyellow);
     height: 15px;
     border-radius: 25px;
@@ -574,6 +575,7 @@ body,html{
 }
 
 .cloudbutton{
+    /* padding-top: ; */
     background-image: url('./assets/cloudborder.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -595,6 +597,7 @@ body,html{
 
 
 .cloudimage{
+    margin-top: 10%;
     width: 100px;
     height: 100px;
 }

@@ -50,9 +50,9 @@ function checkLoggedInProfile(){
         document.getElementById("english-1").style["width"] = (data.engTopicOne)+"%";
         document.getElementById("english-1").textContent = "Topic One "+ data.engTopicOne +"%";
         document.getElementById("english-2").style["width"] = (data.engTopicTwo)+"%";
-        document.getElementById("english-2").textContent = "Topic One "+ data.engTopicTwo +"%";
+        document.getElementById("english-2").textContent = "Topic Two "+ data.engTopicTwo +"%";
         document.getElementById("english-3").style["width"] = (data.engTopicThree)+"%";
-        document.getElementById("english-3").textContent = "Topic One "+ data.engTopicThree +"%";
+        document.getElementById("english-3").textContent = "Topic Three "+ data.engTopicThree +"%";
       } else {
         console.log("No data available.");
       }

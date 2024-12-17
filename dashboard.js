@@ -62,7 +62,8 @@ async function checkLoggedInProfile() {
     const engRef = doc(db, "english", loggedInUserId);
     const achievementRef = doc(db, "achievements", loggedInUserId);
     const userRef = doc(db, "users", loggedInUserId);
-
+    var topicsCompleted = 0;
+ 
     try {
       // Fetch achievement data first
       const achievementdocSnap = await getDoc(achievementRef);
@@ -92,6 +93,26 @@ async function checkLoggedInProfile() {
           totalAchievement += 1; // Increment achievement count
           console.log(`total achievement: ${totalAchievement}`);
         }
+        const engTopics = [[mathData.mathQuizOne,mathData.mathLearnOne,mathData.mathTopicOne],
+                          [mathData.mathQuizTwo,mathData.mathLearnTwo,mathData.mathTopicTwo],
+                          [mathData.mathQuizThree,mathData.mathLearnThree,mathData.mathTopicThree]];
+        for(var i; i < 3;i++){
+          var temp = 0
+          for(var j; j < 3;j++){
+            if(j==0){
+              if(engTopics[i][j] > 0){
+                temp++
+              }
+            }else{
+              if(engTopics[i][j] == 100){
+                temp++
+              }
+            }
+          }
+          if(temp==3){
+            topicsCompleted++
+          }
+        }
       }
 
       // Fetch English progress
@@ -109,9 +130,29 @@ async function checkLoggedInProfile() {
           };
           totalAchievement += 1; // Increment achievement count
           console.log(`total achievement: ${totalAchievement}`);
+          const engTopics = [[engData.engQuizOne,engData.engLearnOne,engData.engTopicOne],
+                             [engData.engQuizTwo,engData.engLearnTwo,engData.engTopicTwo],
+                             [engData.engQuizThree,engData.engLearnThree,engData.engTopicThree]];
+          for(var i; i < 3;i++){
+            var temp = 0
+            for(var j; j < 3;j++){
+              if(j==0){
+                if(engTopics[i][j] > 0){
+                  temp++
+                }
+              }else{
+                if(engTopics[i][j] == 100){
+                  temp++
+                }
+              }
+            }
+            if(temp==3){
+              topicsCompleted++
+            }
+          }
         }
       }
-
+      document.getElementById("topics-completed").innerText = topicsCompleted;
       // Fetch user data for streak
       const userDocSnap = await getDoc(userRef);
       if (userDocSnap.exists()) {
@@ -139,6 +180,8 @@ async function checkLoggedInProfile() {
           // Update the inner text for the corresponding element
           document.getElementById(`${elements[i]}`).href = recentArray[i];
           document.getElementById(`${elements[i]}p`).innerText = text;
+
+          
           }
         }
 
@@ -185,12 +228,13 @@ async function checkLoggedInProfile() {
           document.getElementById(streakIcons[i]).setAttribute("fill", dateArray[i.toString()]["logged"] ? "#FFBB00" : "#05525B");
         }
 
-        const streakChanges = {
+        const userChanges = {
+          "topicsCompleted":topicsCompleted,
           streakDays: dateArray,
           streak: currentStreak,
         };
 
-        await updateDoc(userRef, streakChanges);
+        await updateDoc(userRef, userChanges);
 
         if (currentStreak >= 10 && !achievementdata["10day"]["get"]) {
           alert("Achievement unlocked!\n10 Day streak");
