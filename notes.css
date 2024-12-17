@@ -63,13 +63,5 @@ p{
     
   }
   
-  #returnbutton{
-  color: var(--darkmint);
-  border: 5px solid var(--darkmint);
-  border-radius: 25px;
-  padding: 5%;
-  background-color: var(--primemint);
-  font-weight: bold;
-  font-size: clamp(0.9rem, 1.5vw, 2.3vw);;
-}
+
   

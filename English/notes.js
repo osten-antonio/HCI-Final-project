@@ -8,142 +8,152 @@ switch(id) {
         console.log(id);
         var notes = document.getElementById("notes");
         notes.innerHTML = `
-            <h1>Spelling</h1>
-            <h1 id="subtopic-1">Homophones</h1>
-            1. Definition:
-        Homophones are words that sound the same but have different meanings, spellings, or both.
+        <h1>Spelling</h1>
 
-
-        2. Types:
-
-        Same Pronunciation, Different Spellings:
-        Examples:
-        Pair (two things) vs. Pear (fruit)
-        There (place) vs. Their (possessive) vs. They're (contraction of "they are")
-        Same Pronunciation, Different Meanings and Spellings:
-        Examples:
-        To (direction) vs. Two (number) vs. Too (also)
-        Brake (stop) vs. Break (split)
-
-
-        3. Importance:
-
-        Avoid confusion in writing and speaking.
-        Common in puns and wordplay.
-
-
-        4. Examples of Common Homophones:
-
-        Here (location) vs. Hear (perceive sound)
-        Sea (ocean) vs. See (vision)
-        Whole (entire) vs. Hole (gap)
-
-
-        5. Tips for Remembering:
-
-        Learn meanings and contexts.
-        Practice writing sentences using each word.
-        Use mnemonic devices (e.g., "Sea is full of water, you can see it").
-            
-            <h1 id="subtopic-2">Regular and Irregular Plurals</h1>
-             1. Definition
-
-        Plural: A form of a noun that indicates more than one.
-
-
-        2. Regular Plurals
-
-        Formation: Add -s or -es to the singular noun.
-        Examples:
-        Dog → Dogs
-        Box → Boxes (add -es after s, sh, ch, x, or z)
-        Baby → Babies (change -y to -ies if preceded by a consonant)
-
-
-        3. Irregular Plurals
-
-        Formation: No fixed rule; the plural form changes unpredictably.
-        Examples:
-        Man → Men
-        Woman → Women
-        Child → Children
-        Tooth → Teeth
-        Foot → Feet
-        Mouse → Mice
-        Cactus → Cacti (Latin origin: change -us to -i)
-        Goose → Geese
-
-
-        4. Invariant Nouns
-
-        Same in Singular and Plural:
-        Sheep → Sheep
-        Deer → Deer
-        Fish → Fish (though "fishes" is used to refer to different species)
-
-
-        5. Borrowed Words
-
-        Retain Original Plural Forms:
-        Criterion → Criteria
-        Phenomenon → Phenomena
-        Datum → Data
-
-        6. Tips for Remembering
-
-
-        Study common patterns for irregular forms.
-        Practice writing both singular and plural forms in sentences.
-        Use flashcards or quizzes to test your understanding.
-            <h1 id="subtopic-3">Vocabulary</h1>
-            1. Definition
+        <h2 id="subtopic-1">Homophones</h2>
         
-        Vocabulary refers to the collection of words and their meanings that a person knows and uses.
+        <h3>1. Definition</h3>
+        <p>Homophones are words that sound the same but have different meanings, spellings, or both.</p>
         
+        <h3>2. Types</h3>
+        <ul>
+            <li>
+                <strong>Same Pronunciation, Different Spellings</strong>
+                <ul>
+                    <li>Pair (two things) vs. Pear (fruit)</li>
+                    <li>There (place) vs. Their (possessive) vs. They're (contraction of "they are")</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Same Pronunciation, Different Meanings and Spellings</strong>
+                <ul>
+                    <li>To (direction) vs. Two (number) vs. Too (also)</li>
+                    <li>Brake (stop) vs. Break (split)</li>
+                </ul>
+            </li>
+        </ul>
         
-        2. Types of Vocabulary
+        <h3>3. Importance</h3>
+        <ul>
+            <li>Avoid confusion in writing and speaking.</li>
+            <li>Common in puns and wordplay.</li>
+        </ul>
         
-        Listening Vocabulary: Words understood while listening.
-        Speaking Vocabulary: Words actively used in speech.
-        Reading Vocabulary: Words recognized in written text.
-        Writing Vocabulary: Words used in writing.
+        <h3>4. Examples of Common Homophones</h3>
+        <ul>
+            <li>Here (location) vs. Hear (perceive sound)</li>
+            <li>Sea (ocean) vs. See (vision)</li>
+            <li>Whole (entire) vs. Hole (gap)</li>
+        </ul>
         
+        <h3>5. Tips for Remembering</h3>
+        <ul>
+            <li>Learn meanings and contexts.</li>
+            <li>Practice writing sentences using each word.</li>
+            <li>Use mnemonic devices (e.g., "Sea is full of water, you can see it").</li>
+        </ul>
+
+        <h2 id="subtopic-2">Regular and Irregular Plurals</h2>
         
-        3. Importance of Vocabulary
+        <h3>1. Definition</h3>
+        <p>Plural: A form of a noun that indicates more than one.</p>
         
-        Enhances communication skills.
-        Improves reading comprehension and writing quality.
-        Boosts academic and professional success.
+        <h3>2. Regular Plurals</h3>
+        <p><strong>Formation:</strong> Add <em>-s</em> or <em>-es</em> to the singular noun.</p>
+        <ul>
+            <li>Dog &rarr; Dogs</li>
+            <li>Box &rarr; Boxes (add <em>-es</em> after s, sh, ch, x, or z)</li>
+            <li>Baby &rarr; Babies (change <em>-y</em> to <em>-ies</em> if preceded by a consonant)</li>
+        </ul>
         
+        <h3>3. Irregular Plurals</h3>
+        <p><strong>Formation:</strong> No fixed rule; the plural form changes unpredictably.</p>
+        <ul>
+            <li>Man &rarr; Men</li>
+            <li>Woman &rarr; Women</li>
+            <li>Child &rarr; Children</li>
+            <li>Tooth &rarr; Teeth</li>
+            <li>Foot &rarr; Feet</li>
+            <li>Mouse &rarr; Mice</li>
+            <li>Cactus &rarr; Cacti (Latin origin: change <em>-us</em> to <em>-i</em>)</li>
+            <li>Goose &rarr; Geese</li>
+        </ul>
         
-        4. Strategies to Build Vocabulary
+        <h3>4. Invariant Nouns</h3>
+        <p><strong>Same in Singular and Plural:</strong></p>
+        <ul>
+            <li>Sheep &rarr; Sheep</li>
+            <li>Deer &rarr; Deer</li>
+            <li>Fish &rarr; Fish (though "fishes" is used to refer to different species)</li>
+        </ul>
         
-        Reading: Read books, articles, and newspapers regularly.
-        Context Clues: Infer meanings from surrounding text.
-        Word Lists: Study high-frequency and academic word lists.
-        Practice: Use new words in speaking and writing.
-        Games: Play vocabulary-based games like crosswords or word puzzles.
-        Flashcards: Use digital or physical flashcards for memorization.
-        Roots, Prefixes, and Suffixes: Learn word-building elements (e.g., "un-" means "not").
+        <h3>5. Borrowed Words</h3>
+        <p><strong>Retain Original Plural Forms:</strong></p>
+        <ul>
+            <li>Criterion &rarr; Criteria</li>
+            <li>Phenomenon &rarr; Phenomena</li>
+            <li>Datum &rarr; Data</li>
+        </ul>
         
+        <h3>6. Tips for Remembering</h3>
+        <ul>
+            <li>Study common patterns for irregular forms.</li>
+            <li>Practice writing both singular and plural forms in sentences.</li>
+            <li>Use flashcards or quizzes to test your understanding.</li>
+        </ul>
+
+        <h2 id="subtopic-3">Vocabulary</h2>
         
-        5. Examples of Vocabulary-Building Techniques
+        <h3>1. Definition</h3>
+        <p>Vocabulary refers to the collection of words and their meanings that a person knows and uses.</p>
         
-        Synonyms: Learn words with similar meanings (e.g., happy → joyful).
-        Antonyms: Learn opposites (e.g., hot → cold).
-        Collocations: Learn word pairings (e.g., "make a decision").
+        <h3>2. Types of Vocabulary</h3>
+        <ul>
+            <li>Listening Vocabulary: Words understood while listening.</li>
+            <li>Speaking Vocabulary: Words actively used in speech.</li>
+            <li>Reading Vocabulary: Words recognized in written text.</li>
+            <li>Writing Vocabulary: Words used in writing.</li>
+        </ul>
         
+        <h3>3. Importance of Vocabulary</h3>
+        <ul>
+            <li>Enhances communication skills.</li>
+            <li>Improves reading comprehension and writing quality.</li>
+            <li>Boosts academic and professional success.</li>
+        </ul>
         
-        6. Tips for Retention
+        <h3>4. Strategies to Build Vocabulary</h3>
+        <ul>
+            <li>Reading: Read books, articles, and newspapers regularly.</li>
+            <li>Context Clues: Infer meanings from surrounding text.</li>
+            <li>Word Lists: Study high-frequency and academic word lists.</li>
+            <li>Practice: Use new words in speaking and writing.</li>
+            <li>Games: Play vocabulary-based games like crosswords or word puzzles.</li>
+            <li>Flashcards: Use digital or physical flashcards for memorization.</li>
+            <li>Roots, Prefixes, and Suffixes: Learn word-building elements (e.g., "un-" means "not").</li>
+        </ul>
         
-        Review regularly to reinforce memory.
-        Group words thematically (e.g., words related to travel).
-        Create personal associations or mnemonics.
+        <h3>5. Examples of Vocabulary-Building Techniques</h3>
+        <ul>
+            <li>Synonyms: Learn words with similar meanings (e.g., happy &rarr; joyful).</li>
+            <li>Antonyms: Learn opposites (e.g., hot &rarr; cold).</li>
+            <li>Collocations: Learn word pairings (e.g., "make a decision").</li>
+        </ul>
+        
+        <h3>6. Tips for Retention</h3>
+        <ul>
+            <li>Review regularly to reinforce memory.</li>
+            <li>Group words thematically (e.g., words related to travel).</li>
+            <li>Create personal associations or mnemonics.</li>
+        </ul>
         `;
         console.log(id);
 
         var sidebar = document.getElementById("sidebar");
         sidebar.innerHTML = `
+            <a href="selector.html">
+              <button id="returnbutton" class="raise"><i class="fa fa-solid fa-reply"></i>Return</button>
+            </a>
             <a href="?id=1">
                 <p class="bigfont selectedtopic" id="topic1">Spelling</p>
             </a>
@@ -169,195 +179,133 @@ switch(id) {
         console.log(id);
         var notes = document.getElementById("notes");
         notes.innerHTML = `
-            <h1>Grammar</h1>
-            <h1 id="subtopic1">Conjunctions</h1>
-            1. Definition
+        <h1>Grammar</h1>
         
-        Conjunctions are words that connect words, phrases, or clauses in a sentence.
+        <h2 id="subtopic1">Conjunctions</h2>
         
+        <h3>1. Definition</h3>
+        <p>Conjunctions are words that connect words, phrases, or clauses in a sentence.</p>
         
-        2. Types of Conjunctions
+        <h3>2. Types of Conjunctions</h3>
         
-        Coordinating Conjunctions:
-
-        Join words, phrases, or clauses of equal importance.
-        Examples: and, but, or, nor, for, so, yet.
-        Mnemonic: FANBOYS (For, And, Nor, But, Or, Yet, So).
-        Example Sentence:
-        I wanted to go out, but it was raining.
+        <h4>Coordinating Conjunctions</h4>
+        <p>Join words, phrases, or clauses of equal importance.</p>
+        <p>Examples: and, but, or, nor, for, so, yet.</p>
+        <p>Mnemonic: FANBOYS (For, And, Nor, But, Or, Yet, So).</p>
+        <p><strong>Example Sentence:</strong> I wanted to go out, but it was raining.</p>
         
-        Subordinating Conjunctions:
-
-        Connect dependent (subordinate) clauses to independent clauses.
-        Examples: because, although, since, while, if, unless, until.
-        Example Sentence:
-        She stayed home because she was tired.
-       
-        Correlative Conjunctions:
-
-        Work in pairs to join equal elements.
-        Examples: either...or, neither...nor, not only...but also, both...and.
-        Example Sentence:
-        Either we leave now or we miss the bus.
+        <h4>Subordinating Conjunctions</h4>
+        <p>Connect dependent (subordinate) clauses to independent clauses.</p>
+        <p>Examples: because, although, since, while, if, unless, until.</p>
+        <p><strong>Example Sentence:</strong> She stayed home because she was tired.</p>
         
-
-        3. Importance of Conjunctions
-         
-        Provide logical flow in sentences.
-        Avoid sentence fragmentation.
-        Show relationships like cause, contrast, and choice.
-       
+        <h4>Correlative Conjunctions</h4>
+        <p>Work in pairs to join equal elements.</p>
+        <p>Examples: either...or, neither...nor, not only...but also, both...and.</p>
+        <p><strong>Example Sentence:</strong> Either we leave now or we miss the bus.</p>
         
-        4. Common Mistakes
+        <h3>3. Importance of Conjunctions</h3>
+        <p>Provide logical flow in sentences.</p>
+        <p>Avoid sentence fragmentation.</p>
+        <p>Show relationships like cause, contrast, and choice.</p>
         
-        Overusing conjunctions, leading to run-on sentences.
-        Misplacing conjunctions, causing confusion.
+        <h3>4. Common Mistakes</h3>
+        <p>Overusing conjunctions, leading to run-on sentences.</p>
+        <p>Misplacing conjunctions, causing confusion.</p>
         
+        <h3>5. Tips to Master Conjunctions</h3>
+        <p>Identify the relationship you want to express (e.g., addition, contrast).</p>
+        <p>Use coordinating conjunctions for simple connections.</p>
+        <p>Use subordinating conjunctions to add reasons, conditions, or time.</p>
+        <p>Practice writing sentences with each type of conjunction.</p>
         
-        5. Tips to Master Conjunctions
+        <h2 id="subtopic2">Adverbs</h2>
         
-        Identify the relationship you want to express (e.g., addition, contrast).
-        Use coordinating conjunctions for simple connections.
-        Use subordinating conjunctions to add reasons, conditions, or time.
-        Practice writing sentences with each type of conjunction.
-            <h1 id="subtopic2">Adverbs</h1>
-           1. Definition
+        <h3>1. Definition</h3>
+        <p>Adverbs are words that modify verbs, adjectives, or other adverbs. They provide additional information about how, when, where, why, or to what extent an action is performed.</p>
         
-        Adverbs are words that modify verbs, adjectives, or other adverbs. They provide additional information about how, when, where, why, or to what extent an action is performed.
+        <h3>2. Types of Adverbs</h3>
         
+        <h4>Adverbs of Manner</h4>
+        <p>Describe how an action is performed.</p>
+        <p>Examples: quickly, slowly, carefully, beautifully.</p>
+        <p><strong>Example Sentence:</strong> She speaks softly.</p>
         
-        2. Types of Adverbs
+        <h4>Adverbs of Time</h4>
+        <p>Indicate when an action occurs.</p>
+        <p>Examples: now, yesterday, tomorrow, soon, later.</p>
+        <p><strong>Example Sentence:</strong> He will visit us tomorrow.</p>
         
-        Adverbs of Manner:
-
-        Describe how an action is performed.
-        Examples: quickly, slowly, carefully, beautifully.
-        Example Sentence: She speaks softly.
-        Adverbs of Time:
-
-        Indicate when an action occurs.
-        Examples: now, yesterday, tomorrow, soon, later.
-        Example Sentence: He will visit us tomorrow.
-        Adverbs of Place:
-
-        Show where an action occurs.
-        Examples: here, there, everywhere, nearby.
-        Example Sentence: The children are playing outside.
-        Adverbs of Frequency:
-
-        Indicate how often an action happens.
-        Examples: always, often, rarely, never, sometimes.
-        Example Sentence: She always reads before bed.
-        Adverbs of Degree:
-
-        Express the intensity or degree of an action, adjective, or another adverb.
-        Examples: very, too, quite, almost, completely.
-        Example Sentence: The movie was very interesting.
-        Adverbs of Purpose:
-
-        Explain why an action is done.
-        Examples: therefore, hence, thus, so.
-        Example Sentence: He missed the bus; therefore, he was late.
+        <h4>Adverbs of Place</h4>
+        <p>Show where an action occurs.</p>
+        <p>Examples: here, there, everywhere, nearby.</p>
+        <p><strong>Example Sentence:</strong> The children are playing outside.</p>
         
+        <h4>Adverbs of Frequency</h4>
+        <p>Indicate how often an action happens.</p>
+        <p>Examples: always, often, rarely, never, sometimes.</p>
+        <p><strong>Example Sentence:</strong> She always reads before bed.</p>
         
-        3. Formation of Adverbs
+        <h4>Adverbs of Degree</h4>
+        <p>Express the intensity or degree of an action, adjective, or another adverb.</p>
+        <p>Examples: very, too, quite, almost, completely.</p>
+        <p><strong>Example Sentence:</strong> The movie was very interesting.</p>
         
-        Many adverbs are formed by adding -ly to adjectives.
-        Examples:
-        Quick → Quickly
-        Careful → Carefully
-        Some adverbs have the same form as adjectives.
-        Examples: fast, hard, late.
+        <h4>Adverbs of Purpose</h4>
+        <p>Explain why an action is done.</p>
+        <p>Examples: therefore, hence, thus, so.</p>
+        <p><strong>Example Sentence:</strong> He missed the bus; therefore, he was late.</p>
         
-
-        4. Importance of Adverbs
+        <h3>3. Formation of Adverbs</h3>
+        <p>Many adverbs are formed by adding -ly to adjectives.</p>
+        <p>Examples: Quick → Quickly, Careful → Carefully</p>
+        <p>Some adverbs have the same form as adjectives.</p>
+        <p>Examples: fast, hard, late.</p>
         
-        Add detail and precision to writing and speech.
-        Help answer questions like how, when, where, and why.
+        <h3>4. Importance of Adverbs</h3>
+        <p>Add detail and precision to writing and speech.</p>
+        <p>Help answer questions like how, when, where, and why.</p>
         
+        <h3>5. Tips to Master Adverbs</h3>
+        <p>Identify the role of the adverb in the sentence.</p>
+        <p>Avoid overusing adverbs; choose precise verbs and adjectives instead.</p>
+        <p>Practice forming adverbs from adjectives.</p>
+        <p>Write sentences to practice different types of adverbs.</p>
         
-        5. Tips to Master Adverbs
+        <h2 id="subtopic3">Adjectives</h2>
         
-        Identify the role of the adverb in the sentence.
-        Avoid overusing adverbs; choose precise verbs and adjectives instead.
-        Practice forming adverbs from adjectives.
-        Write sentences to practice different types of adverbs.
-            <h1 id="subtopic3">Adjectives</h1>
-            1. Definition
+        <h3>1. Definition</h3>
+        <p>Adjectives are words that describe or modify nouns and pronouns, providing more information about their qualities, quantity, or identity.</p>
         
-        Adjectives are words that describe or modify nouns and pronouns, providing more information about their qualities, quantity, or identity.
+        <h3>2. Types of Adjectives</h3>
         
+        <h4>Descriptive Adjectives</h4>
+        <p>Describe qualities or characteristics.</p>
+        <p>Examples: beautiful, tall, smart, bright.</p>
+        <p><strong>Example Sentence:</strong> She wore a beautiful dress.</p>
         
-        2. Types of Adjectives
+        <h4>Quantitative Adjectives</h4>
+        <p>Indicate quantity or amount.</p>
+        <p>Examples: some, many, few, several.</p>
+        <p><strong>Example Sentence:</strong> There are several books on the table.</p>
         
-        Descriptive Adjectives:
-
-        Describe qualities or characteristics.
-        Examples: beautiful, tall, smart, bright.
-        Example Sentence: She wore a beautiful dress.
-        Quantitative Adjectives:
-
-        Indicate quantity or amount.
-        Examples: some, many, few, several.
-        Example Sentence: There are several books on the table.
-        Demonstrative Adjectives:
-
-        Point out specific nouns.
-        Examples: this, that, these, those.
-        Example Sentence: These flowers are lovely.
-        Possessive Adjectives:
-
-        Show ownership or possession.
-        Examples: my, your, his, her, their, its, our.
-        Example Sentence: This is my notebook.
-        Interrogative Adjectives:
-
-        Used in questions to modify nouns.
-        Examples: which, what, whose.
-        Example Sentence: Which book do you prefer?
-        Comparative Adjectives:
-
-        Compare two nouns.
-        Examples: taller, better, more beautiful.
-        Example Sentence: She is taller than her sister.
-        Superlative Adjectives:
-
-        Show the highest degree of comparison.
-        Examples: tallest, best, most beautiful.
-        Example Sentence: He is the tallest in the class.
+        <h4>Demonstrative Adjectives</h4>
+        <p>Point out specific nouns.</p>
+        <p>Examples: this, that, these, those.</p>
+        <p><strong>Example Sentence:</strong> These flowers are lovely.</p>
         
-        
-        3. Formation of Adjectives
-        
-        Adding Suffixes:
-        Beauty → Beautiful
-        Care → Careful
-        Irregular Forms:
-        Good → Better → Best
-        
-        
-        4. Order of Adjectives
-        
-        Rule: Opinion, Size, Age, Shape, Color, Origin, Material, Purpose.
-        Example: A beautiful, large, old, round, brown, Italian, wooden, dining table.
-        
-        
-        5. Importance of Adjectives
-        
-        Add detail and specificity to descriptions.
-        Enhance the reader's understanding and imagery.
-        
-        
-        6. Tips to Master Adjectives
-        
-        Use adjectives to make writing vivid and descriptive.
-        Avoid overusing adjectives to prevent redundancy.
-        Practice placing adjectives in the correct order.
-        Write sentences to explore different types of adjectives.
+        <h3>6. Tips to Master Adjectives</h3>
+        <p>Use adjectives to make writing vivid and descriptive.</p>
+        <p>Avoid overusing adjectives to prevent redundancy.</p>
+        <p>Practice placing adjectives in the correct order.</p>
+        <p>Write sentences to explore different types of adjectives.</p>
         `;
         console.log(id);
         var sidebar = document.getElementById("sidebar");
         sidebar.innerHTML = `
+            <a href="selector.html">
+              <button id="returnbutton" class="raise"><i class="fa fa-solid fa-reply"></i>Return</button>
+            </a>
             <a href="?id=1">
                 <p class="bigfont" id="topic1">Spelling</p>
             </a>
@@ -380,303 +328,160 @@ switch(id) {
         `;
         break;
 
-        break;
 
     case "3":
         console.log(id);
         var notes = document.getElementById("notes");
         notes.innerHTML = `
-            <h1>Prepositions</h1>
-            <h1 id="subtopic1">Place</h1>
-            1. Definition
-        
-        Prepositions of place are words that describe the location of someone or something in relation to another object.
-        
-        
-        2. Common Prepositions of Place
-        
-        At:
+        <h1>Prepositions</h1>
 
-        Refers to a specific point or location.
-        Examples:
-        At the door
-        At the bus stop
-        At the top of the hill
-        Example Sentence: She is waiting at the gate.
-        In:
+        <h2 id="subtopic1">Prepositions of Place</h2>
 
-        Refers to an enclosed space or within boundaries.
-        Examples:
-        In the room
-        In the bag
-        In the city
-        Example Sentence: The keys are in the drawer.
-        On:
+        <h3>1. Definition</h3>
+        <p>Prepositions of place are words that describe the location of someone or something in relation to another object.</p>
 
-        Refers to a surface or a position atop something.
-        Examples:
-        On the table
-        On the wall
-        On the floor
-        Example Sentence: The books are on the shelf.
-        
-        
-        3. Other Prepositions of Place
-        
-        Under:
+        <h3>2. Common Prepositions of Place</h3>
+        <ul>
+            <li><strong>At:</strong> Refers to a specific point or location.
+                <ul>
+                    <li>Examples: At the door, At the bus stop, At the top of the hill</li>
+                    <li>Example Sentence: She is waiting at the gate.</li>
+                </ul>
+            </li>
+            <li><strong>In:</strong> Refers to an enclosed space or within boundaries.
+                <ul>
+                    <li>Examples: In the room, In the bag, In the city</li>
+                    <li>Example Sentence: The keys are in the drawer.</li>
+                </ul>
+            </li>
+            <li><strong>On:</strong> Refers to a surface or a position atop something.
+                <ul>
+                    <li>Examples: On the table, On the wall, On the floor</li>
+                    <li>Example Sentence: The books are on the shelf.</li>
+                </ul>
+            </li>
+        </ul>
 
-        Below something.
-        Example: The shoes are under the bed.
-        Over:
+        <h3>3. Other Prepositions of Place</h3>
+        <ul>
+            <li>Under</li>
+            <li>Over</li>
+            <li>Next to/Beside</li>
+            <li>Between</li>
+            <li>Behind</li>
+            <li>In front of</li>
+            <li>Inside</li>
+            <li>Outside</li>
+            <li>Above</li>
+            <li>Below</li>
+        </ul>
 
-        Directly above something, not necessarily touching.
-        Example: There's a fan over the dining table.
-        Next to/Beside:
+        <h3>4. Importance of Prepositions of Place</h3>
+        <ul>
+            <li>Specify the exact location or position of objects.</li>
+            <li>Provide clarity in descriptions.</li>
+        </ul>
 
-        Close to or by the side of something.
-        Example: The bank is next to the post office.
-        Between:
+        <h3>5. Common Mistakes</h3>
+        <ul>
+            <li>Confusing "in" and "on" (e.g., Correct: The pen is in the drawer. Incorrect: The pen is on the drawer.)</li>
+            <li>Misusing "at" for enclosed spaces (e.g., Correct: She is in the room. Incorrect: She is at the room.)</li>
+        </ul>
 
-        In the middle of two objects.
-        Example: The park is between the school and the library.
-        Behind:
+        <h3>6. Tips for Mastery</h3>
+        <ul>
+            <li>Visualize the spatial relationship to choose the correct preposition.</li>
+            <li>Practice with real-life objects and scenarios.</li>
+            <li>Write sentences to apply prepositions accurately.</li>
+        </ul>
 
-        At the back of something.
-        Example: The car is behind the house.
-        In front of:
+        <h2 id="subtopic2">Prepositions of Time</h2>
 
-        Opposite or ahead of something.
-        Example: He stood in front of the mirror.
-        Inside:
+        <h3>1. Definition</h3>
+        <p>Prepositions of time are words used to show the relationship between a time reference and an action or event.</p>
 
-        Within the interior of something.
-        Example: The letters are inside the box.
-        Outside:
+        <h3>2. Common Prepositions of Time</h3>
+        <ul>
+            <li>At</li>
+            <li>On</li>
+            <li>In</li>
+        </ul>
 
-        Opposite of inside; beyond a boundary.
-        Example: She's waiting outside the office.
-        Above:
+        <h3>3. Other Prepositions of Time</h3>
+        <ul>
+            <li>By</li>
+            <li>For</li>
+            <li>Since</li>
+            <li>Ago</li>
+            <li>Until/Till</li>
+            <li>Within</li>
+        </ul>
 
-        Higher than something, without direct contact.
-        Example: The painting hangs above the fireplace.
-        Below:
+        <h3>4. Importance of Prepositions of Time</h3>
+        <ul>
+            <li>Help specify when an event happens.</li>
+            <li>Clarify and organize time-related information.</li>
+        </ul>
 
-        Lower than something, without direct contact.
-        Example: The temperature is below freezing today.
-        
-        
-        4. Importance of Prepositions of Place
-        
-        Specify the exact location or position of objects.
-        Provide clarity in descriptions.
-        
-        
-        5. Common Mistakes
-        
-        Confusing "in" and "on."
-        Correct: The pen is in the drawer.
-        Incorrect: The pen is on the drawer.
-        Misusing "at" for enclosed spaces.
-        Correct: She is in the room.
-        Incorrect: She is at the room.
-        
-        
-        6. Tips for Mastery
-        
-        Visualize the spatial relationship to choose the correct preposition.
-        Practice with real-life objects and scenarios.
-        Write sentences to apply prepositions accurately.
-            <h1 id="subtopic2">Time</h1>
-            1. Definition
-        
-        Prepositions of time are words used to show the relationship between a time reference and an action or event.
-        
-        
-        2. Common Prepositions of Time
-        
-        At:
+        <h3>5. Common Mistakes</h3>
+        <ul>
+            <li>Confusing "in," "on," and "at." (e.g., Correct: He was born in 1995. Incorrect: He was born on 1995.)</li>
+            <li>Using "since" instead of "for" with durations (e.g., Correct: I've lived here for five years. Incorrect: I've lived here since five years.)</li>
+        </ul>
 
-        Used for specific points in time.
-        Examples:
-        At 5 PM
-        At noon
-        At midnight
-        At the weekend (British English).
-        Example Sentence: The train arrives at 6 o'clock.
-        On:
+        <h3>6. Tips for Mastery</h3>
+        <ul>
+            <li>Memorize common uses with examples.</li>
+            <li>Practice filling in blanks with appropriate prepositions.</li>
+            <li>Write sentences to apply what you've learned.</li>
+        </ul>
 
-        Used for specific days and dates.
-        Examples:
-        On Monday
-        On Christmas Day
-        On July 4th
-        Example Sentence: We met on her birthday.
-        In:
+        <h2 id="subtopic3">Prepositions of Movement</h2>
 
-        Used for longer periods such as months, years, centuries, or parts of the day.
-        Examples:
-        In October
-        In 1990
-        In the 21st century
-        In the morning/afternoon/evening
-        Example Sentence: She was born in December.
-        
-        
-        3. Other Prepositions of Time
-        
-        By:
+        <h3>1. Definition</h3>
+        <p>Prepositions of movement indicate the direction or motion from one place to another.</p>
 
-        Indicates a deadline or the latest time something will happen.
-        Example: You must finish the project by Monday.
-        For:
+        <h3>2. Common Prepositions of Movement</h3>
+        <ul>
+            <li>To</li>
+            <li>Into</li>
+            <li>Onto</li>
+            <li>Out of</li>
+            <li>Toward</li>
+            <li>Across</li>
+            <li>Through</li>
+            <li>Over</li>
+            <li>Along</li>
+            <li>Up and Down</li>
+            <li>Past</li>
+        </ul>
 
-        Refers to a duration of time.
-        Example: We stayed in Paris for a week.
-        Since:
+        <h3>3. Importance of Prepositions of Movement</h3>
+        <ul>
+            <li>Describe direction and help convey dynamic action.</li>
+            <li>Provide clarity in instructions and storytelling.</li>
+        </ul>
 
-        Refers to a specific point in the past until now.
-        Example: I have lived here since 2010.
-        Ago:
+        <h3>4. Common Mistakes</h3>
+        <ul>
+            <li>Confusing "to" with "into" (e.g., Correct: He walked into the room. Incorrect: He walked to the room.)</li>
+            <li>Using "on" instead of "onto" for movement (e.g., Correct: She jumped onto the bed. Incorrect: She jumped on the bed.)</li>
+        </ul>
 
-        Refers to a specific time in the past from the present.
-        Example: He left two hours ago.
-        Until/Till:
-
-        Refers to a time up to a point.
-        Example: We waited until midnight.
-        Within:
-
-        Refers to a time frame.
-        Example: You must complete the task within two days.
-        
-        
-        4. Importance of Prepositions of Time
-        
-        Help specify when an event happens.
-        Clarify and organize time-related information.
-        
-        
-        5. Common Mistakes
-        
-        Confusing "in," "on," and "at."
-        Correct: He was born in 1995.
-        Incorrect: He was born on 1995.
-        Using "since" instead of "for" with durations.
-        Correct: I've lived here for five years.
-        Incorrect: I've lived here since five years.
-        
-        
-        6. Tips for Mastery
-        
-        Memorize common uses with examples.
-        Practice filling in blanks with appropriate prepositions.
-        Write sentences to apply what you've learned.
-            <h1 id="subtopic3">Movement</h1>
-            1. Definition
-        
-        Prepositions of movement indicate the direction or motion from one place to another.
-        
-        
-        2. Common Prepositions of Movement
-        
-        To:
-
-        Indicates movement toward a specific destination.
-        Examples:
-        He went to the park.
-        She traveled to Paris.
-        Into:
-
-        Indicates movement from the outside to the inside of something.
-        Examples:
-        The cat jumped into the box.
-        He went into the room.
-        Onto:
-
-        Indicates movement toward a surface.
-        Examples:
-        The child climbed onto the table.
-        She stepped onto the stage.
-        Onto vs. On:
-
-        Onto implies motion; on indicates position.
-        Examples:
-        Motion: He jumped onto the roof.
-        Position: The book is on the table.
-        Out of:
-
-        Indicates movement from inside to outside.
-        Examples:
-        She ran out of the house.
-        The bird flew out of the cage.
-        Toward:
-
-        Indicates movement in the direction of something.
-        Examples:
-        She walked toward the beach.
-        The car moved toward the city.
-        Across:
-
-        Indicates movement from one side to the other.
-        Examples:
-        They swam across the river.
-        He walked across the street.
-        Through:
-
-        Indicates movement within a space and exiting on the other side.
-        Examples:
-        The train passed through the tunnel.
-        He walked through the forest.
-        Over:
-
-        Indicates movement above something, often crossing it.
-        Examples:
-        The plane flew over the mountains.
-        She jumped over the fence.
-        Along:
-
-        Indicates movement following a line, path, or course.
-        Examples:
-        They walked along the river.
-        He ran along the road.
-        Up and Down:
-
-        Up: Movement toward a higher position.
-        Example: He climbed up the hill.
-        Down: Movement toward a lower position.
-        Example: She rolled down the slope.
-        Past:
-
-        Indicates movement beyond or by something.
-        Example: He ran past the store.
-        
-        
-        3. Importance of Prepositions of Movement
-        
-        Describe direction and help convey dynamic action.
-        Provide clarity in instructions and storytelling.
-        
-        
-        4. Common Mistakes
-        
-        Confusing "to" with "into."
-        Correct: He walked into the room.
-        Incorrect: He walked to the room.
-        Using "on" instead of "onto" for movement.
-        Correct: She jumped onto the bed.
-        Incorrect: She jumped on the bed.
-        
-
-        5. Tips for Mastery
-        
-        Visualize the movement and relationship between objects.
-        Practice writing and speaking sentences using different prepositions.
-        Observe how these prepositions are used in stories and conversations.
+        <h3>5. Tips for Mastery</h3>
+        <ul>
+            <li>Visualize the movement and relationship between objects.</li>
+            <li>Practice writing and speaking sentences using different prepositions.</li>
+            <li>Observe how these prepositions are used in stories and conversations.</li>
+        </ul>
         `;
         console.log(id);
         
         var sidebar = document.getElementById("sidebar");
         sidebar.innerHTML = `
+            <a href="selector.html">
+              <button id="returnbutton" class="raise"><i class="fa fa-solid fa-reply"></i>Return</button>
+            </a>
             <a href="?id=1">
                 <p class="bigfont" id="topic1">Spelling</p>
             </a>

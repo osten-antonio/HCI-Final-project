@@ -68,13 +68,6 @@ h2{
   color: var(--darkmint);
 }
 
-.return-button {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-}
 
 .profile-icon {
   width: 30px;
@@ -136,15 +129,6 @@ main {
   box-shadow: 0px 0px 11px 0px rgba(5,82,91,1);
 }
 
-#returnbutton{
-  color: var(--darkmint);
-  border: 5px solid var(--darkmint);
-  border-radius: 25px;
-  padding: 20% 50% 20% 50%;
-  background-color: var(--primemint);
-  font-weight: bold;
-  font-size: clamp(0.9rem, 1.5vw, 2.3vw);
-}
 
 
 @media screen and (max-width: 780px) {

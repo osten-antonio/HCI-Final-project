@@ -24,7 +24,18 @@
     font-family: 'Open Sans', sans-serif;
     box-sizing: border-box;
 }
-
+#returnbutton{
+  display: flex;
+  flex-direction: row;
+  gap: 10%;
+  color: var(--darkmint);
+  border: 5px solid var(--darkmint);
+  border-radius: 25px;
+  padding: 20% 50% 20% 50%;
+  background-color: var(--primemint);
+  font-weight: bold;
+  font-size: clamp(0.9rem, 1.5vw, 2.3vw);;
+}
 .panel {
   padding: 0 18px;
   overflow: hidden;

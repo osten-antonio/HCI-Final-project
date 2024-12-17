@@ -43,20 +43,7 @@ html, body{
     white-space: nowrap;
 }
 
-#returnbutton{
-    color: var(--darkmint);
-    border: 5px solid var(--darkmint);
-    border-radius: 25px;
-    background-color: var(--primemint);
-    font-weight: bold;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 20% 25% 20% 25%;
-    width: 147.92px;
-    height: 83.91px;
-    gap: 15%;
-}
+
 
 #bookmarkbutton{
     color: var(--darkmint);

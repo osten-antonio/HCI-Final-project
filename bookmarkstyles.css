@@ -13,6 +13,7 @@
 html, body{
     margin: 0;
     position:relative;
+    overflow-x: hidden;
 }
 
 *{
@@ -55,23 +56,15 @@ html, body{
     margin-right: auto;
     font-weight: bold;
 }
-#returnbutton{
-    color: var(--darkmint);
-    border: 5px solid var(--darkmint);
-    border-radius: 25px;
-    padding: 20% 50% 20% 50%;
-    background-color: var(--primemint);
-    font-weight: bold;
-    font-size: clamp(0.9rem, 1.5vw, 2.3vw);;
-  }
+
 
   .accordion {
     background-color: var(--primemint);
-
+    margin: 10px 20px;
     color: var(--darkmint);
     cursor: pointer;
     padding: 18px;
-    width: 100%;
+    width: 98%;
     text-align: left;
     border: 5px solid var(--darkmint);
     border-radius: 25px;

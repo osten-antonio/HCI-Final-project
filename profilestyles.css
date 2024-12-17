@@ -152,15 +152,6 @@ html, body{
   content: "\2796";
 }
 
-#returnbutton{
-  color: var(--darkmint);
-  border: 5px solid var(--darkmint);
-  border-radius: 25px;
-  padding: 20% 50% 20% 50%;
-  background-color: var(--primemint);
-  font-weight: bold;
-  font-size: clamp(0.9rem, 1.5vw, 2.3vw);;
-}
 
 #name, #english-1, #english-2, #english-3, #maths-1, #maths-2, #maths-3{
   color: var(--darkmint);

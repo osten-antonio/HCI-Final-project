@@ -88,7 +88,7 @@ function loadQuestions(){
                 var correct = 0;
                 var cur=0;
                 var qna = [{
-                    question:"9 + 2 =",
+                    question:"1. 9 + 2 =",
                     answer1:"A. 11",
                     answer2:"B. 12",
                     answer3:"C. 13",
@@ -96,7 +96,7 @@ function loadQuestions(){
                     answer5:"E. 15",
                     correct:"A"},
                     {
-                    question:"69 - 21 =",
+                    question:"2. 69 - 21 =",
                     answer1:"A. 46",
                     answer2:"B. 47",
                     answer3:"C. 48",
@@ -104,7 +104,7 @@ function loadQuestions(){
                     answer5:"E. 50",
                     correct:"C"},
                     {
-                    question:"7 x 4 =",
+                    question:"3. 7 x 4 =",
                     answer1:"A. 21",
                     answer2:"B. 28",
                     answer3:"C. 35",
@@ -112,7 +112,7 @@ function loadQuestions(){
                     answer5:"E. 49",
                     correct:"B"},
                     {
-                    question:"9 x 9 =",
+                    question:"4. 9 x 9 =",
                     answer1:"A. 81",
                     answer2:"B. 90",
                     answer3:"C. 99",
@@ -120,7 +120,7 @@ function loadQuestions(){
                     answer5:"E. 117",
                     correct:"A"},
                     {
-                    question:"20 / 5 =",
+                    question:"5. 20 / 5 =",
                     answer1:"A. 1",
                     answer2:"B. 2",
                     answer3:"C. 3",
@@ -165,7 +165,7 @@ function loadQuestions(){
                 var correct = 0;
                 var cur=0;
                 var qna = [{
-                    question:"The lmathth of a rectangle is 6cm and its height is 4cm. What is the area of the rectangle?",
+                    question:"1. The length of a rectangle is 6cm and its height is 4cm. What is the area of the rectangle?",
                     answer1:"A. 24cm",
                     answer2:"B. 24m",
                     answer3:"C. 26cm",
@@ -173,7 +173,7 @@ function loadQuestions(){
                     answer5:"E. 2km",
                     correct:"A"},
                     {
-                    question:"The lmathth of a the base of a triangle is 5cm and its height is 3cm. What is the area of the triangle?",
+                    question:"2. The length of a the base of a triangle is 5cm and its height is 3cm. What is the area of the triangle?",
                     answer1:"A. 6.5cm",
                     answer2:"B. 7cm",
                     answer3:"C. 7.5cm",
@@ -181,7 +181,7 @@ function loadQuestions(){
                     answer5:"E. 10cm",
                     correct:"C"},
                     {
-                    question:"The lmathth of a rectangle is 8cm and its height is 6cm. What is the perimiter of the rectangle?",
+                    question:"3. The length of a rectangle is 8cm and its height is 6cm. What is the perimiter of the rectangle?",
                     answer1:"A. 26cm",
                     answer2:"B. 28cm",
                     answer3:"C. 30cm",
@@ -189,7 +189,7 @@ function loadQuestions(){
                     answer5:"E. 34cm",
                     correct:"B"},
                     {
-                    question:"The lmathth of one side of a square is 9cm. What is the perimiter of the square?",
+                    question:"4. The length of one side of a square is 9cm. What is the perimiter of the square?",
                     answer1:"A. 36cm",
                     answer2:"B. 45cm",
                     answer3:"C. 35cm",
@@ -197,7 +197,7 @@ function loadQuestions(){
                     answer5:"E. 50cm",
                     correct:"A"},
                     {
-                    question:"The angle of one acute corner of a right-angle triangle is 57∘. What is the angle of the other acute angle?",
+                    question:"5. The angle of one acute corner of a right-angle triangle is 57∘. What is the angle of the other acute angle?",
                     answer1:"A. 12∘",
                     answer2:"B. 17∘",
                     answer3:"C. 24∘",
@@ -243,7 +243,7 @@ function loadQuestions(){
                 var correct = 0;
                 var cur=0;
                 var qna = [{
-                    question:"Which of the following fractions is equivalent to 2/3?",
+                    question:"1. Which of the following fractions is equivalent to 2/3?",
                     answer1:"A. 6/9",
                     answer2:"B. 4/5",
                     answer3:"C. 5/7",
@@ -251,7 +251,7 @@ function loadQuestions(){
                     answer5:"E. 3/4",
                     correct:"A"},
                     {   
-                    question:"Which fraction is the largest?",
+                    question:"2. Which fraction is the largest?",
                     answer1:"A. 1/5",
                     answer2:"B. 7/10",
                     answer3:"C. 3/4",
@@ -259,7 +259,7 @@ function loadQuestions(){
                     answer5:"E. 3/8",
                     correct:"C"},
                     {
-                    question:"What is the simplified form of 20/28?",
+                    question:"3. What is the simplified form of 20/28?",
                     answer1:"A. 3/4",
                     answer2:"B. 4/7",
                     answer3:"C. 5/7",
@@ -267,7 +267,7 @@ function loadQuestions(){
                     answer5:"E. 6/8",
                     correct:"B"},
                     {
-                    question:"Which of the following fractions is equivalent to 3/6?",
+                    question:"4. Which of the following fractions is equivalent to 3/6?",
                     answer1:"A. 1/2",
                     answer2:"B. 1/3",
                     answer3:"C. 2/3",
@@ -275,7 +275,7 @@ function loadQuestions(){
                     answer5:"E. 5/8",
                     correct:"A"},
                     {
-                    question:"Which fraction is the smallest?",
+                    question:"5. Which fraction is the smallest?",
                     answer1:"A. 2/3",
                     answer2:"B. 5/6",
                     answer3:"C. 1/2",

@@ -13,7 +13,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const loggedInUserId = localStorage.getItem('loggedInUId')
-const mathRef = doc(db,"mathlish",loggedInUserId)
+const mathRef = doc(db,"math",loggedInUserId)
 const mathDocSnap = await getDoc(mathRef)
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -76,43 +76,44 @@ function handleNavigation(content,done,learnArray,topic,subtopic){
 function writeLearn(){
     if(mathDocSnap.exists){
         var data = mathDocSnap.data()
+        console.log(data)
         var learnArray = data.learnCompletion
     }else{
         window.location.replace('../auth.html')
     }
     switch(topic[0]){
         case "1":
-            
             switch(topic[1]){
                 case "1": // TOPIC 1.1
                     var content=[{
-                        subtopic:"Addition",
+                        subtopic:"Addition and Subtraction",
                         content:`
-                            <img>
+                        <ul style="list-style-type:none;">
+                            <li>4 + 6 = 10 <br> (Imagine you have 4 apples, and someone gives you 6 more apples. Now you have 10 apples.)</li>
+                            <li>12 - 5 = 7 <br> (If you have 12 candies and you give away 5, you’ll have 7 candies left.)</li>
+                        </ul>
                         `,
                         explanation:`
-                            <p>Addition and Substraction are both a way to comobine two or more number that is dependent on the symbol. The symbol (+) means to add like 5 + 5 becomes 10. The (-) symbol is to substract which meant it is decreasing the value on the left by the right value such as 10 - 5 = 5</p>
+                            <p><strong>Addition</strong> is when you combine two or more numbers to make a bigger number. The symbol (+) is used for addition. For example, 3 + 2 = 5, which means you have 3 and you add 2 more, giving you a total of 5.</p>
+                            <p><strong>Subtraction</strong> is when you take one number away from another. The symbol (-) is used for subtraction. For example, 7 - 4 = 3, which means you have 7, and if you take away 4, you are left with 3.</p>
+                            <p>These two operations are opposites. Addition increases numbers, while subtraction decreases them.</p>
                         `
                     },{
-                        subtopic:"Subtraction",
+                        subtopic:"Practice Questions",
                         content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
+                            <p>Try solving these problems:</p>
+                            <ul>
+                                <li>5 + 3 = ?</li>
+                                <li>10 - 6 = ?</li>
+                                <li>8 + 2 = ?</li>
+                                <li>15 - 7 = ?</li>
+                            </ul>
                         `,
                         explanation:`
-                            <p>Multiplication is a sytem that multiply the number by a certain ammount. the multiply symbol is an (x) and when used in an equation such as 5 x 5 the eqatuion works by multiplying the first digit  to the last digits times so when the equation says 5 x 5 it means that 5 is added by itself a 5 ammoount of time(5 + 5 + 5 + 5 + 5) equaling to 25.</p>
+                            <p>Use the examples of addition and subtraction to solve the practice questions. Remember, for addition, you are combining numbers to get a bigger total. For subtraction, you are taking away from the first number.</p>
                         `
-                    },{
-                        subtopic:"What is division?",
-                        content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
-                        `,
-                        explanation:`
-                            <p>division is a system that devides a number by another number the symbol itslef is (:) such as 10 : 2 = 5. the simplest way of doing division is by thinking it as sharing an item such as there are 10 pizza and 2 people how much can the 2 equally gets is 5 the same logic as 5 : 2  </p>
-                        `
-                    }] // Change it to how many as you want
-                    var done = 2; // Please change to how many content you provided, -1
+                    }] 
+                    var done = 1; 
                     
                     handleNavigation(content,done,learnArray,"First","0")
                     break
@@ -120,286 +121,224 @@ function writeLearn(){
                     var content=[{
                         subtopic:"Multiplication",
                         content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
+                            <img src="multiplication_example.png" alt="Example of Multiplication">
                         `,
                         explanation:`
-                            <p>Content, you can put HTML tags here</p>
+                            <p><strong>Multiplication</strong> is when you add a number to itself a certain number of times. The symbol (x) or (*) is used for multiplication. For example, 4 x 3 means you add 4 three times (4 + 4 + 4 = 12). So, 4 x 3 = 12.</p>
+                            <p>Multiplication can also be thought of as "groups of". For example, 3 x 2 means you have 3 groups of 2 items, which totals 6.</p>
                         `
                     },{
-                        subtopic:"Subtitle",
+                        subtopic:"Why We Use Multiplication",
                         content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
+                            <p>We use multiplication to make adding large numbers easier. Instead of adding 5 + 5 + 5 + 5, we can just say 5 x 4, which is 20.</p>
                         `,
                         explanation:`
-                            <p>Content, you can put HTML tags here</p>
+                            <p>When you see repeated addition, think of it as multiplication. For example, 7 + 7 + 7 + 7 + 7 is the same as 7 x 5, which equals 35. This makes math faster and easier.</p>
                         `
-                    },{
-                        subtopic:"Subtitle",
-                        content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
-                        `,
-                        explanation:`
-                            <p>Content, you can put HTML tags here</p>
-                        `
-                    }] // Change it to how many as you want
-                    var done = 2; // Please change to how many content you provided, -1
+                    }] 
+                    var done = 1; 
                     
                     handleNavigation(content,done,learnArray,"First","1")
                     break
                 case "3": // TOPIC 1.3
-                    
                     var content=[{
                         subtopic:"Division",
                         content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
+                            <img src="division_example.png" alt="Example of Division">
                         `,
                         explanation:`
-                            <p>Content, you can put HTML tags here</p>
+                            <p><strong>Division</strong> is when you split a number into equal parts. The symbol (÷) or (/) is used for division. For example, 12 ÷ 3 means you are dividing 12 into 3 equal parts, and each part is 4. So, 12 ÷ 3 = 4.</p>
+                            <p>Another way to think about division is sharing. If you have 12 cookies and 3 friends, each friend gets 4 cookies.</p>
                         `
                     },{
-                        subtopic:"Subtitle",
+                        subtopic:"Practice Questions",
                         content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
+                            <p>Try solving these problems:</p>
+                            <ul>
+                                <li>10 ÷ 2 = ?</li>
+                                <li>15 ÷ 3 = ?</li>
+                                <li>8 ÷ 2 = ?</li>
+                                <li>20 ÷ 5 = ?</li>
+                            </ul>
                         `,
                         explanation:`
-                            <p>Content, you can put HTML tags here</p>
+                            <p>Use the idea of "sharing" to solve these division problems. For example, if you have 10 candies and 2 people, each person gets 5 candies. Use this idea to solve the other problems.</p>
                         `
-                    },{
-                        subtopic:"Subtitle",
-                        content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
-                        `,
-                        explanation:`
-                            <p>Content, you can put HTML tags here</p>
-                        `
-                    }] // Change it to how many as you want
-                    var done = 2; // Please change to how many content you provided, -1
+                    }] 
+                    var done = 1; 
                     
                     handleNavigation(content,done,learnArray,"First","2")
+                    
                     break
             }   
             break
         case "2":
             switch(topic[1]){
-                case "1": // TOPIC 2.1
-                    
-                    var content=[{
-                        subtopic:"Area",
-                        content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
+                case "1": // TOPIC 2.1: Area
+                    var content = [{
+                        subtopic: "Area",
+                        content: `
+                            Area is the amount of space inside a shape. 
+                            Think of it as the space where you can color inside a box! 
+                            To find the area of a rectangle, you multiply the length by the width.
+                            For example, if a rectangle has a length of 4 units and a width of 3 units,
+                            the area is 4 x 3 = 12 square units.
+                            <br><br>
+                            Here's a simple rectangle with a length of 4 and width of 3:
+                            <div style="width: 150px; height: 100px; border: 2px solid black;"></div>
                         `,
-                        explanation:`
-                            <p>Content, you can put HTML tags here</p>
+                        explanation: `
+                            <p>Area is the space inside a shape, measured in square units. For example, the area of a rectangle is found by multiplying the length and width.</p>
+                            <p>Area = Length × Width</p>
                         `
-                    },{
-                        subtopic:"Subtitle",
-                        content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
+                    }, {
+                        subtopic: "Subtitle",
+                        content: `
+                            <p>Here's a challenge! Can you find the area of this square?</p>
+                            <div style="width: 100px; height: 100px; border: 2px solid blue;"></div>
+                            <p>If the sides are 5 units long, what is the area?</p>
                         `,
-                        explanation:`
-                            <p>Content, you can put HTML tags here</p>
+                        explanation: `
+                            <p>For squares, the area is the length of one side squared. So, if the side is 5 units, the area is 5 × 5 = 25 square units.</p>
                         `
-                    },{
-                        subtopic:"Subtitle",
-                        content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
+                    }];
+                    var done = 1; // One content provided
+                    handleNavigation(content, done, learnArray, "Second", "0");
+                    break;
+            
+                case "2": // TOPIC 2.2: Perimeter
+                    var content = [{
+                        subtopic: "Perimeter",
+                        content: `
+                            Perimeter is the distance around the outside of a shape.
+                            To find the perimeter of a rectangle, you add up the lengths of all the sides.
+                            For example, if a rectangle has a length of 4 units and a width of 3 units,
+                            the perimeter is 4 + 4 + 3 + 3 = 14 units.
+                            <br><br>
+                            Here's a simple rectangle with a length of 4 and width of 3:
+                            <div style="width: 150px; height: 100px; border: 2px solid red;"></div>
                         `,
-                        explanation:`
-                            <p>Content, you can put HTML tags here</p>
+                        explanation: `
+                            <p>The perimeter is the total length around a shape. For rectangles, you add up all the sides: 2 × (Length + Width).</p>
+                            <p>Perimeter = 2 × (Length + Width)</p>
                         `
-                    }] // Change it to how many as you want
-                    var done = 2; // Please change to how many content you provided, -1
-                    
-                    handleNavigation(content,done,learnArray,"Second","0")
-                    break
-                case "2": // TOPIC 2.2
-                    
-                    var content=[{
-                        subtopic:"Perimeter",
-                        content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
+                    }, {
+                        subtopic: "Subtitle",
+                        content: `
+                            <p>Now, let's calculate the perimeter of this triangle!</p>
+                            <div style="width: 0; height: 0; border-left: 50px solid transparent; border-right: 50px solid transparent; border-bottom: 100px solid green;"></div>
+                            <p>If the sides of the triangle are 5, 5, and 6 units, what is the perimeter?</p>
                         `,
-                        explanation:`
-                            <p>Content, you can put HTML tags here</p>
+                        explanation: `
+                            <p>For triangles, you add the lengths of all three sides. So, the perimeter is 5 + 5 + 6 = 16 units.</p>
                         `
-                    },{
-                        subtopic:"Subtitle",
-                        content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
+                    }];
+                    var done = 1; // One content provided
+                    handleNavigation(content, done, learnArray, "Second", "1");
+                    break;
+            
+                case "3": // TOPIC 2.3: Angles
+                    var content = [{
+                        subtopic: "Angles",
+                        content: `
+                            Angles are formed when two lines meet at a point. 
+                            The space between the two lines is the angle.
+                            You can measure angles in degrees. 
+                            A right angle is 90 degrees and looks like the corner of a book.
+                            <br><br>
+                            Here's a right angle:
+                            <div style="width: 100px; height: 100px; border-left: 2px solid black; border-bottom: 2px solid black;"></div>
                         `,
-                        explanation:`
-                            <p>Content, you can put HTML tags here</p>
+                        explanation: `
+                            <p>An angle is the space between two lines that meet. A right angle is 90 degrees, which is a perfect corner.</p>
+                            <p>Other angles are less than 90° (acute) or greater than 90° (obtuse).</p>
                         `
-                    },{
-                        subtopic:"Subtitle",
-                        content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
+                    }, {
+                        subtopic: "Subtitle",
+                        content: `
+                            <p>Can you spot the right angle in this picture?</p>
+                            <div style="width: 100px; height: 100px; border-left: 2px solid purple; border-bottom: 2px solid purple;"></div>
+                            <p>Does it look like the corner of a book?</p>
                         `,
-                        explanation:`
-                            <p>Content, you can put HTML tags here</p>
+                        explanation: `
+                            <p>Yes! The right angle is 90 degrees, and it looks like the corner of a square or a book!</p>
                         `
-                    }] // Change it to how many as you want
-                    var done = 2; // Please change to how many content you provided, -1
-                    
-                    handleNavigation(content,done,learnArray,"Second","1")
-                    break
-                case "3": // TOPIC 2.3
-                    
-                    var content=[{
-                        subtopic:"Angles",
-                        content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
-                        `,
-                        explanation:`
-                            <p>Content, you can put HTML tags here</p>
-                        `
-                    },{
-                        subtopic:"Subtitle",
-                        content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
-                        `,
-                        explanation:`
-                            <p>Content, you can put HTML tags here</p>
-                        `
-                    },{
-                        subtopic:"Subtitle",
-                        content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
-                        `,
-                        explanation:`
-                            <p>Content, you can put HTML tags here</p>
-                        `
-                    }] // Change it to how many as you want
-                    var done = 2; // Please change to how many content you provided, -1
-                    
-                    handleNavigation(content,done,learnArray,"Second","2")
-                    break
+                    }];
+                    var done = 1; // One content provided
+                    handleNavigation(content, done, learnArray, "Second", "2");
+                    break;
             }   
             break
         case "3":
             switch(topic[1]){
-                case "1": // TOPIC 3.1
-                    
-                    var content=[{
-                        subtopic:"Equivalent",
-                        content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
+                case "1": // TOPIC 3.1: Equivalent Fractions
+                    var content = [{
+                        subtopic: "Equivalent Fractions",
+                        content: `
+                            Equivalent fractions are fractions that look different but represent the same amount.
+                            For example, 1/2 and 2/4 are equivalent fractions because they both represent half.
+                            You can think of it like cutting a pizza into two parts or four parts, but you still have half of it!
+                            <br><br>
+                            Here's a visual:
+                            <div style="width: 100px; height: 50px; background-color: lightblue; display: inline-block;"></div> 
+                            <div style="width: 200px; height: 50px; background-color: lightgreen; display: inline-block;"></div>
+                            <p>Both represent half of a whole!</p>
                         `,
-                        explanation:`
-                            <p>Content, you can put HTML tags here</p>
+                        explanation: `
+                            <p>Equivalent fractions are fractions that represent the same part of a whole, even though they have different numbers. You can make equivalent fractions by multiplying or dividing both the numerator (top number) and the denominator (bottom number) by the same number.</p>
+                            <p>Example: 1/2 = 2/4 = 4/8</p>
                         `
-                    },{
-                        subtopic:"Subtitle",
-                        content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
+                    }];
+                    var done = 1; // One content provided
+                    handleNavigation(content, done, learnArray, "Third", "0");
+                    break;
+            
+                case "2": // TOPIC 3.2: Comparing Fractions
+                    var content = [{
+                        subtopic: "Comparing Fractions",
+                        content: `
+                            Comparing fractions means deciding which fraction is bigger or smaller.
+                            To compare fractions, you need to look at the size of the parts. 
+                            For example, 1/4 is smaller than 1/2 because the parts are smaller!
+                            <br><br>
+                            Here's a simple visual:
+                            <div style="width: 100px; height: 50px; background-color: lightcoral; display: inline-block;"></div> 
+                            <div style="width: 200px; height: 50px; background-color: lightyellow; display: inline-block;"></div>
+                            <p>1/4 is smaller than 1/2 because the pieces are bigger in 1/2!</p>
                         `,
-                        explanation:`
-                            <p>Content, you can put HTML tags here</p>
+                        explanation: `
+                            <p>To compare fractions, check the size of the parts. If two fractions have the same denominator (bottom number), the fraction with the bigger numerator (top number) is the bigger fraction.</p>
+                            <p>Example: 1/2 is bigger than 1/4 because 2 is bigger than 1 when the denominator is the same.</p>
                         `
-                    },{
-                        subtopic:"Subtitle",
-                        content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
+                    }];
+                    var done = 1; // One content provided
+                    handleNavigation(content, done, learnArray, "Third", "1");
+                    break;
+            
+                case "3": // TOPIC 3.3: Simplifying Fractions
+                    var content = [{
+                        subtopic: "Simplifying Fractions",
+                        content: `
+                            Simplifying a fraction means making it easier by using smaller numbers.
+                            For example, the fraction 2/4 can be simplified to 1/2 because both the top and bottom numbers can be divided by 2.
+                            It's like dividing a pizza into fewer slices for easier sharing!
+                            <br><br>
+                            Here's how you simplify:
+                            <div style="width: 100px; height: 50px; background-color: lightpink; display: inline-block;"></div> 
+                            <div style="width: 50px; height: 50px; background-color: lightseagreen; display: inline-block;"></div>
+                            <p>2/4 simplifies to 1/2!</p>
                         `,
-                        explanation:`
-                            <p>Content, you can put HTML tags here</p>
+                        explanation: `
+                            <p>To simplify a fraction, divide both the numerator and the denominator by the same number. You want to find the smallest numbers that still represent the same part of the whole.</p>
+                            <p>Example: 2/4 simplifies to 1/2, because both 2 and 4 can be divided by 2.</p>
                         `
-                    }] // Change it to how many as you want
-                    var done = 2; // Please change to how many content you provided, -1
-                    
-                    handleNavigation(content,done,learnArray,"Third","0")
-                    break
-                case "2": // TOPIC 3.2
-                    
-                    var content=[{
-                        subtopic:"Comparing",
-                        content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
-                        `,
-                        explanation:`
-                            <p>Content, you can put HTML tags here</p>
-                        `
-                    },{
-                        subtopic:"Subtitle",
-                        content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
-                        `,
-                        explanation:`
-                            <p>Content, you can put HTML tags here</p>
-                        `
-                    },{
-                        subtopic:"Subtitle",
-                        content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
-                        `,
-                        explanation:`
-                            <p>Content, you can put HTML tags here</p>
-                        `
-                    }] // Change it to how many as you want
-                    var done = 2; // Please change to how many content you provided, -1
-                    
-                    handleNavigation(content,done,learnArray,"Third","1")
-                    break
-                case "3": // TOPIC 3.3
-                    
-                    var content=[{
-                        subtopic:"Simplifying",
-                        content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
-                        `,
-                        explanation:`
-                            <p>Content, you can put HTML tags here</p>
-                        `
-                    },{
-                        subtopic:"Subtitle",
-                        content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
-                        `,
-                        explanation:`
-                            <p>Content, you can put HTML tags here</p>
-                        `
-                    },{
-                        subtopic:"Subtitle",
-                        content:`
-                            You can put HTML tags here
-                            like <img> this is for the additional content thingamabob
-                        `,
-                        explanation:`
-                            <p>Content, you can put HTML tags here</p>
-                        `
-                    }] // Change it to how many as you want
-                    var done = 2; // Please change to how many content you provided, -1
-                    
-                    handleNavigation(content,done,learnArray,"Third","2")
-                    break
-            }   
+                    }];
+                    var done = 1; // One content provided
+                    handleNavigation(content, done, learnArray, "Third", "2");
+                    break;
+            }
             break
     }
     console.log("Test")
 }
-
-
 writeLearn();
