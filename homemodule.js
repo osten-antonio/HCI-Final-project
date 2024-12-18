@@ -15,7 +15,7 @@ if(loggedInUserId){
     window.location.href='dashboard.html'
 }
 else{
-    window.location.href='auth.html';
+    window.location.href='../auth.html';
 }
 }
 

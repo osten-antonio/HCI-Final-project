@@ -56,7 +56,7 @@ function checkLoggedInProfile(){
         console.error("Error fetching data:", error);
         });
     }else{
-        window.location.replace("auth.html")
+        window.location.replace("../auth.html")
     }
 }
 checkLoggedInProfile();
