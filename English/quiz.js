@@ -148,7 +148,7 @@ function loadQuestions(){
                             change.engQuizOne = correct/5 * 100
 
                             updateDoc(engRef,change)
-                            window.location.replace("selector.html")
+                            .then(window.location.replace("selector.html"))
 
                         }
                     }
@@ -227,16 +227,12 @@ function loadQuestions(){
                         correct++
                     }
                     cur++
-                    if(cur > 5){
+                    if(cur > 4){
                         cur--
                         if(window.confirm("Do you want to submit?")){
-                            change.engQuizOne = correct/5 * 100
-                            const bookmarkChanges = {
-                                engBookmarks: Array.from(new Set(bookmarkData.engBookmarks.concat(bookmarks))) 
-                            }
+                            change.engQuizTwo = correct/5 * 100
                             updateDoc(engRef,change)
-                            updateDoc(bookmarkRef,bookmarkChanges)
-                            window.location.replace("selector.html")
+                            .then(window.location.replace("selector.html"))
                         }
                     }
                     document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%" 
@@ -315,16 +311,12 @@ function loadQuestions(){
                         correct++
                     }
                     cur++
-                    if(cur > 5){
+                    if(cur > 4){
                         cur--
                         if(window.confirm("Do you want to submit?")){
-                            change.engQuizOne = correct/5 * 100
-                            const bookmarkChanges = {
-                                engBookmarks: Array.from(new Set(bookmarkData.engBookmarks.concat(bookmarks))) 
-                            }
+                            change.engQuizThree = correct/5 * 100
                             updateDoc(engRef,change)
-                            updateDoc(bookmarkRef,bookmarkChanges)
-                            window.location.replace("selector.html")
+                            .then(window.location.replace("selector.html"))
                         }
                     }
                     document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%"

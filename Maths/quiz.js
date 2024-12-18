@@ -149,8 +149,7 @@ function loadQuestions(){
                             console.log(change)
                             change.mathQuizOne = correct/5 * 100
                             updateDoc(mathRef,change)
-                            window.location.replace("selector.html")
-
+                            .then(window.location.replace("selector.html"))
                         }
                     }
                     document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%"
@@ -233,7 +232,7 @@ function loadQuestions(){
                             change.mathQuizTwo = correct/5 * 100
 
                             updateDoc(mathRef,change)
-                            window.location.replace("selector.html")
+                            .then(window.location.replace("selector.html"))
 
                         }
                     }
@@ -316,7 +315,7 @@ function loadQuestions(){
                         if(window.confirm("Do you want to submit?")){
                             change.mathQuizThree = correct/5 * 100
                             updateDoc(mathRef,change)
-                            window.location.replace("selector.html")
+                            .then(window.location.replace("selector.html"))
                         }
                     }
                     document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%" 
