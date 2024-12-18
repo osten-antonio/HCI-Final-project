@@ -26,13 +26,13 @@ function checkLoggedInProfile(){
         const data = docSnap.data();
         console.log("Datas", data)
         console.log("Overall progress:", data.overallProgress);
-        document.getElementById("maths-percentage").innerText= (data.overallProgress)+"%";
-        document.getElementById("maths-1").style["width"] = (data.mathTopicOne)+"%";
-        document.getElementById("maths-1").textContent = "Topic One "+ data.mathTopicOne +"%";
-        document.getElementById("maths-2").style["width"] = (data.mathTopicTwo)+"%";
-        document.getElementById("maths-2").textContent = "Topic Two "+ data.mathTopicTwo +"%";
-        document.getElementById("maths-3").style["width"] = (data.mathTopicThree)+"%";
-        document.getElementById("maths-3").textContent = "Topic Three "+ data.mathTopicThree +"%";
+        document.getElementById("maths-percentage").innerText= (Math.ceil(data.overallProgress))+"%";
+        document.getElementById("maths-1").style["width"] = (Math.ceil(data.mathTopicOne))+"%";
+        document.getElementById("maths-1").textContent = "Topic One "+ (Math.ceil(data.mathTopicOne)) +"%";
+        document.getElementById("maths-2").style["width"] = (Math.ceil(data.mathTopicTwo))+"%";
+        document.getElementById("maths-2").textContent = "Topic Two "+ (Math.ceil(data.mathTopicTwo)) +"%";
+        document.getElementById("maths-3").style["width"] = (Math.ceil(data.mathTopicThree))+"%";
+        document.getElementById("maths-3").textContent = "Topic Three "+ (Math.ceil(data.mathTopicThree)) +"%";
       } else {
         console.log("No data available.");
       }
@@ -45,14 +45,14 @@ function checkLoggedInProfile(){
       if (docSnap.exists()) {
         const data = docSnap.data();
         console.log("Datas", data)
-        console.log("Overall progress:", data.overallProgress);
-        document.getElementById("eng-percentage").innerText= (data.overallProgress)+"%";
-        document.getElementById("english-1").style["width"] = (data.engTopicOne)+"%";
-        document.getElementById("english-1").textContent = "Topic One "+ data.engTopicOne +"%";
-        document.getElementById("english-2").style["width"] = (data.engTopicTwo)+"%";
-        document.getElementById("english-2").textContent = "Topic Two "+ data.engTopicTwo +"%";
-        document.getElementById("english-3").style["width"] = (data.engTopicThree)+"%";
-        document.getElementById("english-3").textContent = "Topic Three "+ data.engTopicThree +"%";
+        console.log("Overall progress:", Math.ceil(data.overallProgress));
+        document.getElementById("eng-percentage").innerText= (Math.ceil(data.overallProgress))+"%";
+        document.getElementById("english-1").style["width"] = (Math.ceil(data.engTopicOne))+"%";
+        document.getElementById("english-1").textContent = "Topic One "+ (Math.ceil(data.engTopicOne)) +"%";
+        document.getElementById("english-2").style["width"] = (Math.ceil(data.engTopicTwo))+"%";
+        document.getElementById("english-2").textContent = "Topic Two "+ (Math.ceil(data.engTopicTwo)) +"%";
+        document.getElementById("english-3").style["width"] = (Math.ceil(data.engTopicThree))+"%";
+        document.getElementById("english-3").textContent = "Topic Three "+ (Math.ceil(data.engTopicThree)) +"%";
       } else {
         console.log("No data available.");
       }

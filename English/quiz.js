@@ -45,7 +45,6 @@ function getQna(qna, cur) {
     });
 }
 
-  
 async function fetchBookmarkData() {
     if (bookmarkDocSnap.exists()) {
         return bookmarkDocSnap.data().engBookmarks || [];
@@ -132,9 +131,11 @@ function loadQuestions(){
                 document.getElementById("bookmarkbutton").addEventListener("click",(event)=>{
                     toggleBookmark(cur);
                 })
-      
                 
                 document.getElementById("next").addEventListener("click",(event)=>{
+                    if(document.querySelector('input[name="choice"]:checked') == null) {
+                        window.alert("Please select an option");
+                    }else{
                     console.log(qna[cur].correct)
                     console.log(document.getElementById(qna[cur].correct).checked)
                     if(document.getElementById(qna[cur].correct+"choice").checked == true){
@@ -153,6 +154,7 @@ function loadQuestions(){
                     console.log((cur+1/5 * 100).toString() + "%")
                     document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%"
                     getQna(qna,cur)
+                    }
 
                 })
                 document.getElementById("back").addEventListener("click",(event)=>{
@@ -227,6 +229,9 @@ function loadQuestions(){
                     updateDoc(bookmarkRef,bookmarkChanges)
                 })
                 document.getElementById("next").addEventListener("click",(event)=>{
+                    if(document.querySelector('input[name="choice"]:checked') == null) {
+                        window.alert("Please select an option");
+                    }else{
                     if(document.getElementById(qna[cur].correct+"choice").checked == True){
                         correct++
                     }
@@ -244,7 +249,9 @@ function loadQuestions(){
                     }
                     document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%" 
                     getQna(qna,cur)
+                }
                 })
+                
                 document.getElementById("back").addEventListener("click",(event)=>{
                     if(cur!=0){
                         cur--
@@ -253,6 +260,7 @@ function loadQuestions(){
                     }
                     getQna(qna,cur)
                 })
+            
                 break
                 
             case "3":
@@ -318,6 +326,9 @@ function loadQuestions(){
                     updateDoc(bookmarkRef,bookmarkChanges)
                 })
                 document.getElementById("next").addEventListener("click",(event)=>{
+                    if(document.querySelector('input[name="choice"]:checked') == null) {
+                        window.alert("Please select an option");
+                    }else{
                     if(document.getElementById(qna[cur].correct+"choice").checked == True){
                         correct++
                     }
@@ -335,6 +346,7 @@ function loadQuestions(){
                     }
                     document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%"
                     getQna(qna,cur)
+                }
 
                 })
                 document.getElementById("back").addEventListener("click",(event)=>{

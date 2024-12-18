@@ -93,27 +93,35 @@ async function checkLoggedInProfile() {
           totalAchievement += 1; // Increment achievement count
           console.log(`total achievement: ${totalAchievement}`);
         }
-        const engTopics = [[mathData.mathQuizOne,mathData.mathLearnOne,mathData.mathTopicOne],
-                          [mathData.mathQuizTwo,mathData.mathLearnTwo,mathData.mathTopicTwo],
-                          [mathData.mathQuizThree,mathData.mathLearnThree,mathData.mathTopicThree]];
-        for(var i; i < 3;i++){
-          var temp = 0
-          for(var j; j < 3;j++){
-            if(j==0){
-              if(engTopics[i][j] > 0){
-                temp++
-              }
-            }else{
-              if(engTopics[i][j] == 100){
-                temp++
-              }
-            }
+      const mathTopics = [[mathData.mathQuizOne,mathData.mathLearnOne],
+      [mathData.mathQuizTwo,mathData.mathLearnTwo],
+      [mathData.mathQuizThree,mathData.mathLearnThree]];
+      for(var i = 0; i < 3;i++){
+      var temp = 0
+      for(var j = 0; j < 2;j++){
+        if(j==0){
+          if(mathTopics[i][j] > 0){
+            temp++
           }
-          if(temp==3){
-            topicsCompleted++
+        }else{
+          if(mathTopics[i][j] == 100){
+            temp++
           }
         }
       }
+      if(temp==2){
+        topicsCompleted++
+      }
+    }
+    const change={
+      "mathTopicOne":mathData.mathQuizOne+ mathData.mathLearnOne/2,
+      "mathTopicTwo":mathData.mathQuizTwo+ mathData.mathLearnTwo/2,
+      "mathTopicThree":mathData.mathQuizThree+ mathData.mathLearnThree/2,
+      "overallProgress":((mathData.mathQuizOne+ mathData.mathLearnOne)+
+      (mathData.mathQuizTwo+ mathData.mathLearnTwo)+(mathData.mathQuizThree+ mathData.mathLearnThree))/3
+    }
+    updateDoc(mathRef,change)
+  }
 
       // Fetch English progress
       const engDocSnap = await getDoc(engRef);
@@ -130,27 +138,36 @@ async function checkLoggedInProfile() {
           };
           totalAchievement += 1; // Increment achievement count
           console.log(`total achievement: ${totalAchievement}`);
-          const engTopics = [[engData.engQuizOne,engData.engLearnOne,engData.engTopicOne],
-                             [engData.engQuizTwo,engData.engLearnTwo,engData.engTopicTwo],
-                             [engData.engQuizThree,engData.engLearnThree,engData.engTopicThree]];
-          for(var i; i < 3;i++){
-            var temp = 0
-            for(var j; j < 3;j++){
-              if(j==0){
-                if(engTopics[i][j] > 0){
-                  temp++
-                }
-              }else{
-                if(engTopics[i][j] == 100){
-                  temp++
-                }
+        }   
+        const engTopics = [[engData.engQuizOne,engData.engLearnOne],
+        [engData.engQuizTwo,engData.engLearnTwo],
+        [engData.engQuizThree,engData.engLearnThree]];       
+        for(var i = 0; i < 3;i++){
+          var temp = 0
+          for(var j = 0; j < 2;j++){
+            if(j==0){
+              if(engTopics[i][j] > 0){
+                temp++
+              }
+            }else{
+              if(engTopics[i][j] == 100){
+                temp++
               }
             }
-            if(temp==3){
-              topicsCompleted++
-            }
+          }
+          console.log(`temp ${temp}`)
+          if(temp==2){
+            topicsCompleted++
           }
         }
+        const change={
+          "mathTopicOne":engData.engQuizOne+ engData.engLearnOne/2,
+          "mathTopicTwo":engData.engQuizTwo+ engData.engLearnTwo/2,
+          "mathTopicThree":engData.engQuizThree+ engData.engLearnThree/2,
+          "overallProgress":((engData.engQuizOne+ engData.engLearnOne)+
+          (engData.engQuizTwo+ engData.engLearnTwo)+(engData.engQuizThree+ engData.engLearnThree))/3
+        }
+        updateDoc(engRef,change)
       }
       document.getElementById("topics-completed").innerText = topicsCompleted;
       // Fetch user data for streak

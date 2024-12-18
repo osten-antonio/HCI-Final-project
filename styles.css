@@ -95,7 +95,6 @@ body,html{
     background: linear-gradient(-45deg, var(--secondblue), var(--primemint), #23a6d5, #23d5ab);
     background-size: 300% 300%;
     animation: gradient 10s ease infinite;
-    height: 100vh;
 }
 
 @keyframes gradient {

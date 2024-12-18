@@ -37,6 +37,10 @@ function checkLoggedInProfile(){
             document.getElementById("topic-2q").innerText = (Math.floor(data.engQuizTwo))+"%";
             document.getElementById("quiz-3").style["width"] = (data.engQuizThree)+"%";
             document.getElementById("topic-3q").innerText = (Math.floor(data.engQuizThree))+"%";
+
+            
+
+
         } else {
             console.log("No data available.");
         }
