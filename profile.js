@@ -16,7 +16,7 @@ const db = getFirestore(app);
 const loggedInUserId=localStorage.getItem('loggedInUId');
 
 function checkLoggedInProfile(){
-  console.log(loggedInUserId)
+
   if(loggedInUserId){
     const mathRef = doc(db, "math", loggedInUserId)
     const engRef = doc(db, "english", loggedInUserId)
@@ -24,8 +24,7 @@ function checkLoggedInProfile(){
     .then((docSnap) => {
       if (docSnap.exists()) {
         const data = docSnap.data();
-        console.log("Datas", data)
-        console.log("Overall progress:", data.overallProgress);
+
         document.getElementById("maths-percentage").innerText= (Math.ceil(data.overallProgress))+"%";
         document.getElementById("maths-1").style["width"] = (Math.ceil(data.mathTopicOne))+"%";
         document.getElementById("maths-1").textContent = "Topic One "+ (Math.ceil(data.mathTopicOne)) +"%";
@@ -44,8 +43,7 @@ function checkLoggedInProfile(){
     .then((docSnap) => {
       if (docSnap.exists()) {
         const data = docSnap.data();
-        console.log("Datas", data)
-        console.log("Overall progress:", Math.ceil(data.overallProgress));
+
         document.getElementById("eng-percentage").innerText= (Math.ceil(data.overallProgress))+"%";
         document.getElementById("english-1").style["width"] = (Math.ceil(data.engTopicOne))+"%";
         document.getElementById("english-1").textContent = "Topic One "+ (Math.ceil(data.engTopicOne)) +"%";
@@ -65,7 +63,7 @@ function checkLoggedInProfile(){
     .then((docSnap) => {
       if (docSnap.exists()) {
         const data = docSnap.data();
-        console.log("Datas", data)
+
         document.getElementById("name").innerText=data.Name;
       } else {
         console.log("No data available.");

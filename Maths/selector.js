@@ -39,9 +39,9 @@ function checkLoggedInProfile(){
             document.getElementById("topic-3q").innerText = (Math.floor(data.mathQuizThree))+"%";
 
             const change={
-                "mathTopicOne":data.mathQuizOne+ data.mathLearnOne/2,
-                "mathTopicTwo":data.mathQuizTwo+ data.mathLearnTwo/2,
-                "mathTopicThree":data.mathQuizThree+ data.mathLearnThree/2,
+                "mathTopicOne":(data.mathQuizOne+ data.mathLearnOne)/2,
+                "mathTopicTwo":(data.mathQuizTwo+ data.mathLearnTwo)/2,
+                "mathTopicThree":(data.mathQuizThree+ data.mathLearnThree)/2,
                 "overallProgress":((data.mathQuizOne+ data.mathLearnOne)+
                 (data.mathQuizTwo+ data.mathLearnTwo)+(data.mathQuizThree+ data.mathLearnThree))/3
               }

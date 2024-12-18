@@ -58,6 +58,7 @@ function capitalizeFirstLetter(val) {
 async function checkLoggedInProfile() {
   const loggedInUserId = localStorage.getItem('loggedInUId');
   if (loggedInUserId) {
+    var changec={}
     const mathRef = doc(db, "math", loggedInUserId);
     const engRef = doc(db, "english", loggedInUserId);
     const achievementRef = doc(db, "achievements", loggedInUserId);
@@ -86,7 +87,7 @@ async function checkLoggedInProfile() {
         document.getElementById("maths-overall-label").innerText = `${(Math.ceil(mathProgress))}%`;
         if (mathProgress >= 100 && !achievementdata.mathCompletion["get"]) {
           alert("Achievement unlocked!\nMaths completion");
-          change.mathCompletion = {
+          changec.mathCompletion = {
             get: true,
             dateAchieved: new Date()
           };
@@ -114,25 +115,26 @@ async function checkLoggedInProfile() {
       }
     }
     const change={
-      "mathTopicOne":mathData.mathQuizOne+ mathData.mathLearnOne/2,
-      "mathTopicTwo":mathData.mathQuizTwo+ mathData.mathLearnTwo/2,
-      "mathTopicThree":mathData.mathQuizThree+ mathData.mathLearnThree/2,
+      "mathTopicOne":(mathData.mathQuizOne+ mathData.mathLearnOne)/2,
+      "mathTopicTwo":(mathData.mathQuizTwo+ mathData.mathLearnTwo)/2,
+      "mathTopicThree":(mathData.mathQuizThree+ mathData.mathLearnThree)/2,
       "overallProgress":((mathData.mathQuizOne+ mathData.mathLearnOne)+
       (mathData.mathQuizTwo+ mathData.mathLearnTwo)+(mathData.mathQuizThree+ mathData.mathLearnThree))/6
     }
     updateDoc(mathRef,change)
   }
-
+    
       // Fetch English progress
       const engDocSnap = await getDoc(engRef);
       if (engDocSnap.exists()) {
+
         const engData = engDocSnap.data();
         const engProgress = engData.overallProgress;
         document.getElementById("english-overall").style["width"] = `${(engProgress)}%`;
         document.getElementById("eng-overall-label").innerText = `${(Math.ceil(engProgress))}%`;
         if (engProgress >= 100 && !achievementdata.engCompletion.get) {
           alert("Achievement unlocked!\nEnglish completion");
-          change.engCompletion = {
+          changec.engCompletion = {
             get: true,
             dateAchieved: new Date()
           };
@@ -161,9 +163,9 @@ async function checkLoggedInProfile() {
           }
         }
         const change={
-          "engTopicOne":engData.engQuizOne+ engData.engLearnOne/2,
-          "engTopicTwo":engData.engQuizTwo+ engData.engLearnTwo/2,
-          "engTopicThree":engData.engQuizThree+ engData.engLearnThree/2,
+          "engTopicOne":(engData.engQuizOne+ engData.engLearnOne)/2,
+          "engTopicTwo":(engData.engQuizTwo+ engData.engLearnTwo)/2,
+          "engTopicThree":(engData.engQuizThree+ engData.engLearnThree)/2,
           "overallProgress":((engData.engQuizOne+ engData.engLearnOne)+
           (engData.engQuizTwo+ engData.engLearnTwo)+(engData.engQuizThree+ engData.engLearnThree))/6
         }
@@ -255,7 +257,7 @@ async function checkLoggedInProfile() {
 
         if (currentStreak >= 10 && !achievementdata["10day"]["get"]) {
           alert("Achievement unlocked!\n10 Day streak");
-          change["10day"] = {
+          changec["10day"] = {
             get: true,
             dateAchieved: Date.now(),
           };
@@ -265,9 +267,9 @@ async function checkLoggedInProfile() {
       }
       document.getElementById("achievementvalue").innerText=totalAchievement;
       // After all data is fetched and logic is applied, update achievements
-      change.totalAchievement = totalAchievement;
+      changec.totalAchievement = totalAchievement;
 
-      await updateDoc(achievementRef, change);
+      await updateDoc(achievementRef, changec);
       console.log("Total achievement updated successfully");
       const achievementdocSnap1 = await getDoc(achievementRef);
 
