@@ -56,19 +56,19 @@ const topicList = {
 }
 const descriptionList = {
   1:{
-    1:"Description",
-    2:"Description",
-    3:"Description"
+    1:"Learn to add and subtract numbers efficiently.",
+    2:"Master the basics of multiplication techniques.",
+    3:"Understand the principles of division and how to apply them."
   },
   2:{
-    1:"Description",
-    2:"Description",
-    3:"Description"
+    1:"Discover how to calculate the area of different shapes.",
+    2:"Learn to measure and calculate the perimeter of objects.",
+    3:"Understand different types of angles and how to measure them."
   },
   3:{
-    1:"Description",
-    2:"Description",
-    3:"Description"
+    1:"Identify and create equivalent fractions easily.",
+    2:"Learn to compare fractions to determine which is larger or smaller.",
+    3:"Simplify fractions to their simplest form step-by-step."
   }
 }
 
@@ -82,6 +82,9 @@ function writeSubtopics(id){
   document.getElementById("subtopic1-description").innerText=descriptionList[Number(id)][1]
   document.getElementById("subtopic2-description").innerText=descriptionList[Number(id)][2]
   document.getElementById("subtopic3-description").innerText=descriptionList[Number(id)][3]
+  document.getElementById("subtopic1").setAttribute("href",`learn.html?id=${id}.1`)
+  document.getElementById("subtopic2").setAttribute("href",`learn.html?id=${id}.2`)
+  document.getElementById("subtopic3").setAttribute("href",`learn.html?id=${id}.3`)
 }
 
 
