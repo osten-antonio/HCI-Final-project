@@ -16,6 +16,7 @@ const db = getFirestore(app);
 const loggedInUserId = localStorage.getItem('loggedInUId')
 const mathRef = doc(db,"math",loggedInUserId)
 const bookmarkRef = doc(db,"bookmarks",loggedInUserId)
+var bookmarks = [];
 const bookmarkDocSnap = await getDoc(bookmarkRef);
 const mathDocSnap = await getDoc(mathRef)
 const urlParams = new URLSearchParams(window.location.search);
@@ -137,15 +138,18 @@ function loadQuestions(){
                     if(document.querySelector('input[name="choice"]:checked') == null) {
                         window.alert("Please select an option");
                     }else{
-                    if(document.getElementById(qna[cur].correct).checked == true){
+                    
+                    if(document.getElementById(qna[cur].correct+"choice").checked == true){
                         correct++
                     }
                     cur++
-                    if(cur >= 5){
+                    if(cur > 4){
                         cur--
                         if(window.confirm("Do you want to submit?")){
+                            console.log(change)
                             change.mathQuizOne = correct/5 * 100
                             updateDoc(mathRef,change)
+                            window.location.replace("selector.html")
 
                         }
                     }
@@ -157,7 +161,9 @@ function loadQuestions(){
                     if(cur!=0){
                         cur--
                         document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%"
+                        if(document.getElementById(qna[cur].correct).checked == true){
                         correct--
+                        }
                     }
                     getQna(qna,cur)
                 })
@@ -217,16 +223,18 @@ function loadQuestions(){
                     if(document.querySelector('input[name="choice"]:checked') == null) {
                         window.alert("Please select an option");
                     }else{
-                    if(document.getElementById(qna[cur].correct).checked == true){
+                    if(document.getElementById(qna[cur].correct+"choice").checked == true){
                         correct++
                     }
                     cur++
                     if(cur >= 5){
                         cur--
                         if(window.confirm("Do you want to submit?")){
+                        
                             change.mathQuizOne = correct/5 * 100
 
                             updateDoc(mathRef,change)
+                            window.location.replace("selector.html")
 
                         }
                     }
@@ -238,7 +246,9 @@ function loadQuestions(){
                     if(cur!=0){
                         cur--
                         document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%" 
-                        correct--
+                        if(document.getElementById(qna[cur].correct).checked == true){
+                            correct--
+                            }
                     }
                     getQna(qna,cur)
                 })
@@ -298,7 +308,7 @@ function loadQuestions(){
                     if(document.querySelector('input[name="choice"]:checked') == null) {
                         window.alert("Please select an option");
                     }else{
-                    if(document.getElementById(qna[cur].correct).checked == true){
+                    if(document.getElementById(qna[cur].correct+"choice").checked == true){
                         correct++
                     }
                     cur++
@@ -307,6 +317,7 @@ function loadQuestions(){
                         if(window.confirm("Do you want to submit?")){
                             change.mathQuizOne = correct/5 * 100
                             updateDoc(mathRef,change)
+                            window.location.replace("selector.html")
                         }
                     }
                     document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%" 
@@ -317,7 +328,9 @@ function loadQuestions(){
                     if(cur!=0){
                         cur--
                         document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%" 
-                        correct--
+                        if(document.getElementById(qna[cur].correct).checked == true){
+                            correct--
+                        }
                     }
                     getQna(qna,cur)
                 })
@@ -517,6 +530,7 @@ function loadQuestions(){
                             if (window.confirm("Do you want to submit?")) {
                                 change.mathQuizOne = (correct / qna.length) * 100;
                                 updateDoc(mathRef, change);
+                                window.location.replace("selector.html")
                             }
                         }
                         document.getElementById("quiz-progress").style.width = ((cur + 1) / qna.length * 100).toString() + "%";

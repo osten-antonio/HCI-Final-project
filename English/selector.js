@@ -37,10 +37,17 @@ function checkLoggedInProfile(){
             document.getElementById("topic-2q").innerText = (Math.floor(data.engQuizTwo))+"%";
             document.getElementById("quiz-3").style["width"] = (data.engQuizThree)+"%";
             document.getElementById("topic-3q").innerText = (Math.floor(data.engQuizThree))+"%";
-
+            const change={
+                "engTopicOne":data.engQuizOne+ data.engLearnOne/2,
+                "mathTopicTwo":data.engQuizTwo+ data.engLearnTwo/2,
+                "mathTopicThree":data.engQuizThree+ data.engLearnThree/2,
+                "overallProgress":((data.engQuizOne+ data.engLearnOne)+
+                (data.engQuizTwo+ data.engLearnTwo)+(data.engQuizThree+ data.engLearnThree))/3
+              }
+              updateDoc(docRef,change)
             
 
-
+            
         } else {
             console.log("No data available.");
         }

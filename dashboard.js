@@ -83,7 +83,7 @@ async function checkLoggedInProfile() {
         const mathData = mathDocSnap.data();
         const mathProgress = mathData.overallProgress;
         document.getElementById("maths-overall").style["width"] = `${(mathProgress)}%`;
-        document.getElementById("maths-overall-label").innerText = `${(mathProgress)}%`;
+        document.getElementById("maths-overall-label").innerText = `${(Math.ceil(mathProgress))}%`;
         if (mathProgress >= 100 && !achievementdata.mathCompletion["get"]) {
           alert("Achievement unlocked!\nMaths completion");
           change.mathCompletion = {
@@ -129,7 +129,7 @@ async function checkLoggedInProfile() {
         const engData = engDocSnap.data();
         const engProgress = engData.overallProgress;
         document.getElementById("english-overall").style["width"] = `${(engProgress)}%`;
-        document.getElementById("eng-overall-label").innerText = `${(engProgress)}%`;
+        document.getElementById("eng-overall-label").innerText = `${(Math.ceil(engProgress))}%`;
         if (engProgress >= 100 && !achievementdata.engCompletion.get) {
           alert("Achievement unlocked!\nEnglish completion");
           change.engCompletion = {
@@ -161,10 +161,10 @@ async function checkLoggedInProfile() {
           }
         }
         const change={
-          "mathTopicOne":engData.engQuizOne+ engData.engLearnOne/2,
+          "engTopicOne":engData.engQuizOne+ engData.engLearnOne/2,
           "mathTopicTwo":engData.engQuizTwo+ engData.engLearnTwo/2,
           "mathTopicThree":engData.engQuizThree+ engData.engLearnThree/2,
-          "overallProgress":((engData.engQuizOne+ engData.engLearnOne)+
+          "overallProgress":((mathData.engQuizOne+ engData.engLearnOne)+
           (engData.engQuizTwo+ engData.engLearnTwo)+(engData.engQuizThree+ engData.engLearnThree))/3
         }
         updateDoc(engRef,change)

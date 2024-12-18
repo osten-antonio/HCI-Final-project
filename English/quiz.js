@@ -148,6 +148,7 @@ function loadQuestions(){
                             change.engQuizOne = correct/5 * 100
 
                             updateDoc(engRef,change)
+                            window.location.replace("selector.html")
 
                         }
                     }
@@ -161,7 +162,9 @@ function loadQuestions(){
                     if(cur!=0){
                         cur--
                         document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%"
-                        correct--
+                        if(document.getElementById(qna[cur].correct).checked == true){
+                            correct--
+                        }
                     }
                     getQna(qna,cur)
                 })
@@ -213,26 +216,14 @@ function loadQuestions(){
                 ]
 
                 getQna(qna,cur)
-                document.getElementById("bookmark").addEventListener("click",(event)=>{
-                    bookmarks.push({
-                        quizId:id,
-                        questionIndex:cur
-                    })
-                    bookmarks = Array.from(
-                        new Set(bookmarks.map(bookmark => JSON.stringify(bookmark)))
-                    ).map(str => JSON.parse(str));
-
-                    const bookmarkChanges = {
-                        engBookmarks: Array.from(new Set(bookmarkData.engBookmarks.concat(bookmarks))) 
-                    }
-                    console.log(bookmarkChanges)
-                    updateDoc(bookmarkRef,bookmarkChanges)
+                document.getElementById("bookmarkbutton").addEventListener("click",(event)=>{
+                    toggleBookmark(cur);
                 })
                 document.getElementById("next").addEventListener("click",(event)=>{
                     if(document.querySelector('input[name="choice"]:checked') == null) {
                         window.alert("Please select an option");
                     }else{
-                    if(document.getElementById(qna[cur].correct+"choice").checked == True){
+                    if(document.getElementById(qna[cur].correct+"choice").checked == true){
                         correct++
                     }
                     cur++
@@ -245,6 +236,7 @@ function loadQuestions(){
                             }
                             updateDoc(engRef,change)
                             updateDoc(bookmarkRef,bookmarkChanges)
+                            window.location.replace("selector.html")
                         }
                     }
                     document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%" 
@@ -256,7 +248,9 @@ function loadQuestions(){
                     if(cur!=0){
                         cur--
                         document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%"
-                        correct--
+                        if(document.getElementById(qna[cur].correct).checked == true){
+                            correct--
+                        }
                     }
                     getQna(qna,cur)
                 })
@@ -310,26 +304,14 @@ function loadQuestions(){
                 ]
 
                 getQna(qna,cur)
-                document.getElementById("bookmark").addEventListener("click",(event)=>{
-                    bookmarks.push({
-                        quizId:id,
-                        questionIndex:cur
-                    })
-                    bookmarks = Array.from(
-                        new Set(bookmarks.map(bookmark => JSON.stringify(bookmark)))
-                    ).map(str => JSON.parse(str));
-
-                    const bookmarkChanges = {
-                        engBookmarks: Array.from(new Set(bookmarkData.engBookmarks.concat(bookmarks))) 
-                    }
-                    console.log(bookmarkChanges)
-                    updateDoc(bookmarkRef,bookmarkChanges)
+                document.getElementById("bookmarkbutton").addEventListener("click",(event)=>{
+                    toggleBookmark(cur);
                 })
                 document.getElementById("next").addEventListener("click",(event)=>{
                     if(document.querySelector('input[name="choice"]:checked') == null) {
                         window.alert("Please select an option");
                     }else{
-                    if(document.getElementById(qna[cur].correct+"choice").checked == True){
+                    if(document.getElementById(qna[cur].correct+"choice").checked == true){
                         correct++
                     }
                     cur++
@@ -342,6 +324,7 @@ function loadQuestions(){
                             }
                             updateDoc(engRef,change)
                             updateDoc(bookmarkRef,bookmarkChanges)
+                            window.location.replace("selector.html")
                         }
                     }
                     document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%"
@@ -353,7 +336,9 @@ function loadQuestions(){
                     if(cur!=0){
                         cur--
                         document.getElementById("quiz-progress").style.width = ((cur+1)/5 * 100).toString() + "%"
-                        correct--
+                        if(document.getElementById(qna[cur].correct).checked == true){
+                            correct--
+                            }
                     }
                     getQna(qna,cur)
                 })
