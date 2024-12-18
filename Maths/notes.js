@@ -128,7 +128,7 @@ switch(id) {
         notes.innerHTML = `
         <h1>Geometry</h1>
 
-        <h2 id="subtopic1">Area</h2>
+        <h2 id="subtopic-1">Area</h2>
 
         <h3>1. Definition</h3>
         <p>Area is the amount of space inside a 2D shape or figure. It is measured in square units, such as square meters (m&sup2;), square centimeters (cm&sup2;), etc.</p>
@@ -184,7 +184,7 @@ switch(id) {
             <li><strong>Area of Composite Shapes:</strong> Calculate each shape's area individually and sum them up.</li>
         </ul>
 
-        <h2 id="subtopic2">Perimeter</h2>
+        <h2 id="subtopic-2">Perimeter</h2>
 
         <h3>1. Definition</h3>
         <p>Perimeter is the total length around the boundary of a 2D shape. It is measured in linear units like meters (m), centimeters (cm), or inches (in).</p>
@@ -197,7 +197,7 @@ switch(id) {
             <li><strong>Circle (Circumference):</strong> Circumference = 2 &times; &pi; &times; Radius</li>
         </ul>
 
-        <h2 id="subtopic3">Angles</h2>
+        <h2 id="subtopic-3">Angles</h2>
 
         <h3>1. Definition</h3>
         <p>An angle is formed when two rays meet at a common endpoint called the vertex. The rotation between the two rays is measured in degrees (&deg;).</p>
@@ -262,7 +262,7 @@ switch(id) {
         notes.innerHTML = `
         <h1>Fractions</h1>
 
-        <h2 id="subtopic1">Equivalent Fractions</h2>
+        <h2 id="subtopic-1">Equivalent Fractions</h2>
 
         <h3>1. Definition</h3>
         <p>Equivalent fractions are fractions that represent the same value or proportion, even though they may look different.</p>
@@ -315,7 +315,7 @@ switch(id) {
             <li>Use the cross-multiplication method to check for equivalence.</li>
         </ul>
 
-        <h2 id="subtopic2">Comparing Fractions</h2>
+        <h2 id="subtopic-2">Comparing Fractions</h2>
 
         <h3>1. Definition</h3>
         <p>Comparing fractions means determining which fraction is larger, smaller, or if they are equal.</p>
@@ -348,7 +348,7 @@ switch(id) {
             <li>Use a number line for visualization.</li>
         </ul>
 
-        <h2 id="subtopic3">Simplifying Fractions</h2>
+        <h2 id="subtopic-3">Simplifying Fractions</h2>
 
         <h3>1. Definition</h3>
         <p>Simplifying fractions means reducing a fraction to its simplest form, where the numerator and denominator have no common factors other than 1.</p>

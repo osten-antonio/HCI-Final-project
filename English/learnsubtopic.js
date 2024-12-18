@@ -56,9 +56,9 @@ const topicList = {
 }
 const descriptionList = {
   1:{
-    1:"Description",
-    2:"Description",
-    3:"Description"
+    1:"Homophones are words that sound the same but have different meanings, spellings, or both.",
+    2:"Regular plurals add -s or -es (e.g., cat → cats), while irregular plurals change form (e.g., mouse → mice). ",
+    3:"Vocabulary refers to the set of words used in a language. Building a strong vocabulary improves communication, comprehension, and writing skills. "
   },
   2:{
     1:"Description",
@@ -82,6 +82,9 @@ function writeSubtopics(id){
   document.getElementById("subtopic1-description").innerText=descriptionList[Number(id)][1]
   document.getElementById("subtopic2-description").innerText=descriptionList[Number(id)][2]
   document.getElementById("subtopic3-description").innerText=descriptionList[Number(id)][3]
+  document.getElementById("subtopic1").setAttribute("href",`learn.html?id=${id}.1`)
+  document.getElementById("subtopic2").setAttribute("href",`learn.html?id=${id}.2`)
+  document.getElementById("subtopic3").setAttribute("href",`learn.html?id=${id}.3`)
 }
 
 

@@ -181,7 +181,7 @@ switch(id) {
         notes.innerHTML = `
         <h1>Grammar</h1>
         
-        <h2 id="subtopic1">Conjunctions</h2>
+        <h2 id="subtopic-1">Conjunctions</h2>
         
         <h3>1. Definition</h3>
         <p>Conjunctions are words that connect words, phrases, or clauses in a sentence.</p>
@@ -219,7 +219,7 @@ switch(id) {
         <p>Use subordinating conjunctions to add reasons, conditions, or time.</p>
         <p>Practice writing sentences with each type of conjunction.</p>
         
-        <h2 id="subtopic2">Adverbs</h2>
+        <h2 id="subtopic-2">Adverbs</h2>
         
         <h3>1. Definition</h3>
         <p>Adverbs are words that modify verbs, adjectives, or other adverbs. They provide additional information about how, when, where, why, or to what extent an action is performed.</p>
@@ -272,7 +272,7 @@ switch(id) {
         <p>Practice forming adverbs from adjectives.</p>
         <p>Write sentences to practice different types of adverbs.</p>
         
-        <h2 id="subtopic3">Adjectives</h2>
+        <h2 id="subtopic-3">Adjectives</h2>
         
         <h3>1. Definition</h3>
         <p>Adjectives are words that describe or modify nouns and pronouns, providing more information about their qualities, quantity, or identity.</p>
@@ -335,7 +335,7 @@ switch(id) {
         notes.innerHTML = `
         <h1>Prepositions</h1>
 
-        <h2 id="subtopic1">Prepositions of Place</h2>
+        <h2 id="subtopic-1">Prepositions of Place</h2>
 
         <h3>1. Definition</h3>
         <p>Prepositions of place are words that describe the location of someone or something in relation to another object.</p>
@@ -395,7 +395,7 @@ switch(id) {
             <li>Write sentences to apply prepositions accurately.</li>
         </ul>
 
-        <h2 id="subtopic2">Prepositions of Time</h2>
+        <h2 id="subtopic-2">Prepositions of Time</h2>
 
         <h3>1. Definition</h3>
         <p>Prepositions of time are words used to show the relationship between a time reference and an action or event.</p>
@@ -436,7 +436,7 @@ switch(id) {
             <li>Write sentences to apply what you've learned.</li>
         </ul>
 
-        <h2 id="subtopic3">Prepositions of Movement</h2>
+        <h2 id="subtopic-3">Prepositions of Movement</h2>
 
         <h3>1. Definition</h3>
         <p>Prepositions of movement indicate the direction or motion from one place to another.</p>
