@@ -103,7 +103,7 @@ function checkLoggedInProfile(){
                     createBookmarkButtons(englishBookmarks, 'eng-panel', 'English');
                 }
                 if(!(mathsBookmarks === undefined || mathsBookmarks.length == 0)){
-                    createBookmarkButtons(mathsBookmarks, 'eng-panel', 'Maths');
+                    createBookmarkButtons(mathsBookmarks, 'maths-panel', 'Maths');
                 }
 
             } else{

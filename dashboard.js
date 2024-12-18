@@ -118,7 +118,7 @@ async function checkLoggedInProfile() {
       "mathTopicTwo":mathData.mathQuizTwo+ mathData.mathLearnTwo/2,
       "mathTopicThree":mathData.mathQuizThree+ mathData.mathLearnThree/2,
       "overallProgress":((mathData.mathQuizOne+ mathData.mathLearnOne)+
-      (mathData.mathQuizTwo+ mathData.mathLearnTwo)+(mathData.mathQuizThree+ mathData.mathLearnThree))/3
+      (mathData.mathQuizTwo+ mathData.mathLearnTwo)+(mathData.mathQuizThree+ mathData.mathLearnThree))/6
     }
     updateDoc(mathRef,change)
   }
@@ -162,10 +162,10 @@ async function checkLoggedInProfile() {
         }
         const change={
           "engTopicOne":engData.engQuizOne+ engData.engLearnOne/2,
-          "mathTopicTwo":engData.engQuizTwo+ engData.engLearnTwo/2,
-          "mathTopicThree":engData.engQuizThree+ engData.engLearnThree/2,
-          "overallProgress":((mathData.engQuizOne+ engData.engLearnOne)+
-          (engData.engQuizTwo+ engData.engLearnTwo)+(engData.engQuizThree+ engData.engLearnThree))/3
+          "engTopicTwo":engData.engQuizTwo+ engData.engLearnTwo/2,
+          "engTopicThree":engData.engQuizThree+ engData.engLearnThree/2,
+          "overallProgress":((engData.engQuizOne+ engData.engLearnOne)+
+          (engData.engQuizTwo+ engData.engLearnTwo)+(engData.engQuizThree+ engData.engLearnThree))/6
         }
         updateDoc(engRef,change)
       }

@@ -230,8 +230,7 @@ function loadQuestions(){
                     if(cur >= 5){
                         cur--
                         if(window.confirm("Do you want to submit?")){
-                        
-                            change.mathQuizOne = correct/5 * 100
+                            change.mathQuizTwo = correct/5 * 100
 
                             updateDoc(mathRef,change)
                             window.location.replace("selector.html")
@@ -315,7 +314,7 @@ function loadQuestions(){
                     if(cur >= 5){
                         cur--
                         if(window.confirm("Do you want to submit?")){
-                            change.mathQuizOne = correct/5 * 100
+                            change.mathQuizThree = correct/5 * 100
                             updateDoc(mathRef,change)
                             window.location.replace("selector.html")
                         }
